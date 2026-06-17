@@ -1,36 +1,74 @@
 import { Link } from 'react-router';
+import { motion } from 'motion/react';
 import { projectsContent } from '@/content/projects';
 import { Nav } from './Nav';
 import { WipBanner } from './WipBanner';
+import pageBg from '@/imports/image-9.png';
+
+function ProjectCard({
+  project,
+  index,
+}: {
+  project: (typeof projectsContent)[number];
+  index: number;
+}) {
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 12 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: '-40px' }}
+      transition={{ duration: 0.45, ease: 'easeOut', delay: index * 0.06 }}
+    >
+      <Link to={`/projects/${project.slug}`} className="no-underline text-black block">
+        <motion.div
+          className="flex flex-col gap-3"
+          whileHover={{ y: -4 }}
+          transition={{ duration: 0.2, ease: 'easeOut' }}
+          style={{ padding: '12px', borderRadius: '6px', border: '1px solid transparent' }}
+        >
+          <div className="flex flex-row gap-4 items-start group">
+            <div
+              className="shrink-0 bg-[#d9d9d9] transition-transform duration-200 group-hover:scale-[1.02] overflow-hidden"
+              style={{ width: '80px', height: '70px' }}
+            >
+              <img src={project.thumbnail} alt={project.thumbnailAlt} className="w-full h-full object-cover" />
+            </div>
+            <div>
+              <p style={{ fontSize: '16px', fontWeight: 500, lineHeight: 'normal', marginBottom: '4px' }}>{project.title}</p>
+              <p style={{ fontSize: '13px', fontWeight: 300, lineHeight: '1.5' }}>{project.summary}</p>
+            </div>
+          </div>
+          <div className="flex flex-wrap gap-2">
+            {project.tags.map((tag) => (
+              <span key={tag} className="bg-[#e4e4e4] text-black" style={{ fontSize: '13px', fontWeight: 400, lineHeight: 'normal', padding: '4px 10px' }}>
+                {tag}
+              </span>
+            ))}
+          </div>
+        </motion.div>
+      </Link>
+    </motion.div>
+  );
+}
 
 export function ProjectsPage() {
   return (
-    <div className="bg-white min-h-screen relative" style={{ fontFamily: 'Inter, sans-serif' }}>
+    <div
+      className="min-h-screen relative"
+      style={{
+        fontFamily: 'Inter, sans-serif',
+        backgroundImage: `url(${pageBg})`,
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        backgroundAttachment: 'fixed',
+      }}
+    >
       <WipBanner />
       <Nav />
 
-      <div className="px-6 md:px-16 lg:px-28 pt-4 max-w-5xl mx-auto pb-16 flex flex-col gap-10">
-        {projectsContent.map((project) => (
-          <div key={project.slug} className="flex flex-col gap-3">
-            <div className="flex flex-row gap-4 items-start">
-              <Link to={`/projects/${project.slug}`} className="shrink-0 bg-[#d9d9d9] block overflow-hidden" style={{ width: '80px', height: '70px' }}>
-                <img src={project.thumbnail} alt={project.thumbnailAlt} className="w-full h-full object-cover" />
-              </Link>
-              <div>
-                <Link to={`/projects/${project.slug}`} className="no-underline text-black">
-                  <p style={{ fontSize: '16px', fontWeight: 500, lineHeight: 'normal', marginBottom: '4px' }}>{project.title}</p>
-                </Link>
-                <p style={{ fontSize: '13px', fontWeight: 300, lineHeight: '1.5' }}>{project.summary}</p>
-              </div>
-            </div>
-            <div className="flex flex-wrap gap-2">
-              {project.tags.map((tag) => (
-                <span key={tag} className="bg-[#e4e4e4] text-black" style={{ fontSize: '13px', fontWeight: 400, lineHeight: 'normal', padding: '4px 10px' }}>
-                  {tag}
-                </span>
-              ))}
-            </div>
-          </div>
+      <div className="px-6 md:px-20 lg:px-36 pt-20 max-w-5xl mx-auto pb-16 flex flex-col gap-6">
+        {projectsContent.map((project, index) => (
+          <ProjectCard key={project.slug} project={project} index={index} />
         ))}
       </div>
     </div>
