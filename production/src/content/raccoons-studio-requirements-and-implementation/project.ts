@@ -10,8 +10,6 @@ export const raccoonsStudioRequirementsAndImplementationProject = {
   tags: ['Business Analysis', 'Stakeholder Management', 'Implementation'],
   thumbnail: thumb,
   thumbnailAlt: 'Miniatura projektu Raccoons Studio',
-  heroImage: thumb,
-  heroImageAlt: 'Miniatura projektu Raccoons Studio',
   projectLinks: [
     {
       label: 'Raccoons Studio',

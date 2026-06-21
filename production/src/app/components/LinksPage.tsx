@@ -14,9 +14,6 @@ export function LinksPage() {
           <p style={{ fontSize: 'clamp(22px, 4vw, 36px)', fontWeight: 700, lineHeight: 'normal', marginBottom: '10px' }}>
             {linksContent.title}
           </p>
-          <p style={{ fontSize: '14px', fontWeight: 300, lineHeight: '1.7', maxWidth: '560px' }}>
-            {linksContent.intro}
-          </p>
         </div>
         <div className="flex flex-col">
           {linksContent.items.map((link, i) => (
