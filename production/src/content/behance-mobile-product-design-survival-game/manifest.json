@@ -1,0 +1,113 @@
+{
+  "source": "https://www.behance.net/gallery/233870289/Mobile-Product-Design-Survival-Game",
+  "id": 233870289,
+  "slug": "Mobile-Product-Design-Survival-Game",
+  "title": "Mobile Product Design Survival Game",
+  "description": "",
+  "publishedAt": "2025-09-03T14:26:58Z",
+  "creator": {
+    "name": "Micha Misiejuk",
+    "url": "https://www.behance.net/misiejuk"
+  },
+  "stats": {
+    "appreciations": {
+      "all": 0
+    },
+    "views": {
+      "all": 17
+    },
+    "comments": {
+      "all": 0
+    }
+  },
+  "modules": [
+    {
+      "index": 1,
+      "id": 1342667589,
+      "type": "ImageModule",
+      "caption": "",
+      "altText": "Image may contain: wall, screenshot and indoor",
+      "width": 1280,
+      "height": 338,
+      "sourceUrl": "https://mir-s3-cdn-cf.behance.net/project_modules/source/427724233870289.68b80fbe3f4c8.png",
+      "localPath": "images/01.png"
+    },
+    {
+      "index": 2,
+      "id": 1342667591,
+      "type": "ImageModule",
+      "caption": "",
+      "altText": "Image may contain: wall, fantasy and screenshot",
+      "width": 1280,
+      "height": 338,
+      "sourceUrl": "https://mir-s3-cdn-cf.behance.net/project_modules/source/cc1517233870289.68b80fbe3fcbd.png",
+      "localPath": "images/02.png"
+    },
+    {
+      "index": 3,
+      "id": 1342667581,
+      "type": "ImageModule",
+      "caption": "",
+      "altText": "Image may contain: screenshot and indoor",
+      "width": 1280,
+      "height": 338,
+      "sourceUrl": "https://mir-s3-cdn-cf.behance.net/project_modules/source/1a8c75233870289.68b80fbe3e298.png",
+      "localPath": "images/03.png"
+    },
+    {
+      "index": 4,
+      "id": 1342667587,
+      "type": "ImageModule",
+      "caption": "",
+      "altText": "Image may contain: screenshot and floor",
+      "width": 1280,
+      "height": 338,
+      "sourceUrl": "https://mir-s3-cdn-cf.behance.net/project_modules/source/b6c247233870289.68b80fbe3f056.png",
+      "localPath": "images/04.png"
+    },
+    {
+      "index": 5,
+      "id": 1342667583,
+      "type": "ImageModule",
+      "caption": "",
+      "altText": "Image may contain: screenshot, weapon and pc game",
+      "width": 1280,
+      "height": 338,
+      "sourceUrl": "https://mir-s3-cdn-cf.behance.net/project_modules/source/4e4a7e233870289.68b80fbe3e76f.png",
+      "localPath": "images/05.png"
+    },
+    {
+      "index": 6,
+      "id": 1342667579,
+      "type": "ImageModule",
+      "caption": "",
+      "altText": "Image may contain: screenshot, weapon and pc game",
+      "width": 1280,
+      "height": 338,
+      "sourceUrl": "https://mir-s3-cdn-cf.behance.net/project_modules/source/9f49e3233870289.68b80fbe3db44.png",
+      "localPath": "images/06.png"
+    },
+    {
+      "index": 7,
+      "id": 1342667577,
+      "type": "ImageModule",
+      "caption": "",
+      "altText": "Image may contain: screenshot, black and poster",
+      "width": 1280,
+      "height": 338,
+      "sourceUrl": "https://mir-s3-cdn-cf.behance.net/project_modules/source/569386233870289.68b80fbe3d5fa.png",
+      "localPath": "images/07.png"
+    },
+    {
+      "index": 8,
+      "id": 1342667585,
+      "type": "ImageModule",
+      "caption": "",
+      "altText": "Image may contain: screenshot, map and indoor",
+      "width": 1280,
+      "height": 338,
+      "sourceUrl": "https://mir-s3-cdn-cf.behance.net/project_modules/source/e1accf233870289.68b80fbe3ebdc.png",
+      "localPath": "images/08.png"
+    }
+  ]
+}

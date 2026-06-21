@@ -66,7 +66,7 @@ export function ProjectsPage() {
       <WipBanner />
       <Nav />
 
-      <div className="px-6 md:px-20 lg:px-36 pt-20 max-w-5xl mx-auto pb-16 flex flex-col gap-6">
+      <div className="px-6 pt-20 max-w-3xl mx-auto pb-16 flex flex-col gap-6">
         {projectsContent.map((project, index) => (
           <ProjectCard key={project.slug} project={project} index={index} />
         ))}

@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#111827"/>
+      <stop offset="100%" stop-color="#1f3a5f"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="675" fill="url(#bg)"/>
+  <rect x="110" y="240" width="980" height="190" rx="24" fill="none" stroke="#7dd3fc" stroke-width="8"/>
+  <text x="600" y="335" text-anchor="middle" font-family="Arial, sans-serif" font-size="84" font-weight="700" fill="#e5f6ff">
+    RACCOONS STUDIO
+  </text>
+  <text x="600" y="405" text-anchor="middle" font-family="Arial, sans-serif" font-size="34" fill="#c6e7ff">
+    Requirements and Implementation Support
+  </text>
+</svg>

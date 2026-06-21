@@ -1,0 +1,37 @@
+{
+  "source": "notion-michal-misiejuk",
+  "projectsFound": [
+    {
+      "title": "Mobile Survival Game - Case Study",
+      "slug": "mobile-survival-game-case-study",
+      "folder": "notion-mobile-survival-game-case-study",
+      "overlap": "behance-mobile-product-design-survival-game"
+    },
+    {
+      "title": "Learning Managment System - Case Study",
+      "slug": "learning-managment-system-case-study",
+      "folder": "notion-learning-managment-system-case-study",
+      "overlap": null
+    },
+    {
+      "title": "Underground Garage - Released product",
+      "slug": "underground-garage-released-product",
+      "folder": "notion-underground-garage-released-product",
+      "overlap": "behance-undeground-garage-user-experience-redesign"
+    },
+    {
+      "title": "Kleks Academy - Released product (demo)",
+      "slug": "kleks-academy-released-product-demo",
+      "folder": "notion-kleks-academy-released-product-demo",
+      "overlap": null
+    }
+  ],
+  "existingOverlapCount": 2,
+  "newProjectsCount": 2,
+  "notes": [
+    "Mobile Survival Game z Notion uzupelnia istniejacy projekt Behance o kontekst produktu, role, scope i linki do dokumentacji.",
+    "Underground Garage z Notion uzupelnia istniejacy projekt Behance o kontekst biznesowy, role i scope projektu.",
+    "Learning Management System to nowy projekt tylko z Notion.",
+    "Kleks Academy to nowy projekt tylko z Notion."
+  ]
+}

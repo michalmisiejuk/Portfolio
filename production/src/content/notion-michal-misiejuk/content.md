@@ -1,0 +1,107 @@
+# Micha Misiejuk
+
+Source: https://cool-goat-9ac.notion.site/Micha-Misiejuk-28c3d5f4a00c8047b1b7eed70c5f927c?pvs=74
+
+Micha Misiejuk
+
+## UX Product Designer & Business Analyst | Bridging Digital Experiences, Gamification and Industrial Design
+
+### About me
+
+Im passionate about projects that combine strategic thinking and creative problem-solving, especially where technology meets human behavior.
+
+Im a UX and Product Designer with a background in business analysis, gamification, and industrial design. Ive worked across creative, educational, and industrial sectors designing solutions that connect user needs with business goals and real-world impact.
+
+My experience spans from game and learning design to industrial concept design, giving me a broad perspective on how people interact with both digital and physical systems. I enjoy transforming complex ideas into clear, engaging, and purposeful experiences.
+
+Linkedin | GitHub I Behance I Artstation
+
+- [Linkedin](https://www.linkedin.com/in/micha%C5%82-misiejuk-b64b4411a/)
+
+- [GitHub](https://github.com/michalmisiejuk)
+
+- [Behance](https://www.behance.net/misiejuk)
+
+- [Artstation](https://www.artstation.com/michalmisiejuk)
+
+---
+
+## Featured Projects
+
+### Mobile Survival Game - Case Study
+
+![01.png](images/01.png)
+
+Product Description Decay is a narrative-driven survival & management game set in a dark medieval world. The project delivers mobile-first strategy gameplay with moral choices, systemic economy, and exploration, later expanding to PC/console.
+
+### Project Files
+
+Business Analysis Plan I Case Study Documentation I Behance Documenation
+
+- [Business Analysis Plan](https://docs.google.com/document/d/1MJ7V4jpOxj-_vzXpU0pklFwasL8elmdxT1HwzeHDSOM/edit?usp=sharing)
+
+- [Case Study Documentation](https://docs.google.com/document/d/15zeO6TtC_wGXV7k0uzWpwYxEMyE6AIz7vtqR_7jQCoM/edit?usp=sharing)
+
+- [Behance Documenation](https://www.behance.net/gallery/233870289/Mobile-Product-Design-Survival-Game)
+
+The initiative covers full-cycle production from business analysis and system design to UX/UI prototyping, core loop validation, and player testing.
+
+My role: business analysis, gameplay system modeling, UX research, and interactive UI design (wireframes, usability tests, Figma prototypes, Confluence documentation).
+
+Scope areas: market analysis, stakeholder mapping, process modeling, use case design, prototype validation, and iterative MVP planning.
+
+### Learning Managment System - Case Study
+
+![02.png](images/02.png)
+
+Case Study Overview:
+
+This case study presents the business analysis process for designing a new Learning Management System for a professional training organization. The goal was to understand the companys operations, identify pain points in current tools, and define the requirements for a modern, integrated learning platform.
+
+### Project Files
+
+Case Study Documentation
+
+- [Case Study Documentation](https://docs.google.com/document/d/1yZKA9m3UxxT4IYslVLQsFBzLTBvoIj95by8kfbIhqsM/edit?usp=sharing)
+
+Problem Description:
+
+Course management relied on multiple disconnected tools, leading to data loss, communication issues, and lack of consistent oversight.
+
+Solution:
+
+A new integrated learning platform was conceptually designed through business analysis defining user needs, processes, and system requirements to centralize all training operations in one place.
+
+---
+
+### Underground Garage - Released product
+
+![03.png](images/03.png)
+
+Underground Garage is a realistic car repair and tuning simulation realseased on steam. Inspired by Car Mechanic Simulator, set in a gritty underground world. The game focuses on authentic vehicle systems, garage management, and progressive customization, blending technical precision with creative freedom.
+
+### Project Files
+
+Project Sumary | Steam Product Page
+
+- [Steam Product Page](https://store.steampowered.com/app/1452250/Underground_Garage/)
+
+Context: The project entered a recovery and redesign phase after a missed release, requiring rapid stabilization and redefinition of UX, systems, and production processes.
+
+My role: Lead UX Designer / UX Project Manager / Business Analyst responsible for UX direction, delivery management, and cross-functional coordination. I defined gameplay flows, use cases, and MVP-based UX iterations, ensuring technical feasibility and design coherence.
+
+Scope areas: UX strategy, mechanic system modeling, use-case mapping, process planning (JIRA/Kanban), UIengine integration, and iterative delivery validation through internal and beta testing.
+
+---
+
+### Kleks Academy - Released product (demo)
+
+![04.jpg](images/04.jpg)
+
+As part of the early-stage development of Kleks Academy, I led the product discovery process, focusing on translating business goals and creative vision into a clear, actionable product concept. I gathered and consolidated business and stakeholder requirements, ensuring alignment across multiple disciplines.
+
+### Project Files
+
+Product Steam Page
+
+- [Product Steam Page](https://store.steampowered.com/app/3179870/Akademia_Pana_Kleksa/)

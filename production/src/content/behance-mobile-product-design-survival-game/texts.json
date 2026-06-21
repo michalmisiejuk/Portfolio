@@ -1,0 +1,57 @@
+{
+  "title": "Mobile Product Design Survival Game",
+  "description": "",
+  "creatorName": "Micha Misiejuk",
+  "creatorUrl": "https://www.behance.net/misiejuk",
+  "publishedAt": "2025-09-03T14:26:58Z",
+  "moduleTexts": [
+    {
+      "index": 1,
+      "caption": "",
+      "altText": "Image may contain: wall, screenshot and indoor",
+      "image": "images/01.png"
+    },
+    {
+      "index": 2,
+      "caption": "",
+      "altText": "Image may contain: wall, fantasy and screenshot",
+      "image": "images/02.png"
+    },
+    {
+      "index": 3,
+      "caption": "",
+      "altText": "Image may contain: screenshot and indoor",
+      "image": "images/03.png"
+    },
+    {
+      "index": 4,
+      "caption": "",
+      "altText": "Image may contain: screenshot and floor",
+      "image": "images/04.png"
+    },
+    {
+      "index": 5,
+      "caption": "",
+      "altText": "Image may contain: screenshot, weapon and pc game",
+      "image": "images/05.png"
+    },
+    {
+      "index": 6,
+      "caption": "",
+      "altText": "Image may contain: screenshot, weapon and pc game",
+      "image": "images/06.png"
+    },
+    {
+      "index": 7,
+      "caption": "",
+      "altText": "Image may contain: screenshot, black and poster",
+      "image": "images/07.png"
+    },
+    {
+      "index": 8,
+      "caption": "",
+      "altText": "Image may contain: screenshot, map and indoor",
+      "image": "images/08.png"
+    }
+  ]
+}

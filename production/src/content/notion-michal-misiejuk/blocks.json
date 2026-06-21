@@ -1,0 +1,403 @@
+[
+  {
+    "id": "28c3d5f4-a00c-8047-b1b7-eed70c5f927c",
+    "type": "page",
+    "images": [],
+    "text": "Micha Misiejuk",
+    "links": [],
+    "localImages": []
+  },
+  {
+    "id": "28e3d5f4-a00c-8055-9445-f1646224779a",
+    "type": "sub_header",
+    "images": [],
+    "text": "UX Product Designer & Business Analyst | Bridging Digital Experiences, Gamification and Industrial Design",
+    "links": [],
+    "localImages": []
+  },
+  {
+    "id": "28e3d5f4-a00c-8045-a7f0-fbb14a386870",
+    "type": "sub_sub_header",
+    "images": [],
+    "text": "About me",
+    "links": [],
+    "localImages": []
+  },
+  {
+    "id": "28d3d5f4-a00c-80e8-b262-ed1e2c00edf4",
+    "type": "text",
+    "images": [],
+    "text": "Im passionate about projects that combine strategic thinking and creative problem-solving, especially where technology meets human behavior.",
+    "links": [],
+    "localImages": []
+  },
+  {
+    "id": "28d3d5f4-a00c-801d-838b-ff7efb01995b",
+    "type": "text",
+    "images": [],
+    "text": "Im a UX and Product Designer with a background in business analysis, gamification, and industrial design. Ive worked across creative, educational, and industrial sectors designing solutions that connect user needs with business goals and real-world impact.",
+    "links": [],
+    "localImages": []
+  },
+  {
+    "id": "28d3d5f4-a00c-805e-84eb-fdc06cb0ece5",
+    "type": "text",
+    "images": [],
+    "text": "My experience spans from game and learning design to industrial concept design, giving me a broad perspective on how people interact with both digital and physical systems. I enjoy transforming complex ideas into clear, engaging, and purposeful experiences.",
+    "links": [],
+    "localImages": []
+  },
+  {
+    "id": "2983d5f4-a00c-8068-82da-d55cc82cad05",
+    "type": "text",
+    "images": [],
+    "text": "Linkedin | GitHub I Behance I Artstation",
+    "links": [
+      {
+        "href": "https://www.linkedin.com/in/micha%C5%82-misiejuk-b64b4411a/",
+        "text": "Linkedin"
+      },
+      {
+        "href": "https://github.com/michalmisiejuk",
+        "text": "GitHub"
+      },
+      {
+        "href": "https://www.behance.net/misiejuk",
+        "text": "Behance"
+      },
+      {
+        "href": "https://www.artstation.com/michalmisiejuk",
+        "text": "Artstation"
+      }
+    ],
+    "localImages": []
+  },
+  {
+    "id": "28e3d5f4-a00c-80df-8f4c-f23eeaeb02a1",
+    "type": "divider",
+    "images": [],
+    "text": "",
+    "links": [],
+    "localImages": []
+  },
+  {
+    "id": "28e3d5f4-a00c-809a-9d73-da02b438a8a2",
+    "type": "sub_header",
+    "images": [],
+    "text": "Featured Projects",
+    "links": [],
+    "localImages": []
+  },
+  {
+    "id": "2983d5f4-a00c-80ed-a8b9-dc00b988ff5d",
+    "type": "sub_sub_header",
+    "images": [],
+    "text": "Mobile Survival Game - Case Study",
+    "links": [],
+    "localImages": []
+  },
+  {
+    "id": "2983d5f4-a00c-80f1-82c2-e206ed5ad284",
+    "type": "image",
+    "images": [
+      "/image/attachment%3A4c06861b-d991-4d0d-9272-33f4ae94ffbf%3ADecay_cover.png?table=block&id=2983d5f4-a00c-80f1-82c2-e206ed5ad284&spaceId=30a3d5f4-a00c-81ee-bdab-000356588a34&width=350&userId=&cache=v2&imgBuildSrc=requestProxiedImageUrl"
+    ],
+    "text": "",
+    "links": [],
+    "localImages": [
+      "images/01.png"
+    ]
+  },
+  {
+    "id": "2983d5f4-a00c-8025-bd58-f758255df0fc",
+    "type": "text",
+    "images": [],
+    "text": "Product Description Decay is a narrative-driven survival & management game set in a dark medieval world. The project delivers mobile-first strategy gameplay with moral choices, systemic economy, and exploration, later expanding to PC/console.",
+    "links": [],
+    "localImages": []
+  },
+  {
+    "id": "2983d5f4-a00c-8093-b588-faf8f7d237e1",
+    "type": "sub_sub_header",
+    "images": [],
+    "text": "Project Files",
+    "links": [],
+    "localImages": []
+  },
+  {
+    "id": "2983d5f4-a00c-80f4-ac25-c3b98668f095",
+    "type": "text",
+    "images": [],
+    "text": "Business Analysis Plan I Case Study Documentation I Behance Documenation",
+    "links": [
+      {
+        "href": "https://docs.google.com/document/d/1MJ7V4jpOxj-_vzXpU0pklFwasL8elmdxT1HwzeHDSOM/edit?usp=sharing",
+        "text": "Business Analysis Plan"
+      },
+      {
+        "href": "https://docs.google.com/document/d/15zeO6TtC_wGXV7k0uzWpwYxEMyE6AIz7vtqR_7jQCoM/edit?usp=sharing",
+        "text": "Case Study Documentation"
+      },
+      {
+        "href": "https://www.behance.net/gallery/233870289/Mobile-Product-Design-Survival-Game",
+        "text": "Behance Documenation"
+      }
+    ],
+    "localImages": []
+  },
+  {
+    "id": "2983d5f4-a00c-8076-a896-ee6e45495873",
+    "type": "text",
+    "images": [],
+    "text": "The initiative covers full-cycle production from business analysis and system design to UX/UI prototyping, core loop validation, and player testing.",
+    "links": [],
+    "localImages": []
+  },
+  {
+    "id": "2983d5f4-a00c-80a6-95d3-c8ec984d7639",
+    "type": "text",
+    "images": [],
+    "text": "My role: business analysis, gameplay system modeling, UX research, and interactive UI design (wireframes, usability tests, Figma prototypes, Confluence documentation).",
+    "links": [],
+    "localImages": []
+  },
+  {
+    "id": "2983d5f4-a00c-80f8-ab87-d061ac62bb44",
+    "type": "text",
+    "images": [],
+    "text": "Scope areas: market analysis, stakeholder mapping, process modeling, use case design, prototype validation, and iterative MVP planning.",
+    "links": [],
+    "localImages": []
+  },
+  {
+    "id": "28e3d5f4-a00c-8098-b003-c55c7297d5e5",
+    "type": "sub_sub_header",
+    "images": [],
+    "text": "Learning Managment System - Case Study",
+    "links": [],
+    "localImages": []
+  },
+  {
+    "id": "2983d5f4-a00c-80ec-b796-d903bcbee497",
+    "type": "image",
+    "images": [
+      "/image/attachment%3Af01a6889-5856-4b29-866f-abf9f9a74e4d%3A4c142db4-968a-4647-bf9f-e6a7c2dfe4b4.png?table=block&id=2983d5f4-a00c-80ec-b796-d903bcbee497&spaceId=30a3d5f4-a00c-81ee-bdab-000356588a34&width=290&userId=&cache=v2&imgBuildSrc=requestProxiedImageUrl"
+    ],
+    "text": "",
+    "links": [],
+    "localImages": [
+      "images/02.png"
+    ]
+  },
+  {
+    "id": "2983d5f4-a00c-80a0-b60c-fe0ca4455fff",
+    "type": "text",
+    "images": [],
+    "text": "Case Study Overview:",
+    "links": [],
+    "localImages": []
+  },
+  {
+    "id": "2983d5f4-a00c-808f-a346-d18567290b4d",
+    "type": "text",
+    "images": [],
+    "text": "This case study presents the business analysis process for designing a new Learning Management System for a professional training organization. The goal was to understand the companys operations, identify pain points in current tools, and define the requirements for a modern, integrated learning platform.",
+    "links": [],
+    "localImages": []
+  },
+  {
+    "id": "2943d5f4-a00c-8095-9574-c4afbd8501bf",
+    "type": "sub_sub_header",
+    "images": [],
+    "text": "Project Files",
+    "links": [],
+    "localImages": []
+  },
+  {
+    "id": "2943d5f4-a00c-80e3-89bb-ec45a88c3729",
+    "type": "text",
+    "images": [],
+    "text": "Case Study Documentation",
+    "links": [
+      {
+        "href": "https://docs.google.com/document/d/1yZKA9m3UxxT4IYslVLQsFBzLTBvoIj95by8kfbIhqsM/edit?usp=sharing",
+        "text": "Case Study Documentation"
+      }
+    ],
+    "localImages": []
+  },
+  {
+    "id": "2933d5f4-a00c-8053-ab25-fc73490b7aa5",
+    "type": "text",
+    "images": [],
+    "text": "Problem Description:",
+    "links": [],
+    "localImages": []
+  },
+  {
+    "id": "2943d5f4-a00c-80cb-b93f-efeb7c7f7d6a",
+    "type": "text",
+    "images": [],
+    "text": "Course management relied on multiple disconnected tools, leading to data loss, communication issues, and lack of consistent oversight.",
+    "links": [],
+    "localImages": []
+  },
+  {
+    "id": "2943d5f4-a00c-8009-8d45-df64de82933b",
+    "type": "text",
+    "images": [],
+    "text": "Solution:",
+    "links": [],
+    "localImages": []
+  },
+  {
+    "id": "2943d5f4-a00c-8010-b017-c45b215ddd3b",
+    "type": "text",
+    "images": [],
+    "text": "A new integrated learning platform was conceptually designed through business analysis defining user needs, processes, and system requirements to centralize all training operations in one place.",
+    "links": [],
+    "localImages": []
+  },
+  {
+    "id": "28e3d5f4-a00c-805e-b58b-c654ab74e874",
+    "type": "divider",
+    "images": [],
+    "text": "",
+    "links": [],
+    "localImages": []
+  },
+  {
+    "id": "28e3d5f4-a00c-8096-b2e2-e708d69c80c5",
+    "type": "sub_sub_header",
+    "images": [],
+    "text": "Underground Garage - Released product",
+    "links": [],
+    "localImages": []
+  },
+  {
+    "id": "2923d5f4-a00c-8053-830e-f0fbc090a97f",
+    "type": "image",
+    "images": [
+      "/image/attachment%3Acb127c3e-32b7-4d96-a7e5-122b0854136a%3Aug_main.png?table=block&id=2923d5f4-a00c-8053-830e-f0fbc090a97f&spaceId=30a3d5f4-a00c-81ee-bdab-000356588a34&width=420&userId=&cache=v2&imgBuildSrc=requestProxiedImageUrl"
+    ],
+    "text": "",
+    "links": [],
+    "localImages": [
+      "images/03.png"
+    ]
+  },
+  {
+    "id": "2923d5f4-a00c-8079-80dc-fc799a772afd",
+    "type": "text",
+    "images": [],
+    "text": "Underground Garage is a realistic car repair and tuning simulation realseased on steam. Inspired by Car Mechanic Simulator, set in a gritty underground world. The game focuses on authentic vehicle systems, garage management, and progressive customization, blending technical precision with creative freedom.",
+    "links": [],
+    "localImages": []
+  },
+  {
+    "id": "2933d5f4-a00c-80e9-8069-dabe142eb04f",
+    "type": "sub_sub_header",
+    "images": [],
+    "text": "Project Files",
+    "links": [],
+    "localImages": []
+  },
+  {
+    "id": "2933d5f4-a00c-8011-977c-eb958dceb6c0",
+    "type": "text",
+    "images": [],
+    "text": "Project Sumary | Steam Product Page",
+    "links": [
+      {
+        "href": "/p/1fd3d5f4a00c8089a1c1edb1cbfc5785?pvs=25",
+        "text": "Project Sumary"
+      },
+      {
+        "href": "https://store.steampowered.com/app/1452250/Underground_Garage/",
+        "text": "Steam Product Page"
+      }
+    ],
+    "localImages": []
+  },
+  {
+    "id": "28e3d5f4-a00c-808d-a510-d8859c14707f",
+    "type": "text",
+    "images": [],
+    "text": "Context: The project entered a recovery and redesign phase after a missed release, requiring rapid stabilization and redefinition of UX, systems, and production processes.",
+    "links": [],
+    "localImages": []
+  },
+  {
+    "id": "2923d5f4-a00c-80ed-b26e-c658106e207c",
+    "type": "text",
+    "images": [],
+    "text": "My role: Lead UX Designer / UX Project Manager / Business Analyst responsible for UX direction, delivery management, and cross-functional coordination. I defined gameplay flows, use cases, and MVP-based UX iterations, ensuring technical feasibility and design coherence.",
+    "links": [],
+    "localImages": []
+  },
+  {
+    "id": "2923d5f4-a00c-808a-8e8d-c4ec792fb448",
+    "type": "text",
+    "images": [],
+    "text": "Scope areas: UX strategy, mechanic system modeling, use-case mapping, process planning (JIRA/Kanban), UIengine integration, and iterative delivery validation through internal and beta testing.",
+    "links": [],
+    "localImages": []
+  },
+  {
+    "id": "2933d5f4-a00c-80c4-ab74-ff2b3b1bc827",
+    "type": "divider",
+    "images": [],
+    "text": "",
+    "links": [],
+    "localImages": []
+  },
+  {
+    "id": "2933d5f4-a00c-8030-a951-e7f0712360b8",
+    "type": "sub_sub_header",
+    "images": [],
+    "text": "Kleks Academy - Released product (demo)",
+    "links": [],
+    "localImages": []
+  },
+  {
+    "id": "2983d5f4-a00c-80a1-a86c-ecdf3aa36c3e",
+    "type": "image",
+    "images": [
+      "/image/attachment%3Aeee12e40-241a-452b-aad7-3811aeff83b4%3AKleks_1n1.jpg?table=block&id=2983d5f4-a00c-80a1-a86c-ecdf3aa36c3e&spaceId=30a3d5f4-a00c-81ee-bdab-000356588a34&width=290&userId=&cache=v2&imgBuildSrc=requestProxiedImageUrl"
+    ],
+    "text": "",
+    "links": [],
+    "localImages": [
+      "images/04.jpg"
+    ]
+  },
+  {
+    "id": "2933d5f4-a00c-8042-a9e1-ea8fbf9b6c71",
+    "type": "text",
+    "images": [],
+    "text": "As part of the early-stage development of Kleks Academy, I led the product discovery process, focusing on translating business goals and creative vision into a clear, actionable product concept. I gathered and consolidated business and stakeholder requirements, ensuring alignment across multiple disciplines.",
+    "links": [],
+    "localImages": []
+  },
+  {
+    "id": "2933d5f4-a00c-804d-aa34-e9e4aa381dea",
+    "type": "sub_sub_header",
+    "images": [],
+    "text": "Project Files",
+    "links": [],
+    "localImages": []
+  },
+  {
+    "id": "2933d5f4-a00c-8090-88d0-e7bef8845b62",
+    "type": "text",
+    "images": [],
+    "text": "Product Steam Page",
+    "links": [
+      {
+        "href": "https://store.steampowered.com/app/3179870/Akademia_Pana_Kleksa/",
+        "text": "Product Steam Page"
+      }
+    ],
+    "localImages": []
+  }
+]

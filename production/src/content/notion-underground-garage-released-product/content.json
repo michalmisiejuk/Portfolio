@@ -1,0 +1,14 @@
+{
+  "title": "Underground Garage - Released product",
+  "markdown": "### Underground Garage - Released product\n\n![03.png](images/03.png)\n\nUnderground Garage is a realistic car repair and tuning simulation realseased on steam. Inspired by Car Mechanic Simulator, set in a gritty underground world. The game focuses on authentic vehicle systems, garage management, and progressive customization, blending technical precision with creative freedom.\n\n### Project Files\n\nProject Sumary | Steam Product Page\n\n- [Steam Product Page](https://store.steampowered.com/app/1452250/Underground_Garage/)\n\nContext: The project entered a recovery and redesign phase after a missed release, requiring rapid stabilization and redefinition of UX, systems, and production processes.\n\nMy role: Lead UX Designer / UX Project Manager / Business Analyst responsible for UX direction, delivery management, and cross-functional coordination. I defined gameplay flows, use cases, and MVP-based UX iterations, ensuring technical feasibility and design coherence.\n\nScope areas: UX strategy, mechanic system modeling, use-case mapping, process planning (JIRA/Kanban), UIengine integration, and iterative delivery validation through internal and beta testing.\n\n---",
+  "text": "### Underground Garage - Released product\n\nUnderground Garage is a realistic car repair and tuning simulation realseased on steam. Inspired by Car Mechanic Simulator, set in a gritty underground world. The game focuses on authentic vehicle systems, garage management, and progressive customization, blending technical precision with creative freedom.\n\n### Project Files\n\nProject Sumary | Steam Product Page\n\nSteam Product Page: https://store.steampowered.com/app/1452250/Underground_Garage/\n\nContext: The project entered a recovery and redesign phase after a missed release, requiring rapid stabilization and redefinition of UX, systems, and production processes.\n\nMy role: Lead UX Designer / UX Project Manager / Business Analyst responsible for UX direction, delivery management, and cross-functional coordination. I defined gameplay flows, use cases, and MVP-based UX iterations, ensuring technical feasibility and design coherence.\n\nScope areas: UX strategy, mechanic system modeling, use-case mapping, process planning (JIRA/Kanban), UIengine integration, and iterative delivery validation through internal and beta testing.\n\n---",
+  "links": [
+    {
+      "label": "Steam Product Page",
+      "url": "https://store.steampowered.com/app/1452250/Underground_Garage/"
+    }
+  ],
+  "images": [
+    "images/03.png"
+  ]
+}
