@@ -6,6 +6,7 @@ import image05 from './images/05.png';
 import image06 from './images/06.png';
 import image07 from './images/07.png';
 import image08 from './images/08.png';
+import decayCover from './images/Decay_cover.png';
 
 export const mobileProductDesignSurvivalGameProject = {
   slug: 'mobile-product-design-survival-game',
@@ -14,8 +15,8 @@ export const mobileProductDesignSurvivalGameProject = {
   description:
     'Decay to survival and management game na mobile. Case pokazuje projektowanie core loopa, ekonomii, eksploracji i interfejsu wspierajacego decyzje gracza.',
   tags: ['Mobile UX', 'Game UX', 'Product Design'],
-  thumbnail: image08,
-  thumbnailAlt: 'Mapa wypraw w projekcie Mobile Product Design Survival Game',
+  thumbnail: decayCover,
+  thumbnailAlt: 'Okladka projektu Decay',
   heroImage: image01,
   heroImageAlt: 'Ekran eksploracji w projekcie Mobile Product Design Survival Game',
   heroAspectRatio: '1280 / 338',

@@ -1,4 +1,4 @@
-import thumb from './images/thumb.svg';
+import thumb from './images/raccoons_thumb.png';
 
 export const raccoonsStudioRequirementsAndImplementationProject = {
   slug: 'raccoons-studio-requirements-and-implementation',

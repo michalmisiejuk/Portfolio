@@ -9,6 +9,7 @@ import image11 from './images/11.png';
 import image12 from './images/12.png';
 import image13 from './images/13.png';
 import image14 from './images/14.png';
+import ugCover from './images/ug_cover.png';
 
 export const undergroundGarageUserExperienceRedesignProject = {
   slug: 'underground-garage-user-experience-redesign',
@@ -17,8 +18,8 @@ export const undergroundGarageUserExperienceRedesignProject = {
   description:
     'Underground Garage to gra o naprawie i tuningu samochodow. Projekt obejmowal redesign UX po problematycznym release i uporzadkowanie kluczowych przeplywow gracza.',
   tags: ['Game UX', 'UX Redesign', 'UI Design'],
-  thumbnail: image11,
-  thumbnailAlt: 'Ekran listy questow w projekcie Underground Garage',
+  thumbnail: ugCover,
+  thumbnailAlt: 'Okladka projektu Underground Garage',
   heroImage: image04,
   heroImageAlt: 'HUD i ekran jazdy w projekcie Underground Garage',
   projectLinks: [
