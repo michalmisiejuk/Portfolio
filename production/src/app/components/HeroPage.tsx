@@ -1,5 +1,6 @@
 import { motion } from 'motion/react';
 import { siteContent } from '@/content/site';
+import pageBg from '@/imports/image-9.png';
 import { Nav } from './Nav';
 import { WipBanner } from './WipBanner';
 
@@ -11,7 +12,16 @@ const fadeUp = (delay = 0) => ({
 
 export function HeroPage() {
   return (
-    <div className="bg-white min-h-screen" style={{ fontFamily: 'Inter, sans-serif' }}>
+    <div
+      className="min-h-screen"
+      style={{
+        fontFamily: 'Inter, sans-serif',
+        backgroundImage: `url(${pageBg})`,
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        backgroundAttachment: 'fixed',
+      }}
+    >
       <WipBanner />
       <Nav />
 
