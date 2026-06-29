@@ -34,14 +34,14 @@ function ProjectCard({
             >
               <img src={project.thumbnail} alt={project.thumbnailAlt} className="w-full h-full object-cover" />
             </div>
-            <div>
-              <p style={{ fontSize: '16px', fontWeight: 500, lineHeight: 'normal', marginBottom: '4px' }}>{project.title}</p>
-              <p style={{ fontSize: '13px', fontWeight: 300, lineHeight: '1.5' }}>{project.summary}</p>
+            <div style={{ maxWidth: '620px' }}>
+              <p style={{ fontSize: '15px', fontWeight: 500, lineHeight: '1.2', letterSpacing: '-0.01em', marginBottom: '6px' }}>{project.title}</p>
+              <p style={{ fontSize: '12.5px', fontWeight: 300, lineHeight: '1.6', opacity: 0.82 }}>{project.summary}</p>
             </div>
           </div>
           <div className="flex flex-wrap gap-2">
             {project.tags.map((tag) => (
-              <span key={tag} className="bg-[#e4e4e4] text-black" style={{ fontSize: '13px', fontWeight: 400, lineHeight: 'normal', padding: '4px 10px' }}>
+              <span key={tag} className="bg-[#e4e4e4] text-black" style={{ fontSize: '12px', fontWeight: 400, lineHeight: 'normal', padding: '4px 10px', opacity: 0.82 }}>
                 {tag}
               </span>
             ))}
@@ -74,8 +74,8 @@ export function ProjectsPage() {
       <WipBanner />
       <Nav />
 
-      <div className="px-6 pt-20 max-w-4xl mx-auto pb-16 flex flex-col gap-16">
-        <div className="flex w-full flex-wrap justify-center gap-x-14 gap-y-4">
+      <div className="px-6 pt-20 max-w-4xl mx-auto pb-16 flex flex-col gap-[4.5rem]">
+        <div className="flex w-full flex-wrap justify-center gap-x-12 gap-y-3">
           {projectCategories.map((category) => {
             const isActive = category === activeCategory;
 
@@ -86,10 +86,11 @@ export function ProjectsPage() {
                 onClick={() => setActiveCategory(category)}
                 className="bg-transparent border-0 p-0 cursor-pointer focus:outline-none"
                 style={{
-                  fontSize: 'clamp(14px, 1.7vw, 18px)',
-                  lineHeight: 'normal',
-                  fontWeight: isActive ? 700 : 400,
-                  opacity: isActive ? 1 : 0.45,
+                  fontSize: 'clamp(12px, 1.35vw, 15px)',
+                  lineHeight: '1.2',
+                  letterSpacing: '0.01em',
+                  fontWeight: isActive ? 600 : 400,
+                  opacity: isActive ? 1 : 0.5,
                 }}
               >
                 {category}
@@ -98,7 +99,7 @@ export function ProjectsPage() {
           })}
         </div>
 
-        <div className="flex flex-col gap-8">
+        <div className="flex flex-col gap-9">
           {filteredProjects.map((project, index) => (
             <ProjectCard key={project.slug} project={project} index={index} />
           ))}

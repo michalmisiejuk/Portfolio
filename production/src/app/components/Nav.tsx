@@ -10,12 +10,12 @@ export function Nav() {
   ];
 
   return (
-    <nav className="flex justify-center gap-8 md:gap-16 py-6 px-6">
+    <nav className="flex justify-center gap-8 md:gap-16 py-7 px-6">
       {links.map(({ to, label }) => (
         <Link
           key={to}
           to={to}
-          style={{ fontFamily: 'Inter, sans-serif', fontSize: '16px', lineHeight: 'normal', position: 'relative' }}
+          style={{ fontFamily: 'Inter, sans-serif', fontSize: '15px', lineHeight: 'normal', position: 'relative', letterSpacing: '0.01em' }}
           className="text-black no-underline"
         >
           {/* Hidden bold copy reserves width so layout never shifts */}

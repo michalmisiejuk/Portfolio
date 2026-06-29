@@ -14,16 +14,16 @@ export function ProjectDetailPage() {
     <div className="bg-white min-h-screen" style={{ fontFamily: 'Inter, sans-serif' }}>
       <WipBanner />
 
-      <div className="px-6 md:px-16 lg:px-28 py-6 max-w-5xl mx-auto">
-        <div className="flex items-center gap-4 mb-3">
-          <Link to="/projects" className="text-black no-underline shrink-0" style={{ fontSize: '18px', lineHeight: 1 }}>
+      <div className="px-6 md:px-16 lg:px-28 py-8 max-w-5xl mx-auto">
+        <div className="flex items-center gap-4 mb-4">
+          <Link to="/projects" className="text-black no-underline shrink-0" style={{ fontSize: '17px', lineHeight: 1, opacity: 0.8 }}>
             ←
           </Link>
-          <p style={{ fontSize: '28px', fontWeight: 700, margin: 0 }}>{project.title}</p>
+          <p style={{ fontSize: 'clamp(24px, 3vw, 30px)', fontWeight: 650, lineHeight: '1.08', letterSpacing: '-0.01em', margin: 0 }}>{project.title}</p>
         </div>
         <div className="flex items-center gap-2 flex-wrap">
           {project.tags.map((tag) => (
-            <span key={tag} className="bg-[#e4e4e4] text-black" style={{ fontSize: '13px', fontWeight: 400, padding: '4px 10px' }}>
+            <span key={tag} className="bg-[#e4e4e4] text-black" style={{ fontSize: '12px', fontWeight: 400, padding: '4px 10px', opacity: 0.82 }}>
               {tag}
             </span>
           ))}
@@ -36,7 +36,7 @@ export function ProjectDetailPage() {
         ) : null}
 
         <div>
-          <p style={{ fontSize: '16px', fontWeight: 300, lineHeight: '1.7', maxWidth: '640px' }}>{project.description}</p>
+          <p style={{ fontSize: '14px', fontWeight: 300, lineHeight: '1.8', maxWidth: '620px', opacity: 0.84 }}>{project.description}</p>
         </div>
 
         {project.projectLinks?.length ? (
@@ -48,7 +48,7 @@ export function ProjectDetailPage() {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="no-underline text-black border border-black/15 px-3 py-2"
-                style={{ fontSize: '13px', fontWeight: 400, lineHeight: 'normal' }}
+                style={{ fontSize: '12px', fontWeight: 400, lineHeight: 'normal' }}
               >
                 {link.label}
               </a>
@@ -62,7 +62,7 @@ export function ProjectDetailPage() {
           }
 
           return (
-            <p key={i} style={{ fontSize: '16px', fontWeight: 300, lineHeight: '1.7', maxWidth: '640px' }}>
+            <p key={i} style={{ fontSize: '14px', fontWeight: 300, lineHeight: '1.8', maxWidth: '620px', opacity: 0.84 }}>
               {section.content}
             </p>
           );

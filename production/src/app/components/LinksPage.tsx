@@ -20,7 +20,7 @@ export function LinksPage() {
       <Nav />
 
       <div className="px-6 pt-16 max-w-5xl mx-auto pb-24">
-        <div className="h-16" />
+        <div className="h-20" />
         <div className="flex flex-col">
           {linksContent.items.map((link, i) => (
             <motion.a
@@ -34,13 +34,13 @@ export function LinksPage() {
               className="flex items-baseline justify-between gap-10 py-7 no-underline text-black border-b border-black/10 group"
             >
               <span
-                style={{ fontSize: 'clamp(16px, 2vw, 22px)', fontWeight: 500, lineHeight: 'normal', transition: 'opacity 0.2s' }}
+                style={{ fontSize: 'clamp(15px, 1.8vw, 20px)', fontWeight: 500, lineHeight: '1.15', letterSpacing: '-0.01em', transition: 'opacity 0.2s' }}
                 className="group-hover:opacity-50"
               >
                 {link.label}
               </span>
               <span
-                style={{ fontSize: 'clamp(13px, 1.5vw, 16px)', fontWeight: 300, lineHeight: '1.45', textAlign: 'right', maxWidth: '260px', opacity: 0.5 }}
+                style={{ fontSize: 'clamp(12px, 1.1vw, 14px)', fontWeight: 300, lineHeight: '1.6', textAlign: 'right', maxWidth: '230px', opacity: 0.56 }}
               >
                 {link.desc}
               </span>

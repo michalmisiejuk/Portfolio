@@ -25,20 +25,20 @@ export function HeroPage() {
       <WipBanner />
       <Nav />
 
-      <div className="flex justify-center px-6 pt-16">
+      <div className="flex justify-center px-6 pt-20">
         <div className="w-full max-w-md">
           <motion.p
             {...fadeUp(0.05)}
-            style={{ fontSize: 'clamp(22px, 4vw, 40px)', fontWeight: 700, lineHeight: 'normal', marginBottom: '12px' }}
+            style={{ fontSize: 'clamp(21px, 3.5vw, 34px)', fontWeight: 650, lineHeight: '1.05', letterSpacing: '-0.01em', marginBottom: '14px' }}
           >
             {siteContent.name}
           </motion.p>
-          <div style={{ marginBottom: '48px' }}>
+          <div style={{ marginBottom: '56px' }}>
             {siteContent.roles.map((line, i) => (
               <motion.p
                 key={line}
                 {...fadeUp(0.1 + i * 0.07)}
-                style={{ fontSize: 'clamp(14px, 2.2vw, 22px)', fontWeight: 300, lineHeight: '1.5', margin: 0 }}
+                style={{ fontSize: 'clamp(13px, 1.8vw, 18px)', fontWeight: 300, lineHeight: '1.55', letterSpacing: '0.01em', margin: 0 }}
               >
                 {line}
               </motion.p>
@@ -47,7 +47,7 @@ export function HeroPage() {
 
           <motion.p
             {...fadeUp(0.3)}
-            style={{ fontSize: 'clamp(13px, 1.6vw, 18px)', fontWeight: 300, lineHeight: '1.7', maxWidth: '560px' }}
+            style={{ fontSize: 'clamp(12px, 1.2vw, 14px)', fontWeight: 300, lineHeight: '1.8', maxWidth: '540px', opacity: 0.78 }}
           >
             {siteContent.bio}
           </motion.p>
