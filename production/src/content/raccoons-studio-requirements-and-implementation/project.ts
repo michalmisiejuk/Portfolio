@@ -3,6 +3,7 @@ import thumb from './images/raccoons_thumb.png';
 export const raccoonsStudioRequirementsAndImplementationProject = {
   slug: 'raccoons-studio-requirements-and-implementation',
   title: 'Raccoons Studio - Requirements and Implementation Support',
+  category: 'Business Analysis',
   summary:
     'Zbieranie wymagan, koordynacja stakeholderow i wsparcie wdrozenia rozwiazania dla studia gier.',
   description:

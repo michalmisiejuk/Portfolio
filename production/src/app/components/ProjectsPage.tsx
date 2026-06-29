@@ -1,6 +1,7 @@
+import { useState } from 'react';
 import { Link } from 'react-router';
 import { motion } from 'motion/react';
-import { projectsContent } from '@/content/projects';
+import { projectCategories, projectsContent, type ProjectCategory } from '@/content/projects';
 import { Nav } from './Nav';
 import { WipBanner } from './WipBanner';
 import pageBg from '@/imports/image-9.png';
@@ -52,6 +53,13 @@ function ProjectCard({
 }
 
 export function ProjectsPage() {
+  const [activeCategory, setActiveCategory] = useState<ProjectCategory>('All');
+
+  const filteredProjects =
+    activeCategory === 'All'
+      ? projectsContent
+      : projectsContent.filter((project) => project.category === activeCategory);
+
   return (
     <div
       className="min-h-screen relative"
@@ -66,8 +74,31 @@ export function ProjectsPage() {
       <WipBanner />
       <Nav />
 
-      <div className="px-6 pt-20 max-w-3xl mx-auto pb-16 flex flex-col gap-6">
-        {projectsContent.map((project, index) => (
+      <div className="px-6 pt-10 max-w-3xl mx-auto pb-16 flex flex-col gap-6">
+        <div className="flex flex-wrap gap-x-10 gap-y-3">
+          {projectCategories.map((category) => {
+            const isActive = category === activeCategory;
+
+            return (
+              <button
+                key={category}
+                type="button"
+                onClick={() => setActiveCategory(category)}
+                className="bg-transparent border-0 p-0 cursor-pointer"
+                style={{
+                  fontSize: 'clamp(14px, 2vw, 18px)',
+                  lineHeight: 'normal',
+                  fontWeight: isActive ? 700 : 400,
+                  opacity: isActive ? 1 : 0.45,
+                }}
+              >
+                {category}
+              </button>
+            );
+          })}
+        </div>
+
+        {filteredProjects.map((project, index) => (
           <ProjectCard key={project.slug} project={project} index={index} />
         ))}
       </div>

@@ -4,6 +4,10 @@ import { learningManagementSystemCaseStudyProject } from './notion-learning-mana
 import { kleksAcademyReleasedProductDemoProject } from './notion-kleks-academy-released-product-demo/project';
 import { raccoonsStudioRequirementsAndImplementationProject } from './raccoons-studio-requirements-and-implementation/project';
 
+export const projectCategories = ['All', 'Game UX', 'Business Analysis', 'Product Design'] as const;
+
+export type ProjectCategory = (typeof projectCategories)[number];
+
 export type ProjectSection =
   | {
       type: 'text';
@@ -19,6 +23,7 @@ export type ProjectSection =
 export type Project = {
   slug: string;
   title: string;
+  category: Exclude<ProjectCategory, 'All'>;
   summary: string;
   description: string;
   tags: string[];

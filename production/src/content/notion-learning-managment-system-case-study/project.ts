@@ -3,6 +3,7 @@ import image02 from './images/02.png';
 export const learningManagementSystemCaseStudyProject = {
   slug: 'learning-management-system-case-study',
   title: 'Learning Management System - Case Study',
+  category: 'Business Analysis',
   summary: 'Business analysis dla zintegrowanego LMS dla organizacji szkoleniowej.',
   description:
     'Case study pokazuje analize potrzeb, procesow i wymagan dla nowego Learning Management System, ktory zastapuje rozproszone narzedzia jednym spojnym produktem.',

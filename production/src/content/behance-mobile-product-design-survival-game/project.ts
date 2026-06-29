@@ -11,6 +11,7 @@ import decayCover from './images/Decay_cover.png';
 export const mobileProductDesignSurvivalGameProject = {
   slug: 'mobile-product-design-survival-game',
   title: 'Mobile Product Design Survival Game',
+  category: 'Game UX',
   summary: 'Mobile survival game case study: UX, systemy, eksploracja i decyzje moralne.',
   description:
     'Decay to survival and management game na mobile. Case pokazuje projektowanie core loopa, ekonomii, eksploracji i interfejsu wspierajacego decyzje gracza.',
