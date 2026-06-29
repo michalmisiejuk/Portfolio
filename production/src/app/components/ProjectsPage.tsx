@@ -74,8 +74,8 @@ export function ProjectsPage() {
       <WipBanner />
       <Nav />
 
-      <div className="px-6 pt-10 max-w-3xl mx-auto pb-16 flex flex-col gap-6">
-        <div className="flex flex-wrap gap-x-10 gap-y-3">
+      <div className="px-6 pt-20 max-w-4xl mx-auto pb-16 flex flex-col gap-16">
+        <div className="flex w-full flex-wrap justify-center gap-x-14 gap-y-4">
           {projectCategories.map((category) => {
             const isActive = category === activeCategory;
 
@@ -84,9 +84,9 @@ export function ProjectsPage() {
                 key={category}
                 type="button"
                 onClick={() => setActiveCategory(category)}
-                className="bg-transparent border-0 p-0 cursor-pointer"
+                className="bg-transparent border-0 p-0 cursor-pointer focus:outline-none"
                 style={{
-                  fontSize: 'clamp(14px, 2vw, 18px)',
+                  fontSize: 'clamp(14px, 1.7vw, 18px)',
                   lineHeight: 'normal',
                   fontWeight: isActive ? 700 : 400,
                   opacity: isActive ? 1 : 0.45,
@@ -98,9 +98,11 @@ export function ProjectsPage() {
           })}
         </div>
 
-        {filteredProjects.map((project, index) => (
-          <ProjectCard key={project.slug} project={project} index={index} />
-        ))}
+        <div className="flex flex-col gap-8">
+          {filteredProjects.map((project, index) => (
+            <ProjectCard key={project.slug} project={project} index={index} />
+          ))}
+        </div>
       </div>
     </div>
   );
