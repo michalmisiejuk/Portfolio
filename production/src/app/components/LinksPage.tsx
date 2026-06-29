@@ -40,7 +40,7 @@ export function LinksPage() {
                 {link.label}
               </span>
               <span
-                style={{ fontSize: 'clamp(12px, 1.1vw, 14px)', fontWeight: 300, lineHeight: '1.6', textAlign: 'right', maxWidth: '230px', opacity: 0.56 }}
+                style={{ fontSize: 'clamp(12px, 1.1vw, 14px)', fontWeight: 300, lineHeight: '1.6', textAlign: 'right', minWidth: '320px', whiteSpace: 'nowrap', opacity: 0.56 }}
               >
                 {link.desc}
               </span>
