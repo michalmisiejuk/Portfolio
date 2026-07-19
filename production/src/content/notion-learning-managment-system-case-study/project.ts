@@ -11,11 +11,11 @@ import slide09 from './images/09-outcome.png';
 
 export const learningManagementSystemCaseStudyProject = {
   slug: 'learning-management-system-case-study',
-  title: 'Learning Management System - Case Study',
+  title: 'LMS for Gloria Training Company - Case Study',
   category: 'Business Analysis',
-  summary: 'Business analysis dla zintegrowanego LMS dla organizacji szkoleniowej.',
+  summary: 'Analiza biznesowa LMS dla firmy szkoleniowej Gloria, przygotowana w ramach kursu LABA.',
   description:
-    'Case study pokazuje analize potrzeb, procesow i wymagan dla nowego Learning Management System, ktory zastapuje rozproszone narzedzia jednym spojnym produktem.',
+    'Projekt przedstawia analize potrzeb, procesow i wymagan dla nowego systemu LMS dla firmy szkoleniowej Gloria. Case study zostal rozpoczęty w ramach kursu LABA Analiza Biznesowa z Magdalena Stras i rozwiniety do formy uporzadkowanego konceptu produktowego.',
   tags: ['Business Analysis', 'LMS', 'Product Design'],
   thumbnail: image02,
   thumbnailAlt: 'Ilustracja Learning Management System case study',
@@ -27,8 +27,14 @@ export const learningManagementSystemCaseStudyProject = {
   ],
   sections: [
     {
-      type: 'heading' as const,
-      content: 'Business Analysis',
+      type: 'text' as const,
+      content:
+        'Gloria to firma szkoleniowa prowadzaca kursy online i hybrydowe. Przez kilka lat operacje kursowe rosly wokol rozproszonych narzedzi, glownie Google Drive, Microsoft Teams i Excela, co zaczelo ograniczac skale, kontrole i spojność procesu.',
+    },
+    {
+      type: 'text' as const,
+      content:
+        'Projekt zostal rozpoczęty w ramach kursu LABA Analiza Biznesowa prowadzonego przez Magdalena Stras. Celem bylo przejscie od diagnozy problemu, przez model docelowy i zakres MVP, do pierwszych artefaktow produktowych i wstepnej translacji analizy na UX.',
     },
     {
       type: 'image' as const,
