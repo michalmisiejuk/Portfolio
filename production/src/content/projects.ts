@@ -4,7 +4,7 @@ import { learningManagementSystemCaseStudyProject } from './notion-learning-mana
 import { kleksAcademyReleasedProductDemoProject } from './notion-kleks-academy-released-product-demo/project';
 import { raccoonsStudioRequirementsAndImplementationProject } from './raccoons-studio-requirements-and-implementation/project';
 
-export const projectCategories = ['All', 'Game UX', 'Business Analysis', 'Product Design'] as const;
+export const projectCategories = ['All', 'Business Analysis', 'Product Design', 'Game UX'] as const;
 
 export type ProjectCategory = (typeof projectCategories)[number];
 
@@ -44,11 +44,11 @@ export type Project = {
 };
 
 export const projectsContent: Project[] = [
-  mobileProductDesignSurvivalGameProject,
   learningManagementSystemCaseStudyProject,
+  raccoonsStudioRequirementsAndImplementationProject,
   undergroundGarageUserExperienceRedesignProject,
   kleksAcademyReleasedProductDemoProject,
-  raccoonsStudioRequirementsAndImplementationProject,
+  mobileProductDesignSurvivalGameProject,
 ];
 
 export function getProjectBySlug(slug?: string) {
