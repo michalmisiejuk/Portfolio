@@ -13,9 +13,9 @@ export const learningManagementSystemCaseStudyProject = {
   slug: 'learning-management-system-case-study',
   title: 'LMS for Gloria Training Company - Case Study',
   category: 'Business Analysis',
-  summary: 'Analiza biznesowa LMS dla firmy szkoleniowej Gloria, przygotowana w ramach kursu LABA.',
+  summary: 'Case study analizy biznesowej LMS dla firmy szkoleniowej Gloria, rozwinięty z projektu kursowego LABA.',
   description:
-    'Projekt przedstawia analize potrzeb, procesow i wymagan dla nowego systemu LMS dla firmy szkoleniowej Gloria. Case study zostal rozpoczęty w ramach kursu LABA Analiza Biznesowa z Magdalena Stras i rozwiniety do formy uporzadkowanego konceptu produktowego.',
+    'Projekt pokazuje, jak analiza biznesowa dla firmy szkoleniowej Gloria została przełożona na spójny koncept LMS: od diagnozy problemów operacyjnych, przez model docelowy i zakres MVP, po pierwsze artefakty UX. Case study powstało na bazie pracy rozpoczętej podczas kursu LABA Analiza Biznesowa prowadzonego przez Magdalenę Straś.',
   tags: ['Business Analysis', 'LMS', 'Product Design'],
   thumbnail: image02,
   thumbnailAlt: 'Ilustracja Learning Management System case study',
@@ -29,12 +29,12 @@ export const learningManagementSystemCaseStudyProject = {
     {
       type: 'text' as const,
       content:
-        'Gloria to firma szkoleniowa prowadzaca kursy online i hybrydowe. Przez kilka lat operacje kursowe rosly wokol rozproszonych narzedzi, glownie Google Drive, Microsoft Teams i Excela, co zaczelo ograniczac skale, kontrole i spojność procesu.',
+        'Gloria prowadzi kursy online i hybrydowe, a wraz ze wzrostem skali jej operacje zaczęły opierać się na rozproszonym zestawie narzędzi: Google Drive, Microsoft Teams i Excelu. To utrudniało koordynację, raportowanie i utrzymanie jednego spójnego przebiegu kursu.',
     },
     {
       type: 'text' as const,
       content:
-        'Projekt zostal rozpoczęty w ramach kursu LABA Analiza Biznesowa prowadzonego przez Magdalena Stras. Celem bylo przejscie od diagnozy problemu, przez model docelowy i zakres MVP, do pierwszych artefaktow produktowych i wstepnej translacji analizy na UX.',
+        'Projekt został rozpoczęty w ramach kursu LABA Analiza Biznesowa prowadzonego przez Magdalenę Straś, a następnie rozwinięty do pełniejszego case study. Celem było uporządkowanie decyzji biznesowych i przełożenie ich na kierunek produktowy oraz pierwsze materiały projektowe.',
     },
     {
       type: 'image' as const,
