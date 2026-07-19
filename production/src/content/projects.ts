@@ -10,6 +10,10 @@ export type ProjectCategory = (typeof projectCategories)[number];
 
 export type ProjectSection =
   | {
+      type: 'heading';
+      content: string;
+    }
+  | {
       type: 'text';
       content: string;
     }

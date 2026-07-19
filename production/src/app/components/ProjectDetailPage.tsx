@@ -57,6 +57,18 @@ export function ProjectDetailPage() {
         ) : null}
 
         {project.sections.map((section, i) => {
+          if (section.type === 'heading') {
+            return (
+              <h2
+                key={i}
+                className="text-center"
+                style={{ fontSize: 'clamp(28px, 5vw, 48px)', fontWeight: 650, lineHeight: 1.05, letterSpacing: '-0.03em', margin: '8px 0 4px' }}
+              >
+                {section.content}
+              </h2>
+            );
+          }
+
           if (section.type === 'image') {
             return <img key={i} src={section.src} alt={section.alt} className="w-full h-auto bg-[#d9d9d9]" />;
           }
