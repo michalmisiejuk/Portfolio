@@ -66,18 +66,18 @@ export function HeroPage() {
       <main className="px-6 md:px-16 lg:px-28 max-w-5xl mx-auto pb-28">
         <section className="pt-16 md:pt-24 pb-20 md:pb-28">
           <motion.div {...fadeUp(0)} className="flex flex-wrap items-baseline gap-x-3 gap-y-1" style={{ marginBottom: '22px' }}>
-            <span style={{ fontSize: 'clamp(21px, 2.4vw, 28px)', fontWeight: 650 }}>{siteContent.name}</span>
-            <span style={{ fontSize: '12px', fontWeight: 400, color: 'rgba(0,0,0,0.46)' }}>Product Designer</span>
+            <span style={{ fontSize: 'clamp(30px, 3vw, 40px)', fontWeight: 650, lineHeight: 1.1 }}>{siteContent.name}</span>
+            <span style={{ fontSize: '13px', fontWeight: 400, color: 'rgba(0,0,0,0.5)' }}>Product Designer</span>
           </motion.div>
 
           <motion.h1
             {...fadeUp(0.05)}
             style={{
-              maxWidth: '820px',
+              maxWidth: '760px',
               margin: 0,
-              fontSize: 'clamp(26px, 3.7vw, 42px)',
-              fontWeight: 600,
-              lineHeight: 1.18,
+              fontSize: 'clamp(22px, 2.2vw, 30px)',
+              fontWeight: 500,
+              lineHeight: 1.34,
             }}
           >
             {siteContent.headline}

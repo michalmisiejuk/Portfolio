@@ -45,13 +45,14 @@ export function ScrollIndicator({ enabled = true }: { enabled?: boolean }) {
       style={{
         position: 'fixed',
         bottom: '36px',
-        left: 'calc(50vw - 350px)',
+        left: 'max(24px, calc(50vw - 350px))',
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'center',
         opacity: visible ? 1 : 0,
         transition: 'opacity 0.4s ease',
         pointerEvents: 'none',
+        zIndex: 40,
       }}
     >
       {[0, 1].map((index) => (
@@ -61,7 +62,7 @@ export function ScrollIndicator({ enabled = true }: { enabled?: boolean }) {
           transition={{ duration: 1.4, repeat: Infinity, ease: 'easeInOut', delay: index * 0.2 }}
           style={{ marginTop: index === 1 ? '-8px' : 0 }}
         >
-          <ChevronDown size={22} strokeWidth={1.2} style={{ opacity: 0.3 }} />
+          <ChevronDown size={27} strokeWidth={1.8} style={{ color: '#111', opacity: 0.62 }} />
         </motion.div>
       ))}
     </div>
