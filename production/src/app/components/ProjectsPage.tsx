@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Link } from 'react-router';
 import { motion } from 'motion/react';
-import { projectCategories, projectsContent, type ProjectCategory } from '@/content/projects';
+import { projectCategories, projectsContent, visibleProjectsContent, type ProjectCategory } from '@/content/projects';
 import { Nav } from './Nav';
 import { ScrollIndicator } from './ScrollIndicator';
 import { WipBanner } from './WipBanner';
@@ -94,10 +94,13 @@ function FilterButton({ label, active, onClick }: { label: string; active: boole
 
 export function ProjectsPage() {
   const [activeCategory, setActiveCategory] = useState<ProjectCategory>('All');
+  const availableCategories = projectCategories.filter(
+    (category) => category === 'All' || visibleProjectsContent.some((project) => project.category === category),
+  );
   const visible =
     activeCategory === 'All'
-      ? projectsContent
-      : projectsContent.filter((project) => project.category === activeCategory);
+      ? visibleProjectsContent
+      : visibleProjectsContent.filter((project) => project.category === activeCategory);
 
   return (
     <div className="min-h-screen" style={{ background: '#ffffff', fontFamily: 'Inter, sans-serif' }}>
@@ -105,7 +108,7 @@ export function ProjectsPage() {
       <Nav />
 
       <div className="px-6 max-w-5xl mx-auto pb-2 flex flex-wrap justify-center gap-x-8 gap-y-2" style={{ paddingTop: '46px' }}>
-        {projectCategories.map((category) => (
+        {availableCategories.map((category) => (
           <FilterButton key={category} label={category} active={activeCategory === category} onClick={() => setActiveCategory(category)} />
         ))}
       </div>

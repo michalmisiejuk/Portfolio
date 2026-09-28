@@ -40,7 +40,7 @@ export const learningManagementSystemCaseStudyProject = {
     "Gloria's course delivery relied on Google Drive, Excel and Microsoft Teams. This case study shows how operational evidence was translated into requirements and a testable LMS MVP.",
   description:
     'The project examined where the existing setup failed, defined the product boundary and requirements, and reduced the planned solution to a complete workflow that users could test.',
-  tags: ['Case Study', 'LMS', 'Business Analysis'],
+  tags: ['Case Study', 'Product Design', 'Business Analysis', 'LMS'],
   thumbnail: cover,
   thumbnailAlt: 'Gloria LMS case study cover',
   projectLinks: [

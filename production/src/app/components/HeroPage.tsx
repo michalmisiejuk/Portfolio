@@ -1,5 +1,5 @@
 import { ArrowRight } from 'lucide-react';
-import { motion } from 'motion/react';
+import { motion, useReducedMotion } from 'motion/react';
 import { Link } from 'react-router';
 import { siteContent } from '@/content/site';
 import { Nav } from './Nav';
@@ -33,6 +33,30 @@ function SectionLabel({ children }: { children: string }) {
   );
 }
 
+function SelectedWorkLink() {
+  const reduceMotion = useReducedMotion();
+
+  return (
+    <motion.div whileHover={reduceMotion ? undefined : { x: 4 }} transition={{ duration: 0.18 }} style={{ display: 'inline-block' }}>
+      <Link
+        to="/projects"
+        className="inline-flex items-center gap-2 no-underline text-black"
+        style={{ fontSize: '14px', fontWeight: 600, paddingBottom: '5px', borderBottom: '1px solid #111' }}
+      >
+        View selected work
+        <motion.span
+          aria-hidden
+          animate={reduceMotion ? undefined : { x: [0, 3, 0] }}
+          transition={{ duration: 1.8, repeat: Infinity, ease: 'easeInOut' }}
+          style={{ display: 'flex' }}
+        >
+          <ArrowRight size={15} strokeWidth={1.8} />
+        </motion.span>
+      </Link>
+    </motion.div>
+  );
+}
+
 export function HeroPage() {
   return (
     <div className="min-h-screen" style={{ background: '#ffffff', fontFamily: 'Inter, sans-serif', color: '#111' }}>
@@ -41,18 +65,19 @@ export function HeroPage() {
 
       <main className="px-6 md:px-16 lg:px-28 max-w-5xl mx-auto pb-28">
         <section className="pt-16 md:pt-24 pb-20 md:pb-28">
-          <motion.span {...fadeUp(0)} style={{ display: 'block', fontSize: '13px', fontWeight: 500, marginBottom: '18px' }}>
-            {siteContent.name} / Product Designer
-          </motion.span>
+          <motion.div {...fadeUp(0)} className="flex flex-wrap items-baseline gap-x-3 gap-y-1" style={{ marginBottom: '22px' }}>
+            <span style={{ fontSize: 'clamp(21px, 2.4vw, 28px)', fontWeight: 650 }}>{siteContent.name}</span>
+            <span style={{ fontSize: '12px', fontWeight: 400, color: 'rgba(0,0,0,0.46)' }}>Product Designer</span>
+          </motion.div>
 
           <motion.h1
             {...fadeUp(0.05)}
             style={{
-              maxWidth: '850px',
+              maxWidth: '820px',
               margin: 0,
-              fontSize: 'clamp(32px, 5.2vw, 58px)',
-              fontWeight: 650,
-              lineHeight: 1.12,
+              fontSize: 'clamp(26px, 3.7vw, 42px)',
+              fontWeight: 600,
+              lineHeight: 1.18,
             }}
           >
             {siteContent.headline}
@@ -72,14 +97,7 @@ export function HeroPage() {
           </motion.p>
 
           <motion.div {...fadeUp(0.18)} className="mt-9">
-            <Link
-              to="/projects"
-              className="inline-flex items-center gap-2 no-underline text-black"
-              style={{ fontSize: '14px', fontWeight: 600, paddingBottom: '5px', borderBottom: '1px solid #111' }}
-            >
-              View selected work
-              <ArrowRight size={15} strokeWidth={1.8} />
-            </Link>
+            <SelectedWorkLink />
           </motion.div>
         </section>
 
@@ -174,14 +192,7 @@ export function HeroPage() {
             {siteContent.closing}
           </motion.p>
           <motion.div {...fadeUp(0.05)}>
-            <Link
-              to="/projects"
-              className="inline-flex items-center gap-2 no-underline text-black"
-              style={{ fontSize: '14px', fontWeight: 600, paddingBottom: '5px', borderBottom: '1px solid #111' }}
-            >
-              View selected work
-              <ArrowRight size={15} strokeWidth={1.8} />
-            </Link>
+            <SelectedWorkLink />
           </motion.div>
         </section>
       </main>
