@@ -282,34 +282,36 @@ function ProjectResources({ resources, centered = false }: { resources: Resource
 
   return (
     <div className="flex flex-col gap-2 mb-10" style={{ alignItems: centered ? 'center' : 'flex-start' }}>
-      <span style={{ fontSize: '10px', fontWeight: 600, letterSpacing: '0.1em', textTransform: 'uppercase', opacity: 0.28 }}>
+      <span style={{ fontSize: '10px', fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', color: 'rgba(0,0,0,0.52)' }}>
         Resources
       </span>
       <div className="flex flex-wrap gap-2" style={{ justifyContent: centered ? 'center' : 'flex-start' }}>
         {resources.map((resource) => (
-          <a
+          <motion.a
             key={resource.href}
             href={resource.href}
             target="_blank"
             rel="noopener noreferrer"
             className="no-underline flex items-center gap-1.5"
+            whileHover={{ y: -1, backgroundColor: 'rgba(0,0,0,0.045)', borderColor: 'rgba(0,0,0,0.46)' }}
+            transition={{ duration: 0.15 }}
             style={{
-              fontSize: '12px',
-              fontWeight: 400,
-              color: 'rgba(0,0,0,0.6)',
-              padding: '3px 9px',
-              border: '1px solid rgba(0,0,0,0.16)',
+              fontSize: '13px',
+              fontWeight: 500,
+              color: 'rgba(0,0,0,0.78)',
+              padding: '6px 11px',
+              border: '1px solid rgba(0,0,0,0.28)',
               borderRadius: '3px',
               whiteSpace: 'nowrap',
             }}
           >
             {resource.kind === 'doc' ? (
-              /case|study|pdf/i.test(resource.name) ? <FileText size={12} strokeWidth={1.8} /> : <Download size={12} strokeWidth={1.8} />
+              /case|study|pdf/i.test(resource.name) ? <FileText size={14} strokeWidth={1.8} /> : <Download size={14} strokeWidth={1.8} />
             ) : (
-              <ArrowUpRight size={12} strokeWidth={1.8} />
+              <ArrowUpRight size={14} strokeWidth={1.8} />
             )}
             {resource.name}
-          </a>
+          </motion.a>
         ))}
       </div>
     </div>
