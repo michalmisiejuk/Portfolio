@@ -38,7 +38,7 @@ export const learningManagementSystemCaseStudyProject = {
   category: 'Business Analysis',
   categories: ['Product Design', 'Business Analysis'],
   summary:
-    "Gloria's course delivery relied on Google Drive, Excel and Microsoft Teams. This case study shows how operational evidence was translated into requirements and a testable LMS MVP.",
+    'Gloria is a training company that plans and delivers instructor-led courses for individual learners and corporate teams. Its course materials, schedules, assignments and reporting were managed across Google Drive, Excel and Microsoft Teams. This case study explains how we analysed that process and defined the requirements and MVP for a dedicated LMS.',
   description:
     'The project examined where the existing setup failed, defined the product boundary and requirements, and reduced the planned solution to a complete workflow that users could test.',
   tags: ['Case Study', 'Product Design', 'Business Analysis', 'LMS'],

@@ -451,7 +451,7 @@ export function ProjectDetailPageV2() {
           ))}
         </motion.div>
 
-        <motion.p {...fadeUp(0.1)} style={{ fontSize: '14px', fontWeight: 300, lineHeight: '1.65', maxWidth: '620px', margin: isGloria ? '0 auto 16px' : '0 0 12px 0', opacity: 0.72, textAlign: isGloria ? 'center' : 'left' }}>
+        <motion.p {...fadeUp(0.1)} style={{ fontSize: '13px', fontWeight: 300, lineHeight: '1.65', maxWidth: '680px', margin: isGloria ? '0 auto 16px' : '0 0 12px 0', opacity: 0.72, textAlign: isGloria ? 'center' : 'left' }}>
           {project.summary}
         </motion.p>
 

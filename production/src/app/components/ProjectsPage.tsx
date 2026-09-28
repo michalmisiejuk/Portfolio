@@ -50,9 +50,9 @@ function ProjectCard({
               />
             </div>
 
-            <div style={{ maxWidth: '380px' }}>
+            <div style={{ flex: 1, minWidth: 0, maxWidth: '440px' }}>
               <p style={{ fontSize: '15px', fontWeight: 400, lineHeight: 'normal', marginBottom: '6px' }}>{project.title}</p>
-              <p style={{ fontSize: '13px', fontWeight: 300, lineHeight: '1.5', opacity: 0.6 }}>{project.summary}</p>
+              <p style={{ fontSize: '12px', fontWeight: 300, lineHeight: '1.45', opacity: 0.64 }}>{project.summary}</p>
             </div>
           </div>
 
