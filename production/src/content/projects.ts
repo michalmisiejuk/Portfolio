@@ -4,7 +4,7 @@ import { learningManagementSystemCaseStudyProject } from './notion-learning-mana
 import { kleksAcademyReleasedProductDemoProject } from './notion-kleks-academy-released-product-demo/project';
 import { raccoonsStudioRequirementsAndImplementationProject } from './raccoons-studio-requirements-and-implementation/project';
 
-export const projectCategories = ['All', 'Business Analysis', 'Product Design', 'Game UX'] as const;
+export const projectCategories = ['All', 'Product Design', 'Business Analysis', 'Game UX'] as const;
 
 export type ProjectCategory = (typeof projectCategories)[number];
 
@@ -30,6 +30,7 @@ export type Project = {
   slug: string;
   title: string;
   category: Exclude<ProjectCategory, 'All'>;
+  categories?: Exclude<ProjectCategory, 'All'>[];
   summary: string;
   description: string;
   tags: string[];
@@ -63,6 +64,10 @@ export const hiddenProjectSlugs = new Set([
 export const visibleProjectsContent = projectsContent.filter(
   (project) => !hiddenProjectSlugs.has(project.slug),
 );
+
+export function projectMatchesCategory(project: Project, category: Exclude<ProjectCategory, 'All'>) {
+  return (project.categories ?? [project.category]).includes(category);
+}
 
 export function getProjectBySlug(slug?: string) {
   return projectsContent.find((project) => project.slug === slug);

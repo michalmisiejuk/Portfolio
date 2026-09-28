@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Link } from 'react-router';
 import { motion } from 'motion/react';
-import { projectCategories, projectsContent, visibleProjectsContent, type ProjectCategory } from '@/content/projects';
+import { projectCategories, projectMatchesCategory, projectsContent, visibleProjectsContent, type ProjectCategory } from '@/content/projects';
 import { Nav } from './Nav';
 import { ScrollIndicator } from './ScrollIndicator';
 import { WipBanner } from './WipBanner';
@@ -95,12 +95,12 @@ function FilterButton({ label, active, onClick }: { label: string; active: boole
 export function ProjectsPage() {
   const [activeCategory, setActiveCategory] = useState<ProjectCategory>('All');
   const availableCategories = projectCategories.filter(
-    (category) => category === 'All' || visibleProjectsContent.some((project) => project.category === category),
+    (category) => category === 'All' || visibleProjectsContent.some((project) => projectMatchesCategory(project, category)),
   );
   const visible =
     activeCategory === 'All'
       ? visibleProjectsContent
-      : visibleProjectsContent.filter((project) => project.category === activeCategory);
+      : visibleProjectsContent.filter((project) => projectMatchesCategory(project, activeCategory));
 
   return (
     <div className="min-h-screen" style={{ background: '#ffffff', fontFamily: 'Inter, sans-serif' }}>

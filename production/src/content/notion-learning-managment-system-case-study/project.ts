@@ -36,6 +36,7 @@ export const learningManagementSystemCaseStudyProject = {
   slug: 'learning-management-system-case-study',
   title: 'Gloria LMS: Analysis, Requirements and MVP Definition',
   category: 'Business Analysis',
+  categories: ['Product Design', 'Business Analysis'],
   summary:
     "Gloria's course delivery relied on Google Drive, Excel and Microsoft Teams. This case study shows how operational evidence was translated into requirements and a testable LMS MVP.",
   description:
