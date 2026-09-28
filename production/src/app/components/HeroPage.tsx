@@ -65,9 +65,9 @@ export function HeroPage() {
 
       <main className="px-6 md:px-16 lg:px-28 max-w-5xl mx-auto pb-28">
         <section className="pt-16 md:pt-24 pb-20 md:pb-28">
-          <motion.div {...fadeUp(0)} className="flex flex-wrap items-baseline gap-x-3 gap-y-1" style={{ marginBottom: '22px' }}>
-            <span style={{ fontSize: 'clamp(30px, 3vw, 40px)', fontWeight: 650, lineHeight: 1.1 }}>{siteContent.name}</span>
-            <span style={{ fontSize: '13px', fontWeight: 400, color: 'rgba(0,0,0,0.5)' }}>Product Designer</span>
+          <motion.div {...fadeUp(0)} className="flex flex-wrap items-baseline gap-x-3 gap-y-1" style={{ marginBottom: '24px' }}>
+            <span style={{ fontSize: 'clamp(28px, 2.5vw, 34px)', fontWeight: 620, lineHeight: 1.12 }}>{siteContent.name}</span>
+            <span style={{ fontSize: '14px', fontWeight: 400, color: 'rgba(0,0,0,0.62)' }}>Product Designer</span>
           </motion.div>
 
           <motion.h1
@@ -75,15 +75,15 @@ export function HeroPage() {
             style={{
               maxWidth: '760px',
               margin: 0,
-              fontSize: 'clamp(22px, 2.2vw, 30px)',
-              fontWeight: 500,
-              lineHeight: 1.34,
+              fontSize: 'clamp(21px, 2vw, 27px)',
+              fontWeight: 480,
+              lineHeight: 1.4,
             }}
           >
             {siteContent.headline}
           </motion.h1>
 
-          <motion.div {...fadeUp(0.1)} className="flex flex-wrap gap-x-3 gap-y-2 mt-8" style={{ fontSize: '13px', color: 'rgba(0,0,0,0.58)' }}>
+          <motion.div {...fadeUp(0.1)} className="flex flex-wrap gap-x-3 gap-y-2 mt-10" style={{ fontSize: '13px', color: 'rgba(0,0,0,0.58)' }}>
             {siteContent.experience.map((item, index) => (
               <span key={item} className="flex items-center gap-3">
                 {index > 0 ? <span aria-hidden style={{ color: 'rgba(0,0,0,0.22)' }}>/</span> : null}
