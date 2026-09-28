@@ -1,24 +1,48 @@
-import image02 from './images/02.png';
-import slide01 from './images/01-context-problem-v3.png';
-import slide02 from './images/02-business-case-hybrid-direction.png';
-import slide03 from './images/03-as-is-to-to-be.png';
-import slide04 from './images/04-core-use-cases.png';
-import slide05 from './images/05-mvp-scope.png';
-import slide06 from './images/06-solution-concept.png';
-import slide07 from './images/07-key-learner-flow.png';
-import slide08 from './images/08-low-fi-screens.png';
-import slide09 from './images/09-outcome.png';
+import cover from './images/slides-v3/01-cover.png';
+import businessNeed from './images/slides-v3/03-business-need.png';
+import systemBoundary from './images/slides-v3/05-system-boundary.png';
+import asIsEvidence from './images/slides-v3/07-as-is-process-evidence.png';
+import currentStateDiagnosis from './images/slides-v3/08-current-state-diagnosis.png';
+import userNeeds from './images/slides-v3/10-user-needs.png';
+import requirementsTraceability from './images/slides-v3/12-requirements-traceability.png';
+import requirementsCatalogue from './images/slides-v3/13-requirements-catalogue.png';
+import qualityRequirements from './images/slides-v3/15-quality-requirements.png';
+import targetProductBehaviour from './images/slides-v3/17-target-product-behaviour.png';
+import useCaseModel from './images/slides-v3/18-use-case-model.png';
+import toBeProcessEvidence from './images/slides-v3/20-to-be-process-evidence.png';
+import targetProductModel from './images/slides-v3/21-target-product-model.png';
+import domainModel from './images/slides-v3/22-domain-model.png';
+import mvpPrioritization from './images/slides-v3/24-mvp-prioritization.png';
+import mvpSelection from './images/slides-v3/25-mvp-selection.png';
+import mvpScope from './images/slides-v3/27-mvp-scope.png';
+import coreUserFlows from './images/slides-v3/29-core-user-flows.png';
+import informationArchitecture from './images/slides-v3/31-information-architecture.png';
+import screenInventory from './images/slides-v3/32-screen-inventory.png';
+
+const slide = (src: string, alt: string) => ({
+  type: 'image' as const,
+  src,
+  alt,
+  aspectRatio: '16 / 9',
+});
+
+const transition = (content: string) => ({
+  type: 'text' as const,
+  content,
+  variant: 'transition' as const,
+});
 
 export const learningManagementSystemCaseStudyProject = {
   slug: 'learning-management-system-case-study',
-  title: 'LMS for Gloria Training Company - Case Study',
+  title: 'Gloria LMS: Analysis, Requirements and MVP Definition',
   category: 'Business Analysis',
-  summary: 'Case study analizy biznesowej LMS dla firmy szkoleniowej Gloria, rozwinięty z projektu kursowego LABA.',
+  summary:
+    "Gloria's course delivery relied on Google Drive, Excel and Microsoft Teams. This case study shows how operational evidence was translated into requirements and a testable LMS MVP.",
   description:
-    'Projekt pokazuje, jak analiza biznesowa dla firmy szkoleniowej Gloria została przełożona na spójny koncept LMS: od diagnozy problemów operacyjnych, przez model docelowy i zakres MVP, po pierwsze artefakty UX. Case study powstało na bazie pracy rozpoczętej podczas kursu LABA Analiza Biznesowa prowadzonego przez Magdalenę Straś.',
-  tags: ['Business Analysis', 'LMS', 'Product Design'],
-  thumbnail: image02,
-  thumbnailAlt: 'Ilustracja Learning Management System case study',
+    'The project examined where the existing setup failed, defined the product boundary and requirements, and reduced the planned solution to a complete workflow that users could test.',
+  tags: ['Case Study', 'LMS', 'Business Analysis'],
+  thumbnail: cover,
+  thumbnailAlt: 'Gloria LMS case study cover',
   projectLinks: [
     {
       label: 'Case Study Documentation',
@@ -26,69 +50,82 @@ export const learningManagementSystemCaseStudyProject = {
     },
   ],
   sections: [
+    slide(cover, 'Gloria LMS case study cover'),
     {
-      type: 'text' as const,
-      content:
-        'Gloria prowadzi kursy online i hybrydowe, a wraz ze wzrostem skali jej operacje zaczęły opierać się na rozproszonym zestawie narzędzi: Google Drive, Microsoft Teams i Excelu. To utrudniało koordynację, raportowanie i utrzymanie jednego spójnego przebiegu kursu.',
+      type: 'heading' as const,
+      eyebrow: 'Operational Problem',
+      content: 'Understanding the operational problem',
     },
     {
       type: 'text' as const,
       content:
-        'Projekt został rozpoczęty w ramach kursu LABA Analiza Biznesowa prowadzonego przez Magdalenę Straś, a następnie rozwinięty do pełniejszego case study. Celem było uporządkowanie decyzji biznesowych i przełożenie ich na kierunek produktowy oraz pierwsze materiały projektowe.',
+        "The work began with Gloria's operating model and the recurring problems reported by the Course Manager. The team first established which course activities belonged within the LMS scope.",
+    },
+    slide(businessNeed, 'Fragmented operations made course status unreliable'),
+    transition('The business problem did not yet define which course activities belonged within the LMS scope.'),
+    slide(systemBoundary, 'The LMS scope covers course operations for each course edition'),
+    transition('After setting the boundary, the team mapped the current process to identify where the same problems occurred repeatedly.'),
+    slide(asIsEvidence, 'AS-IS process evidence and recurring coordination problems'),
+    slide(currentStateDiagnosis, 'Current-state diagnosis and recurring operational problems'),
+    {
+      type: 'heading' as const,
+      eyebrow: 'Evidence and Requirements',
+      content: 'From evidence to requirements',
     },
     {
-      type: 'image' as const,
-      src: slide01,
-      alt: 'Gloria LMS context problem slide',
-      aspectRatio: '16 / 9',
+      type: 'text' as const,
+      content:
+        'The interview first suggested a problem with tools. Process analysis showed that teams lacked shared responsibility for course information and a reliable current status. The team recorded both the user need and the strength of the supporting evidence.',
+    },
+    slide(userNeeds, 'User requirements and their evidence status'),
+    transition('Rather than combine all needs into one feature list, the team recorded the source, evidence status and purpose of each requirement.'),
+    slide(requirementsTraceability, 'Requirements traceability from business problem to quality constraint'),
+    slide(requirementsCatalogue, 'Requirements catalogue evidence and validation status'),
+    transition('After defining system behaviour, the team set the quality conditions that would make that behaviour dependable in daily work.'),
+    slide(qualityRequirements, 'Quality requirements for the MVP baseline'),
+    {
+      type: 'heading' as const,
+      eyebrow: 'Product Response',
+      content: 'Defining the product response',
     },
     {
-      type: 'image' as const,
-      src: slide02,
-      alt: 'Gloria LMS business case hybrid direction slide',
-      aspectRatio: '16 / 9',
+      type: 'text' as const,
+      content:
+        'The requirements baseline covered business goals, user needs, system behaviour and quality constraints. The next task was to combine these layers into one coherent operating model for the product.',
+    },
+    slide(targetProductBehaviour, 'Target product behaviour connecting user needs and system requirements'),
+    slide(useCaseModel, 'Use case model for the three course lifecycle roles'),
+    transition('The use case model assigned actions to each role. The team then used the TO-BE process to specify how each action changes the recorded course status.'),
+    slide(toBeProcessEvidence, 'TO-BE process evidence and recorded course status changes'),
+    slide(targetProductModel, 'Target product model and shared course records'),
+    slide(domainModel, 'Domain model for shared course information'),
+    {
+      type: 'heading' as const,
+      eyebrow: 'Testable MVP',
+      content: 'Reducing the solution to a testable MVP',
     },
     {
-      type: 'image' as const,
-      src: slide03,
-      alt: 'Gloria LMS as-is to to-be slide',
-      aspectRatio: '16 / 9',
+      type: 'text' as const,
+      content:
+        'Together, the requirements, TO-BE process and domain model described how the LMS stores current course information. The team then selected the smallest complete workflow involving all three roles.',
+    },
+    slide(mvpPrioritization, 'MVP prioritization and selection criteria'),
+    slide(mvpSelection, 'Assignment workflow selected for the first MVP'),
+    transition('After selecting the assignment lifecycle, the team defined the functional and quality scope required to test it end to end.'),
+    slide(mvpScope, 'Scope of the first MVP assignment workflow'),
+    {
+      type: 'heading' as const,
+      eyebrow: 'Product Definition and UX',
+      content: 'From product definition to UX',
     },
     {
-      type: 'image' as const,
-      src: slide04,
-      alt: 'Gloria LMS core use cases slide',
-      aspectRatio: '16 / 9',
+      type: 'text' as const,
+      content:
+        'After defining the MVP scope, the team still needed to test how each role would use it. Each role had to complete the assignment workflow and understand the current course status without coordinating through other tools.',
     },
-    {
-      type: 'image' as const,
-      src: slide05,
-      alt: 'Gloria LMS MVP scope slide',
-      aspectRatio: '16 / 9',
-    },
-    {
-      type: 'image' as const,
-      src: slide06,
-      alt: 'Gloria LMS solution concept slide',
-      aspectRatio: '16 / 9',
-    },
-    {
-      type: 'image' as const,
-      src: slide07,
-      alt: 'Gloria LMS key learner flow slide',
-      aspectRatio: '16 / 9',
-    },
-    {
-      type: 'image' as const,
-      src: slide08,
-      alt: 'Gloria LMS low-fi screens slide',
-      aspectRatio: '16 / 9',
-    },
-    {
-      type: 'image' as const,
-      src: slide09,
-      alt: 'Gloria LMS outcome slide',
-      aspectRatio: '16 / 9',
-    },
+    slide(coreUserFlows, 'Core user flows included in the MVP'),
+    transition('The team can now use these flows to prepare the Information Architecture, Screen Inventory, wireframes and prototype scenarios.'),
+    slide(informationArchitecture, 'Information architecture for shared and role-specific pages'),
+    slide(screenInventory, 'Screen inventory for the first design and validation set'),
   ],
 };

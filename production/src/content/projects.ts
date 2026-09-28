@@ -12,10 +12,12 @@ export type ProjectSection =
   | {
       type: 'heading';
       content: string;
+      eyebrow?: string;
     }
   | {
       type: 'text';
       content: string;
+      variant?: 'body' | 'transition';
     }
   | {
       type: 'image';

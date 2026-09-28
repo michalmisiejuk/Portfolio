@@ -1,4 +1,5 @@
 import { motion } from 'motion/react';
+import { useEffect, useState } from 'react';
 
 // One unit: text + 2 spaces at the end
 const UNIT = 'Work In Progress  ';
@@ -6,10 +7,30 @@ const UNIT = 'Work In Progress  ';
 const half = Array(12).fill(UNIT).join('');
 
 export function WipBanner() {
+  const [visible, setVisible] = useState(true);
+
+  useEffect(() => {
+    const check = () => {
+      setVisible(window.scrollY < 24);
+    };
+
+    check();
+    window.addEventListener('scroll', check, { passive: true });
+    return () => window.removeEventListener('scroll', check);
+  }, []);
+
   return (
     <div
       className="pointer-events-none z-10 overflow-hidden"
-      style={{ position: 'fixed', top: '-160px', left: '-160px', width: '420px', height: '420px' }}
+      style={{
+        position: 'fixed',
+        top: '-180px',
+        left: '-180px',
+        width: '420px',
+        height: '420px',
+        opacity: visible ? 1 : 0,
+        transition: 'opacity 0.25s ease',
+      }}
     >
       <div
         style={{
