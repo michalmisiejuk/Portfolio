@@ -4,6 +4,7 @@ import { ChevronDown } from 'lucide-react';
 
 export function ScrollIndicator({ enabled = true }: { enabled?: boolean }) {
   const [visible, setVisible] = useState(false);
+  const [railLeft, setRailLeft] = useState(0);
 
   useEffect(() => {
     if (!enabled) {
@@ -14,6 +15,14 @@ export function ScrollIndicator({ enabled = true }: { enabled?: boolean }) {
     const check = () => {
       const canScroll = document.documentElement.scrollHeight > window.innerHeight + 32;
       const atBottom = window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 32;
+      const anchor = document.querySelector<HTMLElement>('[data-scroll-anchor]');
+
+      if (anchor) {
+        const rect = anchor.getBoundingClientRect();
+        const paddingLeft = Number.parseFloat(window.getComputedStyle(anchor).paddingLeft) || 0;
+        setRailLeft(Math.max(0, Math.round(rect.left + paddingLeft - 32)));
+      }
+
       setVisible(canScroll && !atBottom);
     };
 
@@ -44,8 +53,9 @@ export function ScrollIndicator({ enabled = true }: { enabled?: boolean }) {
     <div
       style={{
         position: 'fixed',
-        bottom: '36px',
-        left: 'max(24px, calc(50vw - 350px))',
+        bottom: '32px',
+        left: `${railLeft}px`,
+        width: '24px',
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'center',
@@ -62,7 +72,7 @@ export function ScrollIndicator({ enabled = true }: { enabled?: boolean }) {
           transition={{ duration: 1.4, repeat: Infinity, ease: 'easeInOut', delay: index * 0.2 }}
           style={{ marginTop: index === 1 ? '-8px' : 0 }}
         >
-          <ChevronDown size={27} strokeWidth={1.8} style={{ color: '#111', opacity: 0.62 }} />
+          <ChevronDown size={20} strokeWidth={2.2} style={{ color: '#111', opacity: 0.82 }} />
         </motion.div>
       ))}
     </div>

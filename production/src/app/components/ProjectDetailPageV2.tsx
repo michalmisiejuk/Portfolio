@@ -1,7 +1,7 @@
 import { useCallback, useEffect, useRef, useState, type CSSProperties, type ReactNode } from 'react';
 import { Link, Navigate, useParams } from 'react-router';
 import { AnimatePresence, motion } from 'motion/react';
-import { ArrowUpRight, Download, FileText } from 'lucide-react';
+import { ArrowUpRight, ChevronLeft, ChevronRight, Download, FileText, X } from 'lucide-react';
 import { getProjectBySlug, type Project } from '@/content/projects';
 import { ACCENT, FinalVisual, HeroVisual, ProcessVisual } from './ProjectVisuals';
 import { ScrollIndicator } from './ScrollIndicator';
@@ -26,16 +26,22 @@ type ProcessStep = { label: string; text: string; visual?: ImageSection };
 function arrowStyle(side: 'left' | 'right', disabled: boolean): CSSProperties {
   return {
     position: 'absolute',
-    [side]: '20px',
+    [side]: 'clamp(6px, 2vw, 28px)',
     top: '50%',
     transform: 'translateY(-50%)',
-    background: 'none',
-    border: 'none',
+    width: '44px',
+    height: '56px',
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    background: disabled ? 'rgba(255,255,255,0.06)' : 'rgba(255,255,255,0.12)',
+    border: `1px solid ${disabled ? 'rgba(255,255,255,0.14)' : 'rgba(255,255,255,0.32)'}`,
+    borderRadius: '3px',
     cursor: disabled ? 'default' : 'pointer',
-    color: disabled ? 'rgba(255,255,255,0.15)' : 'rgba(255,255,255,0.6)',
-    fontSize: '22px',
+    color: disabled ? 'rgba(255,255,255,0.42)' : 'rgba(255,255,255,0.92)',
     lineHeight: 1,
-    padding: '12px',
+    padding: 0,
+    zIndex: 2,
   };
 }
 
@@ -91,16 +97,16 @@ function Lightbox({
         touchStartX.current = null;
       }}
     >
-      <div style={{ position: 'absolute', top: 0, left: 0, right: 0, display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '20px 28px', pointerEvents: 'none' }}>
-        <span style={{ fontFamily: MONO, fontSize: '9px', letterSpacing: '0.1em', color: 'rgba(255,255,255,0.35)', textTransform: 'uppercase' }}>
+      <div style={{ position: 'absolute', top: 0, left: 0, right: 0, display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '16px clamp(16px, 2vw, 28px)', pointerEvents: 'none', background: 'linear-gradient(to bottom, rgba(0,0,0,0.42), transparent)' }}>
+        <span style={{ fontFamily: MONO, fontSize: '10px', fontWeight: 600, letterSpacing: '0.1em', color: 'rgba(255,255,255,0.72)', textTransform: 'uppercase' }}>
           {current.label}
         </span>
-        <div style={{ display: 'flex', alignItems: 'center', gap: '20px', pointerEvents: 'auto' }}>
-          <span style={{ fontFamily: MONO, fontSize: '9px', letterSpacing: '0.06em', color: 'rgba(255,255,255,0.35)' }}>
+        <div style={{ display: 'flex', alignItems: 'center', gap: '14px', pointerEvents: 'auto' }}>
+          <span style={{ fontFamily: MONO, fontSize: '10px', fontWeight: 600, letterSpacing: '0.06em', color: 'rgba(255,255,255,0.78)' }}>
             {index + 1} / {images.length}
           </span>
-          <button onClick={onClose} style={{ background: 'none', border: 'none', cursor: 'pointer', color: 'rgba(255,255,255,0.5)', fontSize: '20px', lineHeight: 1, padding: '4px' }} aria-label="Close">
-            x
+          <button onClick={onClose} style={{ width: '38px', height: '38px', display: 'flex', alignItems: 'center', justifyContent: 'center', background: 'rgba(255,255,255,0.12)', border: '1px solid rgba(255,255,255,0.3)', borderRadius: '3px', cursor: 'pointer', color: 'rgba(255,255,255,0.9)', lineHeight: 1, padding: 0 }} aria-label="Close">
+            <X size={20} strokeWidth={2} />
           </button>
         </div>
       </div>
@@ -119,10 +125,10 @@ function Lightbox({
       {images.length > 1 ? (
         <>
           <button onClick={(event) => { event.stopPropagation(); onNav(-1); }} disabled={index === 0} style={arrowStyle('left', index === 0)} aria-label="Previous">
-            {'<'}
+            <ChevronLeft size={28} strokeWidth={2.2} />
           </button>
           <button onClick={(event) => { event.stopPropagation(); onNav(1); }} disabled={index === images.length - 1} style={arrowStyle('right', index === images.length - 1)} aria-label="Next">
-            {'>'}
+            <ChevronRight size={28} strokeWidth={2.2} />
           </button>
         </>
       ) : null}
@@ -462,7 +468,7 @@ export function ProjectDetailPageV2() {
         ) : null}
       </div>
 
-      <div className="px-6 md:px-16 lg:px-28 max-w-5xl mx-auto">
+      <div data-scroll-anchor className="px-6 md:px-16 lg:px-28 max-w-5xl mx-auto">
         <motion.div {...fadeUp(0.16)} style={{ marginBottom: '40px' }}>
           <GalleryImage galleryIndex={0} onOpen={openLightbox} style={imgStyle(heroAspectRatio)}>
             {heroNode}

@@ -63,7 +63,7 @@ export function HeroPage() {
       <WipBanner />
       <Nav />
 
-      <main className="px-6 md:px-16 lg:px-28 max-w-5xl mx-auto pb-28">
+      <main data-scroll-anchor className="px-6 md:px-16 lg:px-28 max-w-5xl mx-auto pb-28">
         <section className="pt-16 md:pt-24 pb-20 md:pb-28">
           <motion.div {...fadeUp(0)} className="flex flex-wrap items-baseline gap-x-3 gap-y-1" style={{ marginBottom: '24px' }}>
             <span style={{ fontSize: 'clamp(28px, 2.5vw, 34px)', fontWeight: 620, lineHeight: 1.12 }}>{siteContent.name}</span>

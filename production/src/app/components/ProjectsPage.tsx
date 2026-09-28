@@ -113,7 +113,7 @@ export function ProjectsPage() {
         ))}
       </div>
 
-      <div className="flex flex-col mx-auto" style={{ width: '100%', maxWidth: '640px', padding: '24px 24px 64px', gap: '24px' }}>
+      <div data-scroll-anchor className="flex flex-col mx-auto" style={{ width: '100%', maxWidth: '640px', padding: '24px 24px 64px', gap: '24px' }}>
         {visible.map((project, index) => (
           <ProjectCard key={`${activeCategory}-${project.slug}`} project={project} index={projectsContent.indexOf(project)} />
         ))}
