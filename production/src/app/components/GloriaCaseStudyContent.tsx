@@ -10,6 +10,7 @@ function Figure({ src, alt, variant = 'default' }: { src: string; alt: string; v
   return (
     <figure className={`gloria-figure gloria-${variant}`}>
       <img src={asset(src)} alt={alt} loading="lazy" />
+      <figcaption>{alt}</figcaption>
     </figure>
   );
 }
@@ -23,38 +24,50 @@ function Explanation({ title, children }: { title: string; children: string }) {
   );
 }
 
-function SectionTitle({ children }: { children: string }) {
-  return <h2 className="gloria-section-title">{children}</h2>;
+function SectionTitle({ number, label, children, description }: { number: string; label: string; children: string; description: string }) {
+  return (
+    <div className="gloria-section-heading">
+      <span>{number} / {label}</span>
+      <h2>{children}</h2>
+      <p>{description}</p>
+    </div>
+  );
 }
 
 export function GloriaCaseStudyContent() {
   return (
     <div className="gloria-case-study">
       <style>{`
-        .gloria-case-study { width: min(1320px, calc(100% - 40px)); margin: 0 auto; padding: 0 0 120px; color: #111827; }
-        .gloria-case-study section { margin: 0 0 112px; }
-        .gloria-section-title { margin: 0 0 32px; font-size: 18px; font-weight: 600; letter-spacing: .01em; color: #6b7280; }
-        .gloria-figure { margin: 0 0 48px; }
-        .gloria-figure img { display: block; width: 100%; height: auto; }
-        .gloria-artifact { width: min(1780px, calc(100vw - 32px)); margin-left: 50%; transform: translateX(-50%); }
-        .gloria-artifact img { border: 1px solid #e5e7eb; }
-        .gloria-portrait { width: min(1050px, 100%); margin-left: auto; margin-right: auto; }
-        .gloria-explanation { max-width: 920px; margin: -18px 0 56px; }
-        .gloria-explanation h3 { margin: 0 0 10px; font-size: 22px; line-height: 1.25; }
-        .gloria-explanation p, .gloria-label { margin: 0; color: #4b5563; font-size: 18px; line-height: 1.55; }
-        .gloria-label { max-width: 920px; margin: -18px 0 56px; }
+        .gloria-case-study { width: min(1024px, calc(100% - 48px)); margin: 0 auto; padding: 24px 0 120px; color: #111; }
+        .gloria-case-study section { margin: 0 0 104px; padding-top: 48px; border-top: 1px solid rgba(0,0,0,.1); }
+        .gloria-case-study section:first-of-type { padding-top: 16px; border-top: 0; }
+        .gloria-section-heading { margin: 0 0 40px; max-width: 760px; }
+        .gloria-section-heading > span { display: block; margin-bottom: 14px; color: #0057ff; font-family: 'JetBrains Mono', monospace; font-size: 10px; font-weight: 700; letter-spacing: .11em; text-transform: uppercase; }
+        .gloria-section-heading h2 { margin: 0 0 12px; color: #111; font-size: clamp(28px, 4vw, 42px); font-weight: 650; line-height: 1.08; letter-spacing: -.035em; }
+        .gloria-section-heading p { margin: 0; max-width: 680px; color: rgba(0,0,0,.58); font-size: 15px; font-weight: 300; line-height: 1.7; }
+        .gloria-figure { margin: 0 0 32px; overflow: hidden; border: 1px solid rgba(0,0,0,.12); border-radius: 3px; background: #f7f8fa; box-shadow: 0 12px 32px rgba(0,0,0,.035); }
+        .gloria-figure img { display: block; width: 100%; height: auto; background: #fff; }
+        .gloria-figure figcaption { padding: 10px 14px; border-top: 1px solid rgba(0,0,0,.08); color: rgba(0,0,0,.46); background: #fafafa; font-family: 'JetBrains Mono', monospace; font-size: 9px; letter-spacing: .035em; text-transform: uppercase; }
+        .gloria-artifact { width: 100%; }
+        .gloria-portrait { width: min(760px, 100%); margin-left: auto; margin-right: auto; }
+        .gloria-explanation { display: grid; grid-template-columns: minmax(190px, .7fr) 1.6fr; gap: 28px; margin: -12px 0 48px; padding: 24px 26px; border-left: 3px solid #0057ff; background: #f5f7fa; }
+        .gloria-explanation h3 { margin: 0; font-size: 18px; font-weight: 600; line-height: 1.35; }
+        .gloria-explanation p, .gloria-label { margin: 0; color: rgba(0,0,0,.62); font-size: 14px; font-weight: 300; line-height: 1.7; }
+        .gloria-label { margin: -12px 0 48px; padding: 22px 24px; border-left: 3px solid #0057ff; background: #f5f7fa; }
         @media (max-width: 720px) {
-          .gloria-case-study { width: calc(100% - 24px); padding-bottom: 72px; }
-          .gloria-case-study section { margin-bottom: 72px; }
-          .gloria-figure { margin-bottom: 28px; }
-          .gloria-explanation { margin-top: -6px; margin-bottom: 40px; }
-          .gloria-explanation h3 { font-size: 19px; }
-          .gloria-explanation p, .gloria-label { font-size: 16px; }
+          .gloria-case-study { width: calc(100% - 32px); padding-top: 8px; padding-bottom: 72px; }
+          .gloria-case-study section { margin-bottom: 72px; padding-top: 36px; }
+          .gloria-section-heading { margin-bottom: 28px; }
+          .gloria-section-heading h2 { font-size: 29px; }
+          .gloria-figure { margin-bottom: 24px; border-radius: 2px; }
+          .gloria-figure figcaption { font-size: 8px; }
+          .gloria-explanation { display: block; margin-top: -4px; margin-bottom: 36px; padding: 20px; }
+          .gloria-explanation h3 { margin-bottom: 10px; font-size: 18px; }
         }
       `}</style>
 
       <section>
-        <SectionTitle>Organizacja i kontekst biznesowy</SectionTitle>
+        <SectionTitle number="01" label="Kontekst" description="Punkt wyjścia: organizacja, model działania oraz otoczenie, w którym powstaje i jest dostarczana usługa szkoleniowa.">Organizacja i kontekst biznesowy</SectionTitle>
         <Figure src="assets/ba-artifacts/operating-context.png" alt="Kontekst operacyjny Gloria LMS" />
         <Figure src="assets/ba-artifacts/organization-context.png" alt="Struktura współpracy wokół cyklu życia kursu" />
         <Figure src="assets/ba-artifacts/business-model-canvas.png" alt="Business Model Canvas Gloria" />
@@ -69,7 +82,7 @@ export function GloriaCaseStudyContent() {
       </section>
 
       <section>
-        <SectionTitle>Zakres produktu i procesy AS-IS</SectionTitle>
+        <SectionTitle number="02" label="Diagnoza" description="Granica produktu oraz procesy pokazujące, gdzie rozproszona praca generowała ręczne handoffy i utratę aktualnego statusu.">Zakres produktu i procesy AS-IS</SectionTitle>
         <Figure src="assets/main-04.png" alt="Granica produktu" />
         <Figure src="assets/main-05.png" alt="Analiza procesu AS-IS" />
         <Figure src="diagrams/as-is-course-planning.png" alt="AS-IS - planowanie kursu" variant="artifact" />
@@ -83,7 +96,7 @@ export function GloriaCaseStudyContent() {
       </section>
 
       <section>
-        <SectionTitle>Użytkownicy i wymagania</SectionTitle>
+        <SectionTitle number="03" label="Wymagania" description="Potrzeby trzech ról zostały połączone z dowodami, odpowiedzialnościami i wymaganiami funkcjonalnymi oraz jakościowymi.">Użytkownicy i wymagania</SectionTitle>
         <Figure src="assets/main-07.png" alt="Potrzeby użytkowników" />
         <Explanation title="Proto-persony: trzy role w jednym lifecycle kursu">Proto-persony porządkują hipotezy o sposobie pracy, celach i problemach użytkowników. Nie zastępują badań z użytkownikami i nie definiują trzech osobnych produktów - pokazują trzy perspektywy na te same materiały, terminy, zadania i statusy.</Explanation>
         <Figure src="personas/LMS_Persona_Learner.jpg" alt="Persona uczestniczki kursu" />
@@ -98,7 +111,7 @@ export function GloriaCaseStudyContent() {
       </section>
 
       <section>
-        <SectionTitle>Zachowanie produktu i procesy TO-BE</SectionTitle>
+        <SectionTitle number="04" label="Model docelowy" description="Docelowe zachowanie systemu i procesy pokazują, jak wspólny stan kursu zastępuje koordynację prowadzoną poza LMS.">Zachowanie produktu i procesy TO-BE</SectionTitle>
         <Figure src="assets/main-11.png" alt="Docelowe zachowanie produktu" />
         <Figure src="assets/main-12.png" alt="Model przypadków użycia" />
         <Figure src="diagrams/LMS_UML_UseCase.jpg" alt="Pełny diagram przypadków użycia" variant="portrait" />
@@ -117,20 +130,20 @@ export function GloriaCaseStudyContent() {
       </section>
 
       <section>
-        <SectionTitle>Model produktu</SectionTitle>
+        <SectionTitle number="05" label="Struktura" description="Model produktu porządkuje współdzielone rekordy i relacje potrzebne do obsługi pełnego cyklu kursu.">Model produktu</SectionTitle>
         <Figure src="assets/main-14.png" alt="Docelowy model produktu" />
         <Figure src="assets/ba-artifacts/domain-model-ddd.png" alt="Konceptualny model domeny Gloria LMS w ujęciu DDD" />
       </section>
 
       <section>
-        <SectionTitle>MVP</SectionTitle>
+        <SectionTitle number="06" label="Priorytety" description="Zakres pierwszej wersji został ograniczony do najmniejszego kompletnego przepływu, który angażuje wszystkie kluczowe role.">MVP</SectionTitle>
         <Figure src="assets/main-16.png" alt="Priorytetyzacja MVP" />
         <Figure src="assets/main-17.png" alt="Logika wyboru MVP" />
         <Figure src="assets/main-18.png" alt="Zakres MVP" />
       </section>
 
       <section>
-        <SectionTitle>Przejście do projektu UX</SectionTitle>
+        <SectionTitle number="07" label="UX" description="Wymagania i procesy zostały przełożone na przepływy użytkowników, architekturę informacji i pierwszy zestaw ekranów.">Przejście do projektu UX</SectionTitle>
         <Figure src="assets/main-19.png" alt="Główne przepływy użytkowników" />
         <Figure src="assets/ba-artifacts/ux-decisions.png" alt="Założenia i decyzje przed architekturą informacji" />
         <Figure src="assets/main-20.png" alt="Architektura informacji" />
