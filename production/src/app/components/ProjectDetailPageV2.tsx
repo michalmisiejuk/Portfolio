@@ -6,6 +6,7 @@ import { getProjectBySlug, type Project } from '@/content/projects';
 import { ACCENT, FinalVisual, HeroVisual, ProcessVisual } from './ProjectVisuals';
 import { ScrollIndicator } from './ScrollIndicator';
 import { WipBanner } from './WipBanner';
+import { GloriaCaseStudyContent } from './GloriaCaseStudyContent';
 
 const MONO = "'JetBrains Mono', monospace";
 
@@ -477,56 +478,7 @@ export function ProjectDetailPageV2() {
       </div>
 
       {isGloria ? (
-        <div className="px-6 md:px-16 lg:px-28 max-w-5xl mx-auto pb-24 flex flex-col" style={{ gap: 'clamp(44px, 7vw, 76px)' }}>
-          {project.sections.slice(1).map((section, index) => {
-            if (section.type === 'heading') {
-              return (
-                <motion.div key={`${section.content}-${index}`} {...fadeUp(0)} style={{ textAlign: 'center', paddingTop: 'clamp(12px, 2vw, 28px)' }}>
-                  {section.eyebrow ? (
-                    <span style={{ fontFamily: MONO, fontSize: '9px', letterSpacing: '0.12em', textTransform: 'uppercase', color: ACCENT, display: 'block', marginBottom: '14px' }}>
-                      {section.eyebrow}
-                    </span>
-                  ) : null}
-                  <h2 style={{ fontSize: 'clamp(22px, 3vw, 30px)', fontWeight: 650, lineHeight: 1.25, margin: 0, color: '#111' }}>
-                    {section.content}
-                  </h2>
-                </motion.div>
-              );
-            }
-
-            if (section.type === 'text') {
-              const isTransition = section.variant === 'transition';
-              return (
-                <motion.p
-                  key={`${section.content}-${index}`}
-                  {...fadeUp(0)}
-                  style={{
-                    fontSize: isTransition ? 'clamp(18px, 2.2vw, 24px)' : '16px',
-                    fontWeight: isTransition ? 500 : 300,
-                    lineHeight: isTransition ? 1.45 : 1.75,
-                    color: isTransition ? '#111' : 'rgba(0,0,0,0.68)',
-                    textAlign: 'center',
-                    maxWidth: isTransition ? '720px' : '660px',
-                    margin: isTransition ? 'clamp(6px, 2vw, 20px) auto' : '-42px auto 0',
-                  }}
-                >
-                  {section.content}
-                </motion.p>
-              );
-            }
-
-            const galleryIndex = galleryIndexBySrc.get(section.src);
-            if (galleryIndex === undefined) return null;
-
-            return (
-              <motion.div key={`${section.src}-${index}`} {...fadeUp(0)}>
-                <GalleryImage galleryIndex={galleryIndex} onOpen={openLightbox} style={imgStyle(section.aspectRatio)}>
-                  <ImageNode src={section.src} alt={section.alt} aspectRatio={section.aspectRatio} />
-                </GalleryImage>
-              </motion.div>
-            );
-          })}
-        </div>
+        <GloriaCaseStudyContent />
       ) : (
       <div className="px-6 md:px-16 lg:px-28 max-w-5xl mx-auto pb-24 flex flex-col gap-10">
         <motion.div {...fadeUp(0)}>
