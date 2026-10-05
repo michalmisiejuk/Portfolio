@@ -36,9 +36,9 @@ function SectionTitle({ number, label, children, description }: { number: string
 
 export function GloriaCaseStudyContent() {
   return (
-    <div className="gloria-case-study">
+    <div className="gloria-case-study px-6 md:px-16 lg:px-28 max-w-5xl mx-auto">
       <style>{`
-        .gloria-case-study { width: min(1024px, calc(100% - 48px)); margin: 0 auto; padding: 24px 0 120px; color: #111; }
+        .gloria-case-study { width: 100%; box-sizing: border-box; padding-top: 24px; padding-bottom: 120px; color: #111; }
         .gloria-case-study section { margin: 0 0 104px; padding-top: 48px; border-top: 1px solid rgba(0,0,0,.1); }
         .gloria-case-study section:first-of-type { padding-top: 16px; border-top: 0; }
         .gloria-section-heading { margin: 0 0 40px; max-width: 760px; }
@@ -55,7 +55,7 @@ export function GloriaCaseStudyContent() {
         .gloria-explanation p, .gloria-label { margin: 0; color: rgba(0,0,0,.62); font-size: 14px; font-weight: 300; line-height: 1.7; }
         .gloria-label { margin: -12px 0 48px; padding: 22px 24px; border-left: 3px solid #0057ff; background: #f5f7fa; }
         @media (max-width: 720px) {
-          .gloria-case-study { width: calc(100% - 32px); padding-top: 8px; padding-bottom: 72px; }
+          .gloria-case-study { padding-top: 8px; padding-bottom: 72px; }
           .gloria-case-study section { margin-bottom: 72px; padding-top: 36px; }
           .gloria-section-heading { margin-bottom: 28px; }
           .gloria-section-heading h2 { font-size: 29px; }
