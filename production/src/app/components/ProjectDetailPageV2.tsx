@@ -285,8 +285,8 @@ function ResourceRow({ item }: { item: Resource }) {
   );
 }
 
-function ProjectResources({ resources, centered = false }: { resources: Resource[]; centered?: boolean }) {
-  if (!resources.length) return null;
+function ProjectResources({ resources, centered = false, prototypeHref }: { resources: Resource[]; centered?: boolean; prototypeHref?: string }) {
+  if (!resources.length && !prototypeHref) return null;
 
   return (
     <div className="flex flex-col gap-2 mb-10" style={{ alignItems: centered ? 'center' : 'flex-start' }}>
@@ -321,6 +321,23 @@ function ProjectResources({ resources, centered = false }: { resources: Resource
             {resource.name}
           </motion.a>
         ))}
+        {prototypeHref ? (
+          <motion.a
+            href={prototypeHref}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="no-underline flex items-center gap-2"
+            whileHover={{ y: -1, backgroundColor: '#292929' }}
+            transition={{ duration: 0.15 }}
+            style={{
+              fontSize: '13px', fontWeight: 600, color: '#fff', padding: '7px 13px',
+              border: '1px solid #161616', borderRadius: '3px', whiteSpace: 'nowrap', background: '#161616',
+            }}
+          >
+            <span style={{ width: '6px', height: '6px', borderRadius: '50%', background: '#ff472e' }} />
+            Interactive prototype <ArrowUpRight size={14} strokeWidth={1.8} />
+          </motion.a>
+        ) : null}
       </div>
     </div>
   );
@@ -465,26 +482,8 @@ export function ProjectDetailPageV2() {
 
         {resources.length ? (
           <motion.div {...fadeUp(0.16)}>
-            <ProjectResources resources={resources} centered={isGloria} />
+            <ProjectResources resources={resources} centered={isGloria} prototypeHref={isGloria ? GLORIA_PROTOTYPE_URL : undefined} />
           </motion.div>
-        ) : null}
-
-        {isGloria ? (
-          <motion.a
-            {...fadeUp(0.2)}
-            href={GLORIA_PROTOTYPE_URL}
-            target="_blank"
-            rel="noopener noreferrer"
-            whileHover={{ y: -2, backgroundColor: '#1747e8' }}
-            className="gloria-prototype-hero-cta"
-            style={{
-              display: 'inline-flex', alignItems: 'center', gap: '9px', margin: '-20px auto 36px',
-              padding: '11px 18px', borderRadius: '3px', background: '#0057ff', color: '#fff',
-              fontSize: '13px', fontWeight: 650, textDecoration: 'none', boxShadow: '0 10px 26px rgba(0,87,255,.2)',
-            }}
-          >
-            Open interactive prototype <ArrowUpRight size={16} strokeWidth={2} />
-          </motion.a>
         ) : null}
       </div>
 

@@ -93,10 +93,10 @@ export function GloriaCaseStudyContent() {
         .gloria-prototype-cta { display: flex; align-items: center; justify-content: space-between; gap: 24px; padding: 24px 26px; border-radius: 3px; background: #101828; color: #fff; }
         .gloria-prototype-cta h3 { margin: 0 0 6px; font-size: 20px; }
         .gloria-prototype-cta p { margin: 0; color: rgba(255,255,255,.68); font-size: 13px; font-weight: 300; line-height: 1.5; }
-        .gloria-prototype-cta a { display: inline-flex; align-items: center; gap: 8px; flex-shrink: 0; padding: 11px 15px; border-radius: 3px; background: #0057ff; color: #fff; font-size: 12px; font-weight: 650; text-decoration: none; transition: .18s ease; }
-        .gloria-prototype-cta a:hover { background: #2d6cff; transform: translateY(-1px); }
+        .gloria-prototype-cta a { display: inline-flex; align-items: center; gap: 8px; flex-shrink: 0; padding: 11px 15px; border: 1px solid rgba(255,255,255,.82); border-radius: 3px; background: #fff; color: #101828; font-size: 12px; font-weight: 650; text-decoration: none; transition: .18s ease; }
+        .gloria-prototype-cta a:hover { background: #f1f1f1; transform: translateY(-1px); }
         html { scroll-behavior: smooth; }
-        @media (max-width: 1399px) { .gloria-stage-nav { display: none; } }
+        @media (max-width: 1279px) { .gloria-stage-nav { display: none; } }
         @media (max-width: 720px) {
           .gloria-case-study { padding-top: 8px; padding-bottom: 72px; }
           .gloria-case-study section { margin-bottom: 72px; padding-top: 36px; }
