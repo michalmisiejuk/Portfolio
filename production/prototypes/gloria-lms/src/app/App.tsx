@@ -94,7 +94,7 @@ const WIDE_SCREENS = new Set([
 ]);
 
 const INITIAL_NOTIFS: Notif[] = [
-  { id: "n0", text: "Zajęcia online — Pandas i NumPy — jutro o 09:00", time: "yesterday", read: false },
+  { id: "n0", text: "Online session — Pandas and NumPy — tomorrow at 09:00", time: "yesterday", read: false },
 ];
 
 const CREDS: Record<Role, string> = {
@@ -120,27 +120,27 @@ function computeBreadcrumbs(nav: string, reviewsCtx: ReviewsContext | null): Cru
     }
     return [
       { label: "Courses", nav: "lec-courses" },
-      { label: "Python dla analityków danych", nav: "lec-courses" },
-      { label: "Edycja 2025/1", nav: "lec-courses" },
+      { label: "Python for Data Analysts", nav: "lec-courses" },
+      { label: "Edition 2025/1", nav: "lec-courses" },
       { label: "Assignments" },
     ];
   }
   const map: Record<string, CrumbItem[]> = {
-    "l-dashboard":       [{ label: "Courses", nav: "l-courses" }, { label: "Python dla analityków danych", nav: "l-workspace" }, { label: "Edycja 2025/1" }],
+    "l-dashboard":       [{ label: "Courses", nav: "l-courses" }, { label: "Python for Data Analysts", nav: "l-workspace" }, { label: "Edition 2025/1" }],
     "l-courses":         [{ label: "Courses" }],
-    "l-workspace":       [{ label: "Courses", nav: "l-courses" }, { label: "Python dla analityków danych" }, { label: "Edycja 2025/1" }],
-    "l-assignments":     [{ label: "Courses", nav: "l-courses" }, { label: "Python dla analityków danych", nav: "l-workspace" }, { label: "Edycja 2025/1", nav: "l-workspace" }, { label: "Module 3", nav: "l-workspace" }, { label: "Assignment 2" }],
+    "l-workspace":       [{ label: "Courses", nav: "l-courses" }, { label: "Python for Data Analysts" }, { label: "Edition 2025/1" }],
+    "l-assignments":     [{ label: "Courses", nav: "l-courses" }, { label: "Python for Data Analysts", nav: "l-workspace" }, { label: "Edition 2025/1", nav: "l-workspace" }, { label: "Module 3", nav: "l-workspace" }, { label: "Assignment 2" }],
     "l-calendar":        [{ label: "Calendar" }],
     "l-notifications":   [{ label: "Notifications" }],
     "l-account":         [{ label: "Account" }],
-    "lec-dashboard":     [{ label: "Courses", nav: "lec-courses" }, { label: "Python dla analityków danych" }, { label: "Edycja 2025/1" }],
-    "lec-courses":       [{ label: "Courses", nav: "lec-courses" }, { label: "Python dla analityków danych" }, { label: "Edycja 2025/1" }, { label: "Course Management" }],
+    "lec-dashboard":     [{ label: "Courses", nav: "lec-courses" }, { label: "Python for Data Analysts" }, { label: "Edition 2025/1" }],
+    "lec-courses":       [{ label: "Courses", nav: "lec-courses" }, { label: "Python for Data Analysts" }, { label: "Edition 2025/1" }, { label: "Course Management" }],
     "lec-calendar":      [{ label: "Calendar" }],
     "lec-notifications": [{ label: "Notifications" }],
     "lec-account":       [{ label: "Account" }],
     "pm-operations":     [{ label: "Operations" }],
-    "pm-courses":        [{ label: "Courses", nav: "pm-courses" }, { label: "Python dla analityków danych" }, { label: "Edycja 2025/1" }],
-    "pm-schedule":       [{ label: "Courses", nav: "pm-courses" }, { label: "Python dla analityków danych" }, { label: "Edycja 2025/1" }, { label: "Schedule" }],
+    "pm-courses":        [{ label: "Courses", nav: "pm-courses" }, { label: "Python for Data Analysts" }, { label: "Edition 2025/1" }],
+    "pm-schedule":       [{ label: "Courses", nav: "pm-courses" }, { label: "Python for Data Analysts" }, { label: "Edition 2025/1" }, { label: "Schedule" }],
     "pm-reports":        [{ label: "Reports" }],
     "pm-issues":         [{ label: "Issues" }],
     "pm-notifications":  [{ label: "Notifications" }],
@@ -493,31 +493,31 @@ function Header({
 function LearnerCourseWorkspace({ scenario, navigate }: { scenario: Scenario; navigate: (s: string) => void }) {
   const modules = [
     {
-      id: "m1", num: 1, title: "Wprowadzenie do Pythona",
-      date: "03 lut 2025", mode: "online" as const, status: "completed" as const,
-      materials: ["Skrypt_Python_podstawy.pdf", "Prezentacja_T1.pptx"],
-      assignment: { id: "a1", title: "Zadanie 1", grade: "82 pts · 4+", subStatus: "graded" as SubmissionStatus },
+      id: "m1", num: 1, title: "Introduction to Python",
+      date: "03 Feb 2025", mode: "online" as const, status: "completed" as const,
+      materials: ["Python_Fundamentals.pdf", "Module_1_Slides.pptx"],
+      assignment: { id: "a1", title: "Assignment 1", grade: "82 pts · B+", subStatus: "graded" as SubmissionStatus },
     },
     {
-      id: "m2", num: 2, title: "Struktury danych",
-      date: "10 lut 2025", mode: "in person" as const, status: "completed" as const,
-      materials: ["Prezentacja_T2.pptx", "Zad_struktury.zip"],
+      id: "m2", num: 2, title: "Data Structures",
+      date: "10 Feb 2025", mode: "in person" as const, status: "completed" as const,
+      materials: ["Module_2_Slides.pptx", "Data_Structures_Exercises.zip"],
       assignment: null,
     },
     {
-      id: "m3", num: 3, title: "Pandas i NumPy",
-      date: "17 lut 2025", mode: "online" as const, status: "current" as const,
-      materials: ["Skrypt_Pandas_NumPy.pdf", "Prezentacja_T3.pptx", "Dane_sprzedaz_2024.xlsx"],
-      assignment: { id: "a2", title: "Zadanie 2 — Analiza danych Pandas", isScenario: true },
+      id: "m3", num: 3, title: "Pandas and NumPy",
+      date: "17 Feb 2025", mode: "online" as const, status: "current" as const,
+      materials: ["Pandas_NumPy_Handbook.pdf", "Module_3_Slides.pptx", "Sales_Data_2024.xlsx"],
+      assignment: { id: "a2", title: "Assignment 2 — Pandas Data Analysis", isScenario: true },
     },
     {
-      id: "m4", num: 4, title: "Wizualizacja danych",
-      date: "24 lut 2025", mode: "in person" as const, status: "upcoming" as const,
+      id: "m4", num: 4, title: "Data Visualization",
+      date: "24 Feb 2025", mode: "in person" as const, status: "upcoming" as const,
       materials: [], assignment: null,
     },
     {
-      id: "m5", num: 5, title: "Projekt końcowy",
-      date: "10 mar 2025", mode: "in person" as const, status: "upcoming" as const,
+      id: "m5", num: 5, title: "Final Project",
+      date: "10 Mar 2025", mode: "in person" as const, status: "upcoming" as const,
       materials: [], assignment: null,
     },
   ] as const;
@@ -528,7 +528,7 @@ function LearnerCourseWorkspace({ scenario, navigate }: { scenario: Scenario; na
     <div className="space-y-6">
       <div className="flex items-start justify-between gap-4 pb-5 border-b border-slate-200">
         <div>
-          <PageTitle title="Python dla analityków danych" subtitle="dr Jan Nowak · Edycja 2025/1 · 03 lut – 28 mar 2025" />
+          <PageTitle title="Python for Data Analysts" subtitle="Jan Nowak · Edition 2025/1 · 03 Feb – 28 Mar 2025" />
           <div className="flex items-center gap-2 mt-3">
             <Badge color="green">active</Badge>
             <Badge color="gray">hybrid</Badge>
@@ -544,7 +544,7 @@ function LearnerCourseWorkspace({ scenario, navigate }: { scenario: Scenario; na
         <div className="flex items-center justify-between gap-4 p-4 bg-blue-50 border border-blue-200 rounded-xl">
           <div>
             <p className="font-semibold text-blue-900">Open assignment awaiting submission</p>
-            <p className="text-sm text-blue-700 mt-0.5">Zadanie 2 — Analiza danych Pandas · deadline: 17 lut 2025, 23:59</p>
+            <p className="text-sm text-blue-700 mt-0.5">Assignment 2 — Pandas Data Analysis · deadline: 17 Feb 2025, 23:59</p>
           </div>
           <Btn onClick={() => navigate("l-assignments")} className="shrink-0">
             Submit work <ArrowUpRight size={14} />
@@ -638,8 +638,8 @@ function LearnerCourseWorkspace({ scenario, navigate }: { scenario: Scenario; na
                             onClick={() => navigate("l-assignments")}
                             disabled={scenario.assignmentStatus === "draft"}>
                             <div className="flex-1 min-w-0">
-                              <p className="font-medium text-slate-900">Zadanie 2 — Analiza danych Pandas</p>
-                              <p className="text-sm text-slate-500 mt-0.5">Deadline: 17 lut 2025, 23:59</p>
+                              <p className="font-medium text-slate-900">Assignment 2 — Pandas Data Analysis</p>
+                              <p className="text-sm text-slate-500 mt-0.5">Deadline: 17 Feb 2025, 23:59</p>
                             </div>
                             <div className="flex items-center gap-1.5 shrink-0">
                               <AssignmentBadge status={scenario.assignmentStatus} />
@@ -705,19 +705,19 @@ function LearnerDashboard({ navigate }: { navigate: (s: string) => void }) {
         <div className="mt-3 border border-slate-200 rounded-xl overflow-hidden bg-white">
           <div className="px-5 pt-4 pb-3 flex items-start justify-between gap-4">
             <div>
-              <p className="font-semibold text-slate-900">Python dla analityków danych</p>
-              <p className="text-sm text-slate-500 mt-0.5">Edycja 2025/1 · dr Jan Nowak</p>
+              <p className="font-semibold text-slate-900">Python for Data Analysts</p>
+              <p className="text-sm text-slate-500 mt-0.5">Edition 2025/1 · Jan Nowak</p>
             </div>
             <Badge color="green">active</Badge>
           </div>
           <div className="px-5 pb-3"><ProgressBar value={2} max={5} color="blue" /></div>
           <div className="divide-y divide-slate-100">
             {[
-              { mod: "Module 1", title: "Wprowadzenie do Pythona", done: true,  active: false },
-              { mod: "Module 2", title: "Struktury danych",        done: true,  active: false },
+              { mod: "Module 1", title: "Introduction to Python", done: true,  active: false },
+              { mod: "Module 2", title: "Data Structures",        done: true,  active: false },
               { mod: "Module 3", title: "Pandas i NumPy",          done: false, active: true  },
-              { mod: "Module 4", title: "Wizualizacja danych",     done: false, active: false },
-              { mod: "Module 5", title: "Projekt końcowy",         done: false, active: false },
+              { mod: "Module 4", title: "Data Visualization",     done: false, active: false },
+              { mod: "Module 5", title: "Final Project",          done: false, active: false },
             ].map(m => (
               <div key={m.mod} className={`flex items-center gap-3 px-5 py-2.5 ${m.active ? "bg-blue-50/50" : ""}`}>
                 {m.done ? <Check size={14} className="text-emerald-500 shrink-0" /> :
@@ -748,8 +748,8 @@ function LearnerMyCourses({ navigate }: { navigate: (s: string) => void }) {
       </div>
       <div className="grid md:grid-cols-2 gap-4">
         {[
-          { title: "Python dla analityków danych", progress: 2, max: 5, edition: "2025/1", next: "17 lut, 09:00" },
-          { title: "Zarządzanie projektami Agile",  progress: 1, max: 4, edition: "2025/1", next: "20 lut, 14:00" },
+          { title: "Python for Data Analysts", progress: 2, max: 5, edition: "2025/1", next: "17 Feb, 09:00" },
+          { title: "Agile Project Management", progress: 1, max: 4, edition: "2025/1", next: "20 Feb, 14:00" },
         ].map(c => (
           <button key={c.title}
             className="text-left p-5 bg-white border border-slate-200 rounded-xl hover:border-blue-300 hover:shadow-sm transition-all group"
@@ -783,9 +783,9 @@ function LearnerAssignments({ scenario, actions }: { scenario: Scenario; actions
   const [uploadError, setUploadError] = useState(false);
 
   const assignments = [
-    { id: "a1", module: "Module 1", title: "Zadanie 1 — Wprowadzenie do Pythona",   deadline: "10 lut 2025",        aStatus: "closed"    as AssignmentStatus, sStatus: "graded"      as SubmissionStatus },
-    { id: "a2", module: "Module 3", title: "Zadanie 2 — Analiza danych Pandas",     deadline: "17 lut 2025, 23:59", aStatus: scenario.assignmentStatus,    sStatus: scenario.submissionStatus },
-    { id: "a3", module: "Module 4", title: "Zadanie 3 — Wizualizacja danych",        deadline: "24 lut 2025, 23:59", aStatus: "draft"     as AssignmentStatus, sStatus: "not_started" as SubmissionStatus },
+    { id: "a1", module: "Module 1", title: "Assignment 1 — Introduction to Python", deadline: "10 Feb 2025",        aStatus: "closed"    as AssignmentStatus, sStatus: "graded"      as SubmissionStatus },
+    { id: "a2", module: "Module 3", title: "Assignment 2 — Pandas Data Analysis",    deadline: "17 Feb 2025, 23:59", aStatus: scenario.assignmentStatus,    sStatus: scenario.submissionStatus },
+    { id: "a3", module: "Module 4", title: "Assignment 3 — Data Visualization",      deadline: "24 Feb 2025, 23:59", aStatus: "draft"     as AssignmentStatus, sStatus: "not_started" as SubmissionStatus },
   ];
 
   const sel  = assignments.find(a => a.id === selectedId)!;
@@ -801,7 +801,7 @@ function LearnerAssignments({ scenario, actions }: { scenario: Scenario; actions
   return (
     <div className="space-y-6">
       <div className="pb-5 border-b border-slate-200">
-        <PageTitle title="Assignments" subtitle="Python dla analityków danych · Edycja 2025/1" />
+        <PageTitle title="Assignments" subtitle="Python for Data Analysts · Edition 2025/1" />
       </div>
       <div className="grid md:grid-cols-5 gap-6">
         <div className="md:col-span-2 space-y-1.5">
@@ -853,10 +853,10 @@ function LearnerAssignments({ scenario, actions }: { scenario: Scenario; actions
 
               {selectedId !== "a1" && (
                 <div className="px-5 py-4 text-sm text-slate-600 leading-relaxed bg-slate-50/60 border-b border-slate-100">
-                  Stwórz analizę dostarczonego zbioru danych sprzedażowych. Użyj{" "}
-                  <code className="font-mono text-xs bg-white border border-slate-200 px-1 rounded">groupby</code> i{" "}
+                  Analyze the provided sales dataset. Use{" "}
+                  <code className="font-mono text-xs bg-white border border-slate-200 px-1 rounded">groupby</code> and{" "}
                   <code className="font-mono text-xs bg-white border border-slate-200 px-1 rounded">pivot_table</code>{" "}
-                  do agregacji. Przygotuj co najmniej 2 czytelne wykresy.
+                  for aggregation. Prepare at least two clear charts.
                 </div>
               )}
 
@@ -865,10 +865,10 @@ function LearnerAssignments({ scenario, actions }: { scenario: Scenario; actions
                   <div className="flex items-center justify-between p-4 bg-emerald-50 rounded-lg border border-emerald-200">
                     <div>
                       <p className="font-semibold text-emerald-900">
-                        {selectedId === "a1" ? "Grade: 4+ · 82 pts" : `Grade: ${scenario.gradeLetter} · ${scenario.grade} pts`}
+                        {selectedId === "a1" ? "Grade: B+ · 82 pts" : `Grade: ${scenario.gradeLetter} · ${scenario.grade} pts`}
                       </p>
                       <p className="text-sm text-emerald-700 mt-0.5">
-                        {selectedId === "a1" ? "Graded: 08 lut 2025" : `Graded: ${scenario.gradedAt}`}
+                        {selectedId === "a1" ? "Graded: 08 Feb 2025" : `Graded: ${scenario.gradedAt}`}
                       </p>
                     </div>
                     <CheckCircle size={20} className="text-emerald-500 shrink-0" />
@@ -876,9 +876,9 @@ function LearnerAssignments({ scenario, actions }: { scenario: Scenario; actions
                   <div>
                     <p className="text-xs font-semibold text-slate-500 uppercase tracking-wider mb-2">Lecturer feedback</p>
                     <p className="text-sm text-slate-700 leading-relaxed">
-                      {selectedId === "a1" ? "Dobra praca! Kod poprawny i dobrze udokumentowany." : scenario.feedbackText}
+                      {selectedId === "a1" ? "Good work! The code is correct and well documented." : scenario.feedbackText}
                     </p>
-                    <p className="text-xs text-slate-400 mt-2">— dr Jan Nowak</p>
+                    <p className="text-xs text-slate-400 mt-2">— Jan Nowak</p>
                   </div>
                 </div>
               ) : isSc && scenario.submissionStatus === "submitted" ? (
@@ -991,7 +991,7 @@ function LecturerDashboard({ scenario, navigate }: { scenario: Scenario; navigat
           <AlertTriangle size={16} className="text-amber-600 shrink-0" />
           <div className="flex-1">
             <p className="font-medium text-slate-900">New submission: Piotr Jabłoński — Assignment 2</p>
-            <p className="text-sm text-slate-500 mt-0.5">Python dla analityków danych · Edycja 2025/1</p>
+            <p className="text-sm text-slate-500 mt-0.5">Python for Data Analysts · Edition 2025/1</p>
           </div>
           <ArrowUpRight size={14} className="text-amber-600 shrink-0" />
         </button>
@@ -1000,8 +1000,8 @@ function LecturerDashboard({ scenario, navigate }: { scenario: Scenario; navigat
         <SectionLabel>Assigned courses</SectionLabel>
         <div className="mt-3 divide-y divide-slate-100 border border-slate-200 rounded-xl overflow-hidden bg-white">
           {[
-            { title: "Python dla analityków danych", participants: 28, pendingLocal: pending + 8, next: "tomorrow, 09:00" },
-            { title: "Analiza danych w R",            participants: 22, pendingLocal: 3,            next: "Tue, 14:00" },
+            { title: "Python for Data Analysts", participants: 28, pendingLocal: pending + 8, next: "tomorrow, 09:00" },
+            { title: "Data Analysis in R",       participants: 22, pendingLocal: 3,            next: "Tue, 14:00" },
             { title: "Excel zaawansowany",            participants: 35, pendingLocal: 0,            next: "Wed, 10:00" },
           ].map(c => (
             <div key={c.title} className="flex items-center gap-4 px-5 py-3.5 hover:bg-slate-50 cursor-pointer" onClick={() => navigate("lec-courses")}>
@@ -1024,7 +1024,7 @@ function LecturerMyCourses({ scenario, actions }: { scenario: Scenario; actions:
   return (
     <div className="space-y-5">
       <div className="pb-4 border-b border-slate-200">
-        <p className="text-sm text-slate-500">Python dla analityków danych · Edycja 2025/1</p>
+        <p className="text-sm text-slate-500">Python for Data Analysts · Edition 2025/1</p>
         <PageTitle title="Course Management" />
       </div>
       <Tabs
@@ -1035,9 +1035,9 @@ function LecturerMyCourses({ scenario, actions }: { scenario: Scenario; actions:
         <div className="space-y-3">
           <div className="divide-y divide-slate-100 border border-slate-200 rounded-xl overflow-hidden bg-white">
             {[
-              { id: "a1", title: "Zadanie 1 — Wprowadzenie do Pythona", status: "closed" as AssignmentStatus, deadline: "10 lut" },
-              { id: "a2", title: "Zadanie 2 — Analiza danych Pandas",   status: scenario.assignmentStatus,    deadline: "17 lut" },
-              { id: "a3", title: "Zadanie 3 — Wizualizacja danych",      status: "draft" as AssignmentStatus, deadline: "24 lut" },
+              { id: "a1", title: "Assignment 1 — Introduction to Python", status: "closed" as AssignmentStatus, deadline: "10 Feb" },
+              { id: "a2", title: "Assignment 2 — Pandas Data Analysis",   status: scenario.assignmentStatus,    deadline: "17 Feb" },
+              { id: "a3", title: "Assignment 3 — Data Visualization",      status: "draft" as AssignmentStatus, deadline: "24 Feb" },
             ].map(a => (
               <div key={a.id} className="flex items-center gap-3 px-5 py-3.5">
                 <div className="flex-1">
@@ -1090,12 +1090,12 @@ interface FullSub {
 
 function buildSubmissions(scenario: Scenario): FullSub[] {
   return [
-    { id: "pj", learner: "Piotr Jabłoński",  course: "Python dla analityków danych", edition: "2025/1", assignment: "Zadanie 2 — Analiza Pandas", assignmentId: "a2", submittedAt: scenario.submittedAt, file: scenario.submissionFile, status: scenario.submissionStatus, isScenario: true },
-    { id: "kw", learner: "Karolina Wróbel",  course: "Python dla analityków danych", edition: "2025/1", assignment: "Zadanie 2 — Analiza Pandas", assignmentId: "a2", submittedAt: "11 lut, 18:20", file: "analiza_kwrobel.py",  status: "submitted", isScenario: false },
-    { id: "tl", learner: "Tomasz Lewicki",   course: "Python dla analityków danych", edition: "2025/1", assignment: "Zadanie 2 — Analiza Pandas", assignmentId: "a2", submittedAt: "10 lut, 09:15", file: "tlewicki_zad2.ipynb", status: "graded",    isScenario: false },
-    { id: "ab", learner: "Anna Brzezińska",  course: "Python dla analityków danych", edition: "2025/1", assignment: "Zadanie 1 — Wprowadzenie",   assignmentId: "a1", submittedAt: "08 lut, 22:01", file: null,                 status: "late",      isScenario: false },
-    { id: "kr", learner: "Karol Różański",   course: "Analiza danych w R",           edition: "2025/1", assignment: "Zadanie 1 — Podstawy R",      assignmentId: "r1", submittedAt: "05 lut, 14:30", file: "kr_zad1.R",          status: "submitted", isScenario: false },
-    { id: "mb", learner: "Marta Baranowska", course: "Analiza danych w R",           edition: "2025/1", assignment: "Zadanie 1 — Podstawy R",      assignmentId: "r1", submittedAt: "04 lut, 20:10", file: "mbaranowska.R",      status: "graded",    isScenario: false },
+    { id: "pj", learner: "Piotr Jabłoński",  course: "Python for Data Analysts", edition: "2025/1", assignment: "Assignment 2 — Pandas Analysis", assignmentId: "a2", submittedAt: scenario.submittedAt, file: scenario.submissionFile, status: scenario.submissionStatus, isScenario: true },
+    { id: "kw", learner: "Karolina Wróbel",  course: "Python for Data Analysts", edition: "2025/1", assignment: "Assignment 2 — Pandas Analysis", assignmentId: "a2", submittedAt: "11 Feb, 18:20", file: "kwrobel_analysis.py",  status: "submitted", isScenario: false },
+    { id: "tl", learner: "Tomasz Lewicki",   course: "Python for Data Analysts", edition: "2025/1", assignment: "Assignment 2 — Pandas Analysis", assignmentId: "a2", submittedAt: "10 Feb, 09:15", file: "tlewicki_assignment2.ipynb", status: "graded", isScenario: false },
+    { id: "ab", learner: "Anna Brzezińska",  course: "Python for Data Analysts", edition: "2025/1", assignment: "Assignment 1 — Introduction",     assignmentId: "a1", submittedAt: "08 Feb, 22:01", file: null, status: "late", isScenario: false },
+    { id: "kr", learner: "Karol Różański",   course: "Data Analysis in R",       edition: "2025/1", assignment: "Assignment 1 — R Fundamentals",   assignmentId: "r1", submittedAt: "05 Feb, 14:30", file: "kr_assignment1.R", status: "submitted", isScenario: false },
+    { id: "mb", learner: "Marta Baranowska", course: "Data Analysis in R",       edition: "2025/1", assignment: "Assignment 1 — R Fundamentals",   assignmentId: "r1", submittedAt: "04 Feb, 20:10", file: "mbaranowska.R", status: "graded", isScenario: false },
   ].filter(s => s.status !== "not_started");
 }
 
@@ -1125,7 +1125,7 @@ function LecturerReviews({ scenario, actions, initialFilter, onSelectSubmission 
   );
   const [gradeVal,       setGradeVal]       = useState("82");
   const [letterVal,      setLetterVal]      = useState("4+");
-  const [feedbackVal,    setFeedbackVal]    = useState("Dobra analiza danych. Kod czytelny i dobrze skomentowany. Sugeruję użyć seaborn zamiast matplotlib dla czytelniejszych wizualizacji.");
+  const [feedbackVal,    setFeedbackVal]    = useState("Good data analysis. The code is clear and well commented. Consider using seaborn instead of matplotlib for more readable visualizations.");
   const [gradePublished, setGradePublished] = useState(false);
 
   useEffect(() => { setStatusFilter(initialFilter); }, [initialFilter]);
@@ -1338,11 +1338,11 @@ function LecturerReviews({ scenario, actions, initialFilter, onSelectSubmission 
 
 function PmOperations({ scenario, navigate }: { scenario: Scenario; navigate: (s: string, p?: NavParams) => void }) {
   const alerts = [
-    { id: "a-anna",  msg: "Anna Brzezińska — inactive for 6 days",                              course: "Python dla analityków · Edycja 2025/1", level: "warning", pmTab: "participants" as PmTab, pmHighlight: "Anna Brzezińska" },
-    ...(scenario.assignmentStatus === "draft"     ? [{ id: "a-draft",  msg: "Assignment 2 not published by lecturer",                          course: "Python dla analityków · Edycja 2025/1", level: "error",   pmTab: "assignments" as PmTab, pmHighlight: "a2"     }] : []),
-    ...(scenario.submissionStatus === "submitted" ? [{ id: "a-sub",    msg: "New submission: Piotr Jabłoński — Assignment 2 awaiting review",   course: "Python dla analityków · Edycja 2025/1", level: "warning", pmTab: "assignments" as PmTab, pmHighlight: "a2-sub" }] : []),
-    ...(scenario.submissionStatus === "graded"    ? [{ id: "a-graded", msg: "Assignment 2 graded — Piotr Jabłoński",                            course: "Python dla analityków · Edycja 2025/1", level: "success", pmTab: "assignments" as PmTab, pmHighlight: "a2"     }] : []),
-    { id: "a-freq",  msg: "Attendance below 50% for 2 participants",                              course: "Zarządzanie projektami Agile · 2025/1", level: "warning", pmTab: "participants" as PmTab, pmHighlight: null },
+    { id: "a-anna",  msg: "Anna Brzezińska — inactive for 6 days",                              course: "Python for Data Analysts · Edition 2025/1", level: "warning", pmTab: "participants" as PmTab, pmHighlight: "Anna Brzezińska" },
+    ...(scenario.assignmentStatus === "draft"     ? [{ id: "a-draft",  msg: "Assignment 2 not published by lecturer",                        course: "Python for Data Analysts · Edition 2025/1", level: "error", pmTab: "assignments" as PmTab, pmHighlight: "a2" }] : []),
+    ...(scenario.submissionStatus === "submitted" ? [{ id: "a-sub",    msg: "New submission: Piotr Jabłoński — Assignment 2 awaiting review", course: "Python for Data Analysts · Edition 2025/1", level: "warning", pmTab: "assignments" as PmTab, pmHighlight: "a2-sub" }] : []),
+    ...(scenario.submissionStatus === "graded"    ? [{ id: "a-graded", msg: "Assignment 2 graded — Piotr Jabłoński",                          course: "Python for Data Analysts · Edition 2025/1", level: "success", pmTab: "assignments" as PmTab, pmHighlight: "a2" }] : []),
+    { id: "a-freq",  msg: "Attendance below 50% for 2 participants",                            course: "Agile Project Management · 2025/1", level: "warning", pmTab: "participants" as PmTab, pmHighlight: null },
   ];
 
   const borderColor = (level: string) =>
@@ -1390,8 +1390,8 @@ function PmOperations({ scenario, navigate }: { scenario: Scenario; navigate: (s
         <SectionLabel>Active courses</SectionLabel>
         <div className="mt-3 divide-y divide-slate-100 border border-slate-200 rounded-xl overflow-hidden bg-white">
           {[
-            { title: "Python dla analityków danych", ed: "2025/1", participants: 28, progress: 40 },
-            { title: "Zarządzanie projektami Agile",  ed: "2025/1", participants: 35, progress: 25 },
+            { title: "Python for Data Analysts", ed: "2025/1", participants: 28, progress: 40 },
+            { title: "Agile Project Management", ed: "2025/1", participants: 35, progress: 25 },
             { title: "Excel zaawansowany",             ed: "2025/1", participants: 22, progress: 75 },
           ].map(c => (
             <div key={c.title} className="flex items-center gap-4 px-5 py-3.5 hover:bg-slate-50 cursor-pointer" onClick={() => navigate("pm-courses")}>
@@ -1414,9 +1414,9 @@ function PmCoursesEditions({ scenario, tab, highlight, onTabChange }: {
   scenario: Scenario; tab: PmTab; highlight: string | null; onTabChange: (t: PmTab) => void;
 }) {
   const assignments = [
-    { id: "a1", title: "Zadanie 1 — Wprowadzenie do Pythona", status: "closed" as AssignmentStatus, submissions: 26, graded: 26 },
-    { id: "a2", title: "Zadanie 2 — Analiza danych Pandas",   status: scenario.assignmentStatus,    submissions: scenario.submissionStatus !== "not_started" ? 1 : 0, graded: scenario.submissionStatus === "graded" ? 1 : 0 },
-    { id: "a3", title: "Zadanie 3 — Wizualizacja danych",      status: "draft" as AssignmentStatus, submissions: 0, graded: 0 },
+    { id: "a1", title: "Assignment 1 — Introduction to Python", status: "closed" as AssignmentStatus, submissions: 26, graded: 26 },
+    { id: "a2", title: "Assignment 2 — Pandas Data Analysis",   status: scenario.assignmentStatus, submissions: scenario.submissionStatus !== "not_started" ? 1 : 0, graded: scenario.submissionStatus === "graded" ? 1 : 0 },
+    { id: "a3", title: "Assignment 3 — Data Visualization",     status: "draft" as AssignmentStatus, submissions: 0, graded: 0 },
   ];
   const participants = [
     { name: "Piotr Jabłoński",  p: 75,  tasks: "2/3", risk: false },
@@ -1433,10 +1433,10 @@ function PmCoursesEditions({ scenario, tab, highlight, onTabChange }: {
     <div className="space-y-5">
       <div className="pb-4 border-b border-slate-200">
         <p className="text-xs font-medium text-slate-500 uppercase tracking-wide">Courses &amp; Editions</p>
-        <PageTitle title="Python dla analityków danych" />
+        <PageTitle title="Python for Data Analysts" />
         <div className="flex items-center gap-2 mt-2">
           <Badge color="green">active</Badge>
-          <span className="text-sm text-slate-500">Edycja 2025/1 · 03 lut – 28 mar 2025 · dr Jan Nowak</span>
+          <span className="text-sm text-slate-500">Edition 2025/1 · 03 Feb – 28 Mar 2025 · Jan Nowak</span>
         </div>
       </div>
       <Tabs
@@ -1498,7 +1498,7 @@ function PmReports() {
       </div>
       <div>
         <div className="flex items-center justify-between mb-3">
-          <SectionLabel>Participant progress — Python dla analityków</SectionLabel>
+          <SectionLabel>Participant progress — Python for Data Analysts</SectionLabel>
           <Btn variant="secondary" size="sm"><Download size={14} /> CSV</Btn>
         </div>
         <div className="border border-slate-200 rounded-xl overflow-hidden bg-white">
@@ -1548,7 +1548,7 @@ function PmIssues() {
       </div>
       <div className="divide-y divide-slate-100 border border-slate-200 rounded-xl overflow-hidden bg-white">
         {[
-          { id: "ISS-041", title: "Participant unable to log in to the platform", course: "Python dla analityków · 2025/1", sev: "high",   status: "open"        },
+          { id: "ISS-041", title: "Participant unable to log in to the platform", course: "Python for Data Analysts · 2025/1", sev: "high", status: "open" },
           { id: "ISS-040", title: "Missing materials for module 4",                course: "Excel zaawansowany · 2025/1",    sev: "high",   status: "in progress" },
           { id: "ISS-039", title: "Request to reschedule a class",                 course: "Agile · 2025/1",                 sev: "low",    status: "closed"      },
         ].map(iss => (
@@ -1671,7 +1671,7 @@ export default function App() {
   const actions: Actions = {
     publishAssignment: () => {
       setAssignmentStatus("published");
-      setLearnerNotifs(prev => [...prev, { id: "n-pub", text: "Zadanie 2 — Analiza danych Pandas zostało opublikowane", time: "now", read: false, deepLink: "l-assignments" }]);
+      setLearnerNotifs(prev => [...prev, { id: "n-pub", text: "Assignment 2 — Pandas Data Analysis has been published", time: "now", read: false, deepLink: "l-assignments" }]);
     },
     submitWork: (file: string) => {
       setSubmissionFile(file);
@@ -1682,7 +1682,7 @@ export default function App() {
     publishGrade: (g: number, letter: string, feedback: string) => {
       setGrade(g); setGradeLetter(letter); setFeedbackText(feedback);
       setGradedAt("today"); setSubmissionStatus("graded"); setLecturerSubNotif(false);
-      setLearnerNotifs(prev => [...prev, { id: "n-grade", text: `Zadanie 2 zostało ocenione — ${g} pts (${letter}). Check your feedback.`, time: "now", read: false, deepLink: "l-assignments" }]);
+      setLearnerNotifs(prev => [...prev, { id: "n-grade", text: `Assignment 2 has been graded — ${g} pts (${letter}). Check your feedback.`, time: "now", read: false, deepLink: "l-assignments" }]);
     },
     markNotifRead: (id: string) => setLearnerNotifs(prev => prev.map(n => n.id === id ? { ...n, read: true } : n)),
   };
