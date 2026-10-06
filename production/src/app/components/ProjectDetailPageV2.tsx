@@ -9,6 +9,7 @@ import { WipBanner } from './WipBanner';
 import { GloriaCaseStudyContent } from './GloriaCaseStudyContent';
 
 const MONO = "'JetBrains Mono', monospace";
+const GLORIA_PROTOTYPE_URL = '/Portfolio/demos/gloria-lms/';
 
 const fadeUp = (delay = 0) => ({
   initial: { opacity: 0, y: 10 },
@@ -466,6 +467,24 @@ export function ProjectDetailPageV2() {
           <motion.div {...fadeUp(0.16)}>
             <ProjectResources resources={resources} centered={isGloria} />
           </motion.div>
+        ) : null}
+
+        {isGloria ? (
+          <motion.a
+            {...fadeUp(0.2)}
+            href={GLORIA_PROTOTYPE_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            whileHover={{ y: -2, backgroundColor: '#1747e8' }}
+            className="gloria-prototype-hero-cta"
+            style={{
+              display: 'inline-flex', alignItems: 'center', gap: '9px', margin: '-20px auto 36px',
+              padding: '11px 18px', borderRadius: '3px', background: '#0057ff', color: '#fff',
+              fontSize: '13px', fontWeight: 650, textDecoration: 'none', boxShadow: '0 10px 26px rgba(0,87,255,.2)',
+            }}
+          >
+            Open interactive prototype <ArrowUpRight size={16} strokeWidth={2} />
+          </motion.a>
         ) : null}
       </div>
 

@@ -4,7 +4,8 @@
   "version": "0.0.1",
   "type": "module",
   "scripts": {
-    "build": "vite build",
+    "build": "npm run build:prototype && vite build",
+    "build:prototype": "vite build --config prototypes/gloria-lms/vite.config.ts",
     "dev": "vite"
   },
   "dependencies": {
