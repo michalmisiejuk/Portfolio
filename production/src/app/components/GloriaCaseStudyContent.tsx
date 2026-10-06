@@ -211,7 +211,7 @@ export function GloriaCaseStudyContent() {
         <div className="gloria-prototype-gallery">
           <figure className="gloria-prototype-shot"><img src={asset('prototype/learner-dashboard.png')} alt="Panel uczestnika w prototypie Gloria LMS" loading="lazy" /></figure>
           <figure className="gloria-prototype-shot"><img src={asset('prototype/login.png')} alt="Logowanie do prototypu Gloria LMS" loading="lazy" /></figure>
-          <figure className="gloria-prototype-shot"><img src={asset('prototype/account.png')} alt="Widok konta uczestnika" loading="lazy" /></figure>
+          <figure className="gloria-prototype-shot"><img src={asset('prototype/account.png')} alt="Panel operacyjny course managera" loading="lazy" /></figure>
         </div>
         <div className="gloria-prototype-cta">
           <div><h3>Explore the working prototype</h3><p>Prototype opens in a new tab and includes role switching and the core assignment workflow.</p></div>

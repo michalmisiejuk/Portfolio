@@ -1642,10 +1642,14 @@ function LoginScreen({ debugRole, onLogin }: { debugRole: Role; onLogin: () => v
 // ── App ────────────────────────────────────────────────────────────────────────
 
 export default function App() {
-  const [role,       setRole]       = useState<Role | null>(null);
-  const [debugRole,  setDebugRole]  = useState<Role>("learner");
+  const captureParams = new URLSearchParams(window.location.search);
+  const captureRole = captureParams.get("role") as Role | null;
+  const captureMode = captureParams.get("capture") === "1";
+  const initialRole = captureRole && ["learner", "lecturer", "pm"].includes(captureRole) ? captureRole : null;
+  const [role,       setRole]       = useState<Role | null>(initialRole);
+  const [debugRole,  setDebugRole]  = useState<Role>(initialRole ?? "learner");
   const [protoOpen,  setProtoOpen]  = useState(false);
-  const [currentNav, setCurrentNav] = useState("l-dashboard");
+  const [currentNav, setCurrentNav] = useState(captureParams.get("view") ?? (initialRole ? DEFAULT_NAV[initialRole] : "l-dashboard"));
   const [reviewsFilter,  setReviewsFilter]  = useState("all");
   const [pmTab,          setPmTab]          = useState<PmTab>("overview");
   const [pmHighlight,    setPmHighlight]    = useState<string | null>(null);
@@ -1731,7 +1735,7 @@ export default function App() {
   return (
     <>
       {/* Global prototype controls — fixed bottom-left on every screen */}
-      <PrototypeControlsFloat {...protoState} />
+      {!captureMode ? <PrototypeControlsFloat {...protoState} /> : null}
 
       {!role ? (
         <LoginScreen debugRole={debugRole} onLogin={() => { setRole(debugRole); setCurrentNav(DEFAULT_NAV[debugRole]); }} />
