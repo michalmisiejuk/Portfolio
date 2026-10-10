@@ -4,7 +4,7 @@ import {
   BarChart2, TrendingUp, AlertTriangle, List,
   ChevronRight, ChevronDown, Plus, Eye, Download, Upload, Send,
   CheckCircle, X, Search, Filter, MoreHorizontal,
-  Edit2, Paperclip, Clock, LogOut, ArrowUpRight,
+  Edit2, Paperclip, Clock, LogOut, ArrowUpRight, ArrowLeft,
   Layers, RefreshCw, PlayCircle, Lock, Check,
 } from "lucide-react";
 
@@ -45,6 +45,7 @@ interface Actions {
 
 interface NavParams {
   filter?: string; pmTab?: PmTab; pmHighlight?: string | null;
+  fromAlert?: boolean;
 }
 
 // ── Static config ──────────────────────────────────────────────────────────────
@@ -105,42 +106,34 @@ const CREDS: Record<Role, string> = {
 
 // ── Breadcrumbs ────────────────────────────────────────────────────────────────
 
-function computeBreadcrumbs(nav: string, reviewsCtx: ReviewsContext | null): CrumbItem[] {
+function computeBreadcrumbs(nav: string, reviewsCtx: ReviewsContext | null, pmFromAlert: boolean): CrumbItem[] {
   if (nav === "lec-reviews") {
     if (reviewsCtx) {
       return [
-        { label: "Courses", nav: "lec-courses" },
-        { label: reviewsCtx.course, nav: "lec-courses" },
-        { label: reviewsCtx.edition, nav: "lec-courses" },
-        { label: "Assignments" },
-        { label: reviewsCtx.task },
-        { label: "Submission" },
-        { label: reviewsCtx.name },
+        { label: "Recenzje", nav: "lec-reviews-list" },
+        { label: `Zadanie 2 · ${reviewsCtx.name}` },
       ];
     }
-    return [
-      { label: "Courses", nav: "lec-courses" },
-      { label: "Python for Data Analysts", nav: "lec-courses" },
-      { label: "Edition 2025/1", nav: "lec-courses" },
-      { label: "Assignments" },
-    ];
+    return [{ label: "Recenzje" }];
   }
   const map: Record<string, CrumbItem[]> = {
-    "l-dashboard":       [{ label: "Courses", nav: "l-courses" }, { label: "Python for Data Analysts", nav: "l-workspace" }, { label: "Edition 2025/1" }],
-    "l-courses":         [{ label: "Courses" }],
-    "l-workspace":       [{ label: "Courses", nav: "l-courses" }, { label: "Python for Data Analysts" }, { label: "Edition 2025/1" }],
-    "l-assignments":     [{ label: "Courses", nav: "l-courses" }, { label: "Python for Data Analysts", nav: "l-workspace" }, { label: "Edition 2025/1", nav: "l-workspace" }, { label: "Module 3", nav: "l-workspace" }, { label: "Assignment 2" }],
+    "l-dashboard":       [{ label: "Dashboard" }],
+    "l-courses":         [{ label: "Kursy" }],
+    "l-workspace":       [{ label: "Kursy", nav: "l-courses" }, { label: "Python for Data Analysts · 2025/1" }],
+    "l-assignments":     [{ label: "Kursy", nav: "l-courses" }, { label: "Python for Data Analysts · 2025/1", nav: "l-workspace" }, { label: "Zadanie 2" }],
     "l-calendar":        [{ label: "Calendar" }],
     "l-notifications":   [{ label: "Notifications" }],
     "l-account":         [{ label: "Account" }],
-    "lec-dashboard":     [{ label: "Courses", nav: "lec-courses" }, { label: "Python for Data Analysts" }, { label: "Edition 2025/1" }],
-    "lec-courses":       [{ label: "Courses", nav: "lec-courses" }, { label: "Python for Data Analysts" }, { label: "Edition 2025/1" }, { label: "Course Management" }],
+    "lec-dashboard":     [{ label: "Dashboard" }],
+    "lec-courses":       [{ label: "Kursy" }, { label: "Python for Data Analysts · 2025/1" }],
     "lec-calendar":      [{ label: "Calendar" }],
     "lec-notifications": [{ label: "Notifications" }],
     "lec-account":       [{ label: "Account" }],
     "pm-operations":     [{ label: "Operations" }],
-    "pm-courses":        [{ label: "Courses", nav: "pm-courses" }, { label: "Python for Data Analysts" }, { label: "Edition 2025/1" }],
-    "pm-schedule":       [{ label: "Courses", nav: "pm-courses" }, { label: "Python for Data Analysts" }, { label: "Edition 2025/1" }, { label: "Schedule" }],
+    "pm-courses":        pmFromAlert
+      ? [{ label: "Operacje", nav: "pm-operations" }, { label: "Python for Data Analysts · 2025/1" }]
+      : [{ label: "Kursy" }, { label: "Python for Data Analysts · 2025/1" }],
+    "pm-schedule":       [{ label: "Harmonogram" }],
     "pm-reports":        [{ label: "Reports" }],
     "pm-issues":         [{ label: "Issues" }],
     "pm-notifications":  [{ label: "Notifications" }],
@@ -237,11 +230,24 @@ function Textarea({ label, ...props }: { label: string } & React.TextareaHTMLAtt
   );
 }
 
-function PageTitle({ title, subtitle }: { title: string; subtitle?: string }) {
+function PageTitle({ title, subtitle, onBack }: { title: string; subtitle?: string; onBack?: () => void }) {
   return (
-    <div>
-      <h1 className="text-[22px] font-bold text-slate-900 leading-tight tracking-tight">{title}</h1>
-      {subtitle && <p className="text-sm text-slate-500 mt-1">{subtitle}</p>}
+    <div className="flex items-start gap-2.5">
+      {onBack && (
+        <button
+          type="button"
+          onClick={onBack}
+          title="Wróć"
+          aria-label="Wróć"
+          className="mt-0.5 flex h-7 w-7 shrink-0 items-center justify-center rounded-md border border-slate-200 bg-white text-slate-600 transition-colors hover:border-slate-300 hover:bg-slate-50 hover:text-slate-900 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500"
+        >
+          <ArrowLeft size={15} />
+        </button>
+      )}
+      <div>
+        <h1 className="text-[22px] font-bold text-slate-900 leading-tight tracking-tight">{title}</h1>
+        {subtitle && <p className="text-sm text-slate-500 mt-1">{subtitle}</p>}
+      </div>
     </div>
   );
 }
@@ -528,7 +534,7 @@ function LearnerCourseWorkspace({ scenario, navigate }: { scenario: Scenario; na
     <div className="space-y-6">
       <div className="flex items-start justify-between gap-4 pb-5 border-b border-slate-200">
         <div>
-          <PageTitle title="Python for Data Analysts" subtitle="Jan Nowak · Edition 2025/1 · 03 Feb – 28 Mar 2025" />
+          <PageTitle title="Python for Data Analysts" subtitle="Jan Nowak · Edition 2025/1 · 03 Feb – 28 Mar 2025" onBack={() => navigate("l-courses")} />
           <div className="flex items-center gap-2 mt-3">
             <Badge color="green">active</Badge>
             <Badge color="gray">hybrid</Badge>
@@ -776,7 +782,7 @@ function LearnerMyCourses({ navigate }: { navigate: (s: string) => void }) {
   );
 }
 
-function LearnerAssignments({ scenario, actions }: { scenario: Scenario; actions: Actions }) {
+function LearnerAssignments({ scenario, actions, navigate }: { scenario: Scenario; actions: Actions; navigate: (s: string) => void }) {
   const [selectedId, setSelectedId] = useState<string>("a2");
   const fileInputRef = useRef<HTMLInputElement>(null);
   const [uploadedFile, setUploadedFile] = useState<string | null>(null);
@@ -801,7 +807,7 @@ function LearnerAssignments({ scenario, actions }: { scenario: Scenario; actions
   return (
     <div className="space-y-6">
       <div className="pb-5 border-b border-slate-200">
-        <PageTitle title="Assignments" subtitle="Python for Data Analysts · Edition 2025/1" />
+        <PageTitle title="Assignment 2" subtitle="Python for Data Analysts · Edition 2025/1" onBack={() => navigate("l-workspace")} />
       </div>
       <div className="grid md:grid-cols-5 gap-6">
         <div className="md:col-span-2 space-y-1.5">
@@ -1107,8 +1113,9 @@ const GRADE_OPTIONS = [
   { value: "2",  label: "2 (fail)" },
 ];
 
-function LecturerReviews({ scenario, actions, initialFilter, onSelectSubmission }: {
+function LecturerReviews({ scenario, actions, initialFilter, listRequest, onSelectSubmission }: {
   scenario: Scenario; actions: Actions; initialFilter: string;
+  listRequest: number;
   onSelectSubmission: (ctx: ReviewsContext | null) => void;
 }) {
   const allSubs = buildSubmissions(scenario);
@@ -1127,8 +1134,15 @@ function LecturerReviews({ scenario, actions, initialFilter, onSelectSubmission 
   const [letterVal,      setLetterVal]      = useState("4+");
   const [feedbackVal,    setFeedbackVal]    = useState("Good data analysis. The code is clear and well commented. Consider using seaborn instead of matplotlib for more readable visualizations.");
   const [gradePublished, setGradePublished] = useState(false);
+  const listRequestRef = useRef(listRequest);
 
   useEffect(() => { setStatusFilter(initialFilter); }, [initialFilter]);
+  useEffect(() => {
+    if (listRequestRef.current === listRequest) return;
+    listRequestRef.current = listRequest;
+    setSelectedId(null);
+    onSelectSubmission(null);
+  }, [listRequest, onSelectSubmission]);
 
   useEffect(() => {
     if (selectedId !== null) {
@@ -1163,7 +1177,11 @@ function LecturerReviews({ scenario, actions, initialFilter, onSelectSubmission 
   return (
     <div className="space-y-5">
       <div className="flex items-start justify-between pb-5 border-b border-slate-200">
-        <PageTitle title="Reviews" subtitle="Submitted work overview" />
+        <PageTitle
+          title={sub ? `Assignment 2 · ${sub.learner}` : "Reviews"}
+          subtitle="Submitted work overview"
+          onBack={sub ? () => { setSelectedId(null); onSelectSubmission(null); } : undefined}
+        />
         <span className="text-sm text-slate-500 mt-1.5">{filtered.length} results</span>
       </div>
 
@@ -1364,7 +1382,7 @@ function PmOperations({ scenario, navigate }: { scenario: Scenario; navigate: (s
           {alerts.map(a => (
             <button key={a.id}
               className={`w-full text-left flex items-start gap-3 p-4 bg-white rounded-xl border border-slate-200 border-l-4 hover:bg-slate-50 transition-colors ${borderColor(a.level)}`}
-              onClick={() => navigate("pm-courses", { pmTab: a.pmTab, pmHighlight: a.pmHighlight ?? undefined })}>
+              onClick={() => navigate("pm-courses", { pmTab: a.pmTab, pmHighlight: a.pmHighlight ?? undefined, fromAlert: true })}>
               {iconEl(a.level)}
               <div className="flex-1">
                 <p className="font-medium text-slate-900">{a.msg}</p>
@@ -1410,8 +1428,9 @@ function PmOperations({ scenario, navigate }: { scenario: Scenario; navigate: (s
   );
 }
 
-function PmCoursesEditions({ scenario, tab, highlight, onTabChange }: {
-  scenario: Scenario; tab: PmTab; highlight: string | null; onTabChange: (t: PmTab) => void;
+function PmCoursesEditions({ scenario, tab, highlight, fromAlert, navigate, onTabChange }: {
+  scenario: Scenario; tab: PmTab; highlight: string | null; fromAlert: boolean;
+  navigate: (s: string) => void; onTabChange: (t: PmTab) => void;
 }) {
   const assignments = [
     { id: "a1", title: "Assignment 1 — Introduction to Python", status: "closed" as AssignmentStatus, submissions: 26, graded: 26 },
@@ -1433,7 +1452,7 @@ function PmCoursesEditions({ scenario, tab, highlight, onTabChange }: {
     <div className="space-y-5">
       <div className="pb-4 border-b border-slate-200">
         <p className="text-xs font-medium text-slate-500 uppercase tracking-wide">Courses &amp; Editions</p>
-        <PageTitle title="Python for Data Analysts" />
+        <PageTitle title="Python for Data Analysts" onBack={fromAlert ? () => navigate("pm-operations") : undefined} />
         <div className="flex items-center gap-2 mt-2">
           <Badge color="green">active</Badge>
           <span className="text-sm text-slate-500">Edition 2025/1 · 03 Feb – 28 Mar 2025 · Jan Nowak</span>
@@ -1572,11 +1591,11 @@ function PmIssues() {
 
 // ── Screen router ──────────────────────────────────────────────────────────────
 
-function ScreenRouter({ screen, scenario, actions, navigate, reviewsFilter, learnerNotifs, pmTab, pmHighlight, onPmTabChange, onSelectSubmission }: {
+function ScreenRouter({ screen, scenario, actions, navigate, reviewsFilter, reviewsListRequest, learnerNotifs, pmTab, pmHighlight, pmFromAlert, onPmTabChange, onSelectSubmission }: {
   screen: string; scenario: Scenario; actions: Actions;
   navigate: (s: string, p?: NavParams) => void;
-  reviewsFilter: string; learnerNotifs: Notif[];
-  pmTab: PmTab; pmHighlight: string | null;
+  reviewsFilter: string; reviewsListRequest: number; learnerNotifs: Notif[];
+  pmTab: PmTab; pmHighlight: string | null; pmFromAlert: boolean;
   onPmTabChange: (t: PmTab) => void;
   onSelectSubmission: (ctx: ReviewsContext | null) => void;
 }) {
@@ -1584,18 +1603,18 @@ function ScreenRouter({ screen, scenario, actions, navigate, reviewsFilter, lear
     case "l-dashboard":      return <LearnerDashboard navigate={navigate} />;
     case "l-courses":        return <LearnerMyCourses navigate={navigate} />;
     case "l-workspace":      return <LearnerCourseWorkspace scenario={scenario} navigate={navigate} />;
-    case "l-assignments":    return <LearnerAssignments scenario={scenario} actions={actions} />;
+    case "l-assignments":    return <LearnerAssignments scenario={scenario} actions={actions} navigate={navigate} />;
     case "l-calendar":       return <MvpScreen title="Calendar" />;
     case "l-notifications":  return <LearnerNotifications notifs={learnerNotifs} onMarkRead={actions.markNotifRead} navigate={navigate} />;
     case "l-account":        return <MvpScreen title="Account" />;
     case "lec-dashboard":    return <LecturerDashboard scenario={scenario} navigate={navigate} />;
     case "lec-courses":      return <LecturerMyCourses scenario={scenario} actions={actions} />;
-    case "lec-reviews":      return <LecturerReviews scenario={scenario} actions={actions} initialFilter={reviewsFilter} onSelectSubmission={onSelectSubmission} />;
+    case "lec-reviews":      return <LecturerReviews scenario={scenario} actions={actions} initialFilter={reviewsFilter} listRequest={reviewsListRequest} onSelectSubmission={onSelectSubmission} />;
     case "lec-calendar":     return <MvpScreen title="Calendar" />;
     case "lec-notifications":return <MvpScreen title="Notifications" />;
     case "lec-account":      return <MvpScreen title="Account" />;
     case "pm-operations":    return <PmOperations scenario={scenario} navigate={navigate} />;
-    case "pm-courses":       return <PmCoursesEditions scenario={scenario} tab={pmTab} highlight={pmHighlight} onTabChange={onPmTabChange} />;
+    case "pm-courses":       return <PmCoursesEditions scenario={scenario} tab={pmTab} highlight={pmHighlight} fromAlert={pmFromAlert} navigate={navigate} onTabChange={onPmTabChange} />;
     case "pm-schedule":      return <MvpScreen title="Schedule" />;
     case "pm-reports":       return <PmReports />;
     case "pm-issues":        return <PmIssues />;
@@ -1651,8 +1670,10 @@ export default function App() {
   const [protoOpen,  setProtoOpen]  = useState(false);
   const [currentNav, setCurrentNav] = useState(captureParams.get("view") ?? (initialRole ? DEFAULT_NAV[initialRole] : "l-dashboard"));
   const [reviewsFilter,  setReviewsFilter]  = useState("all");
+  const [reviewsListRequest, setReviewsListRequest] = useState(0);
   const [pmTab,          setPmTab]          = useState<PmTab>("overview");
   const [pmHighlight,    setPmHighlight]    = useState<string | null>(null);
+  const [pmFromAlert,    setPmFromAlert]    = useState(false);
   const [reviewsCtx,     setReviewsCtx]     = useState<ReviewsContext | null>(null);
 
   const [assignmentStatus, setAssignmentStatus] = useState<AssignmentStatus>("draft");
@@ -1692,6 +1713,7 @@ export default function App() {
     setSubmittedAt(null); setGrade(null); setGradeLetter(null); setFeedbackText(null); setGradedAt(null);
     setLearnerNotifs(INITIAL_NOTIFS); setLecturerSubNotif(false);
     setPmTab("overview"); setPmHighlight(null); setReviewsFilter("all"); setReviewsCtx(null);
+    setPmFromAlert(false);
   }
 
   function handleRoleSwitch(r: Role) {
@@ -1700,10 +1722,17 @@ export default function App() {
   }
 
   function navigate(screenId: string, params?: NavParams) {
+    if (screenId === "lec-reviews-list") {
+      setCurrentNav("lec-reviews");
+      setReviewsCtx(null);
+      setReviewsListRequest(value => value + 1);
+      return;
+    }
     setCurrentNav(screenId);
     if (params?.filter !== undefined)        setReviewsFilter(params.filter);
     if (params?.pmTab)                       setPmTab(params.pmTab);
     if (params?.pmHighlight !== undefined)   setPmHighlight(params.pmHighlight ?? null);
+    setPmFromAlert(screenId === "pm-courses" && params?.fromAlert === true);
     if (screenId !== "lec-reviews")          setReviewsCtx(null);
   }
 
@@ -1711,13 +1740,14 @@ export default function App() {
     setCurrentNav(id);
     setReviewsFilter("all");
     if (id !== "pm-courses")  { setPmTab("overview"); setPmHighlight(null); }
+    setPmFromAlert(false);
     if (id !== "lec-reviews") setReviewsCtx(null);
   }
 
   const learnerUnread  = learnerNotifs.filter(n => !n.read).length;
   const lecturerUnread = lecturerSubNotif ? 1 : 0;
   const pendingReviews = submissionStatus === "submitted" ? 1 : 0;
-  const crumbs         = computeBreadcrumbs(currentNav, reviewsCtx);
+  const crumbs         = computeBreadcrumbs(currentNav, reviewsCtx, pmFromAlert);
   const isWide         = WIDE_SCREENS.has(currentNav);
 
   const protoState: ProtoState = {
@@ -1760,8 +1790,8 @@ export default function App() {
               <div className={`mx-auto ${isWide ? "max-w-[1200px]" : "max-w-[1080px]"}`}>
                 <ScreenRouter
                   screen={currentNav} scenario={scenario} actions={actions} navigate={navigate}
-                  reviewsFilter={reviewsFilter} learnerNotifs={learnerNotifs}
-                  pmTab={pmTab} pmHighlight={pmHighlight}
+                  reviewsFilter={reviewsFilter} reviewsListRequest={reviewsListRequest} learnerNotifs={learnerNotifs}
+                  pmTab={pmTab} pmHighlight={pmHighlight} pmFromAlert={pmFromAlert}
                   onPmTabChange={t => { setPmTab(t); setPmHighlight(null); }}
                   onSelectSubmission={setReviewsCtx}
                 />
