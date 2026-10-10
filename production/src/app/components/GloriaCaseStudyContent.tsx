@@ -45,6 +45,30 @@ function SectionTitle({ number, label, children, description }: { number: string
 
 export function GloriaCaseStudyContent() {
   const [activeStage, setActiveStage] = useState(stages[0][0]);
+  const [railLeft, setRailLeft] = useState(0);
+
+  useEffect(() => {
+    const updateRailPosition = () => {
+      const anchor = document.querySelector<HTMLElement>('[data-scroll-anchor]');
+      if (!anchor) return;
+
+      const rect = anchor.getBoundingClientRect();
+      const paddingLeft = Number.parseFloat(window.getComputedStyle(anchor).paddingLeft) || 0;
+      setRailLeft(Math.max(0, Math.round(rect.left + paddingLeft - 32)));
+    };
+
+    updateRailPosition();
+    const frame = window.requestAnimationFrame(updateRailPosition);
+    window.addEventListener('resize', updateRailPosition, { passive: true });
+    const observer = new ResizeObserver(updateRailPosition);
+    observer.observe(document.documentElement);
+
+    return () => {
+      window.cancelAnimationFrame(frame);
+      window.removeEventListener('resize', updateRailPosition);
+      observer.disconnect();
+    };
+  }, []);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -80,10 +104,10 @@ export function GloriaCaseStudyContent() {
         .gloria-explanation h3 { margin: 0; font-size: 18px; font-weight: 600; line-height: 1.35; }
         .gloria-explanation p, .gloria-label { margin: 0; color: rgba(0,0,0,.62); font-size: 14px; font-weight: 300; line-height: 1.7; }
         .gloria-label { margin: -12px 0 48px; padding: 22px 24px; border-left: 3px solid #0057ff; background: #f5f7fa; }
-        .gloria-stage-nav { position: fixed; z-index: 35; top: 50%; left: max(14px, calc(50vw - 570px)); transform: translateY(-50%); display: flex; flex-direction: column; gap: 9px; }
-        .gloria-stage-link { position: relative; display: flex; align-items: center; justify-content: center; width: 24px; height: 24px; color: #0057ff; text-decoration: none; }
-        .gloria-stage-dot { width: 5px; height: 5px; border: 1px solid #0057ff; border-radius: 50%; background: #fff; transition: .18s ease; }
-        .gloria-stage-link.active .gloria-stage-dot, .gloria-stage-link:hover .gloria-stage-dot { width: 9px; height: 9px; background: #0057ff; }
+        .gloria-stage-nav { position: fixed; z-index: 35; top: 50%; transform: translateY(-50%); display: flex; flex-direction: column; gap: 9px; width: 24px; }
+        .gloria-stage-link { position: relative; display: flex; align-items: center; justify-content: center; width: 24px; height: 24px; padding: 0; border: 0; background: transparent; color: #111; cursor: pointer; }
+        .gloria-stage-dot { width: 5px; height: 5px; border: 1px solid #111; border-radius: 50%; background: #fff; transition: .18s ease; }
+        .gloria-stage-link.active .gloria-stage-dot, .gloria-stage-link:hover .gloria-stage-dot { width: 9px; height: 9px; background: #111; }
         .gloria-stage-label { position: absolute; right: 28px; padding: 5px 8px; border: 1px solid rgba(0,0,0,.12); border-radius: 2px; background: #fff; color: #111; box-shadow: 0 5px 18px rgba(0,0,0,.08); font: 600 9px/1 'JetBrains Mono', monospace; letter-spacing: .06em; text-transform: uppercase; white-space: nowrap; opacity: 0; transform: translateX(5px); pointer-events: none; transition: .18s ease; }
         .gloria-stage-link:hover .gloria-stage-label, .gloria-stage-link:focus-visible .gloria-stage-label { opacity: 1; transform: translateX(0); }
         .gloria-prototype-gallery { display: grid; grid-template-columns: 1.35fr 1fr; gap: 16px; margin-bottom: 24px; }
@@ -113,12 +137,18 @@ export function GloriaCaseStudyContent() {
         }
       `}</style>
 
-      <nav className="gloria-stage-nav" aria-label="Case study stages">
+      <nav className="gloria-stage-nav" aria-label="Case study stages" style={{ left: `${railLeft}px` }}>
         {stages.map(([id, label], index) => (
-          <a key={id} href={`#${id}`} className={`gloria-stage-link ${activeStage === id ? 'active' : ''}`} aria-label={`${index + 1}. ${label}`}>
+          <button
+            key={id}
+            type="button"
+            className={`gloria-stage-link ${activeStage === id ? 'active' : ''}`}
+            aria-label={`${index + 1}. ${label}`}
+            onClick={() => document.getElementById(id)?.scrollIntoView({ behavior: 'smooth', block: 'start' })}
+          >
             <span className="gloria-stage-label">{String(index + 1).padStart(2, '0')} / {label}</span>
             <span className="gloria-stage-dot" />
-          </a>
+          </button>
         ))}
       </nav>
 
