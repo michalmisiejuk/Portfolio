@@ -54,12 +54,7 @@ export const projectsContent: Project[] = [
   mobileProductDesignSurvivalGameProject,
 ];
 
-export const hiddenProjectSlugs = new Set([
-  'raccoons-studio-requirements-and-implementation',
-  'underground-garage-user-experience-redesign',
-  'kleks-academy-released-product-demo',
-  'mobile-product-design-survival-game',
-]);
+export const hiddenProjectSlugs = new Set<string>();
 
 export const visibleProjectsContent = projectsContent.filter(
   (project) => !hiddenProjectSlugs.has(project.slug),
