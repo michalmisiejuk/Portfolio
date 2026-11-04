@@ -355,8 +355,9 @@ export function ProjectDetailPageV2() {
   const textSections = getTextSections(project);
   const imageSections = getImageSections(project);
   const isGloria = project.slug === 'learning-management-system-case-study';
+  const isFocusCycle = project.slug === 'focus-cycle-time-management';
   const resources = buildResources(project);
-  const processSource = textSections.length ? textSections : [{ type: 'text' as const, content: project.description }];
+  const processSource = textSections;
   const processSteps: ProcessStep[] = isGloria
     ? [
         {
@@ -370,7 +371,7 @@ export function ProjectDetailPageV2() {
           visual: imageSections[2],
         },
       ].filter((step) => step.visual)
-    : processSource.slice(0, 3).map((section, index) => ({
+    : isFocusCycle ? [] : processSource.slice(0, 3).map((section, index) => ({
         label: processLabel(section.content, index),
         text: cleanPrefix(section.content),
       }));
@@ -383,6 +384,12 @@ export function ProjectDetailPageV2() {
         ['Objective', textSections[1]?.content ?? project.description],
         ['Direction', 'Define a coherent LMS product direction: hybrid, structured around the full course lifecycle and realistic for Gloria operations.'],
       ] as const)
+    : isFocusCycle
+    ? ([
+        ['Format', 'Mobile-first Pomodoro timer'],
+        ['Core use', 'Select a project and task before starting a session.'],
+        ['Tracking', 'Project time and task time are visible in the timer view.'],
+      ] as const)
     : ([
         ['Challenge', project.summary],
         ['Approach', project.description],
@@ -391,7 +398,7 @@ export function ProjectDetailPageV2() {
   const heroSection = isGloria ? imageSections[0] : undefined;
   const heroSrc = heroSection?.src ?? project.heroImage ?? project.thumbnail;
   const heroAlt = heroSection?.alt ?? project.heroImageAlt ?? project.thumbnailAlt ?? project.title;
-  const heroAspectRatio = heroSection?.aspectRatio ?? '2/1';
+  const heroAspectRatio = heroSection?.aspectRatio ?? project.heroAspectRatio ?? '2/1';
   const heroNode = heroSrc ? <ImageNode src={heroSrc} alt={heroAlt} /> : <HeroVisual title={project.title} domain={project.category} dark={project.category === 'Game UX'} />;
   const heroLightboxNode = heroSrc ? <ImageNode src={heroSrc} alt={heroAlt} fit="contain" /> : heroNode;
   const resultImage = imageSections.at(-1);
@@ -417,7 +424,7 @@ export function ProjectDetailPageV2() {
     lightboxNode: <ImageNode src={section.src} alt={section.alt} aspectRatio={section.aspectRatio} fit="contain" />,
     label: `${String(index + 1).padStart(2, '0')} / ${section.alt}`,
   }));
-  const gallery = isGloria ? narrativeGallery : standardGallery;
+  const gallery = isGloria ? narrativeGallery : isFocusCycle ? [standardGallery[0]] : standardGallery;
   const galleryIndexBySrc = new Map(imageSections.map((section, index) => [section.src, index]));
   const artefactsStartIndex = 1 + processSteps.length;
   const resultGalleryIndex = gallery.length - 1;
@@ -488,7 +495,7 @@ export function ProjectDetailPageV2() {
       </div>
 
       <div data-scroll-anchor className="px-6 md:px-16 lg:px-28 max-w-5xl mx-auto">
-        <motion.div {...fadeUp(0.16)} style={{ marginBottom: '40px' }}>
+        <motion.div {...fadeUp(0.16)} style={{ maxWidth: isFocusCycle ? '360px' : undefined, margin: isFocusCycle ? '0 auto 40px' : '0 0 40px' }}>
           <GalleryImage galleryIndex={0} onOpen={openLightbox} style={imgStyle(heroAspectRatio)}>
             {heroNode}
           </GalleryImage>
@@ -511,7 +518,7 @@ export function ProjectDetailPageV2() {
           </div>
         </motion.div>
 
-        {processSteps.length ? (
+        {!isFocusCycle && processSteps.length ? (
           <motion.div {...fadeUp(0)}>
             <span style={{ fontSize: '10px', fontWeight: 600, letterSpacing: '0.1em', textTransform: 'uppercase', opacity: 0.28, display: 'block', marginBottom: '18px' }}>{isGloria ? 'Case Flow' : 'Process'}</span>
             <div style={{ display: 'flex', flexDirection: 'column', gap: '32px' }}>
@@ -546,7 +553,7 @@ export function ProjectDetailPageV2() {
           </motion.div>
         ) : null}
 
-        <motion.div {...fadeUp(0)}>
+        {!isFocusCycle ? <motion.div {...fadeUp(0)}>
           <span style={{ fontSize: '10px', fontWeight: 600, letterSpacing: '0.1em', textTransform: 'uppercase', opacity: 0.28, display: 'block', marginBottom: '18px' }}>Result</span>
           <p style={{ fontSize: '15px', fontWeight: 300, lineHeight: '1.75', color: 'rgba(0,0,0,0.7)', margin: '0 0 24px', maxWidth: '600px' }}>
             {cleanPrefix(outcomeText)}
@@ -554,7 +561,7 @@ export function ProjectDetailPageV2() {
           <GalleryImage galleryIndex={resultGalleryIndex} onOpen={openLightbox} style={imgStyle(resultImage?.aspectRatio ?? '16/9')}>
             {resultNode}
           </GalleryImage>
-        </motion.div>
+        </motion.div> : null}
 
       </div>
       )}
