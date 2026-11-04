@@ -3,6 +3,7 @@ import { undergroundGarageUserExperienceRedesignProject } from './behance-undegr
 import { learningManagementSystemCaseStudyProject } from './notion-learning-managment-system-case-study/project';
 import { kleksAcademyReleasedProductDemoProject } from './notion-kleks-academy-released-product-demo/project';
 import { raccoonsStudioRequirementsAndImplementationProject } from './raccoons-studio-requirements-and-implementation/project';
+import { focusCycleTimeManagementProject } from './focus-cycle-time-management/project';
 
 export const projectCategories = ['All', 'Product Design', 'Business Analysis', 'Game UX'] as const;
 
@@ -48,6 +49,7 @@ export type Project = {
 
 export const projectsContent: Project[] = [
   learningManagementSystemCaseStudyProject,
+  focusCycleTimeManagementProject,
   raccoonsStudioRequirementsAndImplementationProject,
   undergroundGarageUserExperienceRedesignProject,
   kleksAcademyReleasedProductDemoProject,
