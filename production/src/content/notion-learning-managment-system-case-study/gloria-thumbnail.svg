@@ -1,53 +1,41 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 1000" role="img" aria-labelledby="title desc">
   <title id="title">Gloria LMS case study</title>
-  <desc id="desc">A visual summary of the Gloria LMS journey from operational problem to testable MVP.</desc>
-  <rect width="1200" height="1000" fill="#f4f7fb"/>
-  <rect x="54" y="48" width="1092" height="76" rx="18" fill="#0b1b4d"/>
-  <circle cx="88" cy="86" r="8" fill="#ff5b4d"/>
-  <text x="116" y="94" fill="#ffffff" font-family="Inter, Arial, sans-serif" font-size="28" font-weight="700" letter-spacing="3">GLORIA LMS</text>
-  <text x="1050" y="94" fill="#b9c7e6" font-family="Inter, Arial, sans-serif" font-size="18" font-weight="600" text-anchor="end" letter-spacing="2">CASE STUDY</text>
+  <desc id="desc">A centered three-stage visual for the Gloria LMS case study.</desc>
+  <rect width="1200" height="1000" fill="#0b1b4d"/>
+  <circle cx="96" cy="90" r="18" fill="#ff5b4d"/>
+  <text x="600" y="132" fill="#ffffff" font-family="Inter, Arial, sans-serif" font-size="58" font-weight="700" text-anchor="middle" letter-spacing="6">GLORIA LMS</text>
+  <text x="600" y="188" fill="#a9b9df" font-family="Inter, Arial, sans-serif" font-size="23" font-weight="600" text-anchor="middle" letter-spacing="5">ANALYSIS / REQUIREMENTS / MVP</text>
 
-  <text x="74" y="210" fill="#2f7cff" font-family="Inter, Arial, sans-serif" font-size="22" font-weight="700" letter-spacing="3">BUSINESS ANALYSIS</text>
-  <text x="74" y="278" fill="#0b1b4d" font-family="Inter, Arial, sans-serif" font-size="54" font-weight="700">From scattered tools</text>
-  <text x="74" y="338" fill="#0b1b4d" font-family="Inter, Arial, sans-serif" font-size="54" font-weight="700">to one course lifecycle</text>
-  <line x1="74" y1="388" x2="1126" y2="388" stroke="#d9e2f0" stroke-width="2"/>
+  <line x1="188" y1="530" x2="1012" y2="530" stroke="#3f527f" stroke-width="10" stroke-linecap="round"/>
+  <path d="M378 530h52M410 502l32 28-32 28M768 530h52M800 502l32 28-32 28" fill="none" stroke="#7185b2" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
 
-  <g transform="translate(74 452)">
-    <rect width="314" height="320" rx="22" fill="#ffffff" stroke="#dce5f1" stroke-width="2"/>
-    <rect x="28" y="28" width="54" height="8" rx="4" fill="#eb526d"/>
-    <text x="28" y="88" fill="#0b1b4d" font-family="Inter, Arial, sans-serif" font-size="28" font-weight="700">Operational</text>
-    <text x="28" y="122" fill="#0b1b4d" font-family="Inter, Arial, sans-serif" font-size="28" font-weight="700">problem</text>
-    <text x="28" y="184" fill="#60749a" font-family="Inter, Arial, sans-serif" font-size="21">Drive / Teams / Excel</text>
-    <text x="28" y="222" fill="#60749a" font-family="Inter, Arial, sans-serif" font-size="21">Manual handoffs</text>
-    <text x="28" y="260" fill="#60749a" font-family="Inter, Arial, sans-serif" font-size="21">Weak visibility</text>
-    <circle cx="268" cy="268" r="20" fill="#fff0f3"/>
-    <path d="M258 268h20M270 258l10 10-10 10" fill="none" stroke="#eb526d" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+  <g transform="translate(72 360)">
+    <rect width="300" height="340" rx="30" fill="#ffffff"/>
+    <rect width="300" height="22" rx="11" fill="#eb526d"/>
+    <circle cx="150" cy="150" r="66" fill="#fff0f3"/>
+    <text x="150" y="175" fill="#eb526d" font-family="Inter, Arial, sans-serif" font-size="74" font-weight="700" text-anchor="middle">01</text>
+    <text x="150" y="260" fill="#0b1b4d" font-family="Inter, Arial, sans-serif" font-size="31" font-weight="700" text-anchor="middle">PROBLEM</text>
+    <text x="150" y="304" fill="#6c7da0" font-family="Inter, Arial, sans-serif" font-size="20" font-weight="600" text-anchor="middle" letter-spacing="2">SCATTERED TOOLS</text>
   </g>
 
-  <g transform="translate(443 452)">
-    <rect width="314" height="320" rx="22" fill="#ffffff" stroke="#dce5f1" stroke-width="2"/>
-    <rect x="28" y="28" width="54" height="8" rx="4" fill="#7659e8"/>
-    <text x="28" y="88" fill="#0b1b4d" font-family="Inter, Arial, sans-serif" font-size="28" font-weight="700">System</text>
-    <text x="28" y="122" fill="#0b1b4d" font-family="Inter, Arial, sans-serif" font-size="28" font-weight="700">requirements</text>
-    <text x="28" y="184" fill="#60749a" font-family="Inter, Arial, sans-serif" font-size="21">Roles and permissions</text>
-    <text x="28" y="222" fill="#60749a" font-family="Inter, Arial, sans-serif" font-size="21">Course operations</text>
-    <text x="28" y="260" fill="#60749a" font-family="Inter, Arial, sans-serif" font-size="21">Shared course data</text>
-    <circle cx="268" cy="268" r="20" fill="#f0edff"/>
-    <path d="M258 268h20M270 258l10 10-10 10" fill="none" stroke="#7659e8" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+  <g transform="translate(450 360)">
+    <rect width="300" height="340" rx="30" fill="#ffffff"/>
+    <rect width="300" height="22" rx="11" fill="#7659e8"/>
+    <circle cx="150" cy="150" r="66" fill="#f0edff"/>
+    <text x="150" y="175" fill="#7659e8" font-family="Inter, Arial, sans-serif" font-size="74" font-weight="700" text-anchor="middle">02</text>
+    <text x="150" y="260" fill="#0b1b4d" font-family="Inter, Arial, sans-serif" font-size="31" font-weight="700" text-anchor="middle">SYSTEM</text>
+    <text x="150" y="304" fill="#6c7da0" font-family="Inter, Arial, sans-serif" font-size="20" font-weight="600" text-anchor="middle" letter-spacing="2">REQUIREMENTS</text>
   </g>
 
-  <g transform="translate(812 452)">
-    <rect width="314" height="320" rx="22" fill="#ffffff" stroke="#dce5f1" stroke-width="2"/>
-    <rect x="28" y="28" width="54" height="8" rx="4" fill="#12a88f"/>
-    <text x="28" y="88" fill="#0b1b4d" font-family="Inter, Arial, sans-serif" font-size="28" font-weight="700">Testable</text>
-    <text x="28" y="122" fill="#0b1b4d" font-family="Inter, Arial, sans-serif" font-size="28" font-weight="700">MVP</text>
-    <text x="28" y="184" fill="#60749a" font-family="Inter, Arial, sans-serif" font-size="21">Set up</text>
-    <text x="28" y="222" fill="#60749a" font-family="Inter, Arial, sans-serif" font-size="21">Deliver and assess</text>
-    <text x="28" y="260" fill="#60749a" font-family="Inter, Arial, sans-serif" font-size="21">Report and learn</text>
-    <circle cx="268" cy="268" r="20" fill="#e9faf6"/>
-    <path d="M258 268h20M270 258l10 10-10 10" fill="none" stroke="#12a88f" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+  <g transform="translate(828 360)">
+    <rect width="300" height="340" rx="30" fill="#ffffff"/>
+    <rect width="300" height="22" rx="11" fill="#12a88f"/>
+    <circle cx="150" cy="150" r="66" fill="#e9faf6"/>
+    <text x="150" y="175" fill="#12a88f" font-family="Inter, Arial, sans-serif" font-size="74" font-weight="700" text-anchor="middle">03</text>
+    <text x="150" y="260" fill="#0b1b4d" font-family="Inter, Arial, sans-serif" font-size="31" font-weight="700" text-anchor="middle">MVP</text>
+    <text x="150" y="304" fill="#6c7da0" font-family="Inter, Arial, sans-serif" font-size="20" font-weight="600" text-anchor="middle" letter-spacing="2">TESTABLE FLOW</text>
   </g>
 
-  <rect x="74" y="842" width="1052" height="76" rx="18" fill="#0b1b4d"/>
-  <text x="600" y="890" fill="#ffffff" font-family="Inter, Arial, sans-serif" font-size="25" font-weight="600" text-anchor="middle" letter-spacing="1">ONE CONNECTED COURSE LIFECYCLE</text>
+  <rect x="330" y="820" width="540" height="76" rx="38" fill="#ffffff"/>
+  <text x="600" y="869" fill="#0b1b4d" font-family="Inter, Arial, sans-serif" font-size="25" font-weight="700" text-anchor="middle" letter-spacing="2">ONE COURSE LIFECYCLE</text>
 </svg>

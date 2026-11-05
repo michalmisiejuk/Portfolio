@@ -1,36 +1,16 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 1000" role="img" aria-labelledby="title desc">
   <title id="title">Focus Cycle mobile time management app</title>
-  <desc id="desc">A mobile Pomodoro timer interface for choosing a task and starting a focused session.</desc>
-  <rect width="1200" height="1000" fill="#f4f7fb"/>
-  <circle cx="110" cy="108" r="38" fill="#dce9fb"/>
-  <path d="M97 108h26M110 95v26" stroke="#3b82f6" stroke-width="6" stroke-linecap="round"/>
-  <text x="74" y="236" fill="#0b1b4d" font-family="Inter, Arial, sans-serif" font-size="23" font-weight="700" letter-spacing="3">FOCUS CYCLE</text>
-  <text x="74" y="310" fill="#0b1b4d" font-family="Inter, Arial, sans-serif" font-size="54" font-weight="700">Focus time,</text>
-  <text x="74" y="370" fill="#0b1b4d" font-family="Inter, Arial, sans-serif" font-size="54" font-weight="700">one task at a time.</text>
-  <text x="74" y="432" fill="#617494" font-family="Inter, Arial, sans-serif" font-size="23">A mobile-first Pomodoro workflow</text>
-  <text x="74" y="468" fill="#617494" font-family="Inter, Arial, sans-serif" font-size="23">for projects, tasks and focused sessions.</text>
-  <rect x="74" y="536" width="118" height="36" rx="18" fill="#e5efff"/>
-  <text x="133" y="560" fill="#2f6fd5" font-family="Inter, Arial, sans-serif" font-size="16" font-weight="700" text-anchor="middle" letter-spacing="1">PROJECT</text>
-  <rect x="204" y="536" width="96" height="36" rx="18" fill="#e5efff"/>
-  <text x="252" y="560" fill="#2f6fd5" font-family="Inter, Arial, sans-serif" font-size="16" font-weight="700" text-anchor="middle" letter-spacing="1">TASK</text>
-  <rect x="312" y="536" width="120" height="36" rx="18" fill="#e5efff"/>
-  <text x="372" y="560" fill="#2f6fd5" font-family="Inter, Arial, sans-serif" font-size="16" font-weight="700" text-anchor="middle" letter-spacing="1">SESSION</text>
+  <desc id="desc">A centered Pomodoro timer visual for the Focus Cycle mobile app.</desc>
+  <rect width="1200" height="1000" fill="#f2f7fc"/>
+  <text x="600" y="112" fill="#0b1b4d" font-family="Inter, Arial, sans-serif" font-size="42" font-weight="700" text-anchor="middle" letter-spacing="6">FOCUS CYCLE</text>
+  <rect x="454" y="152" width="292" height="62" rx="18" fill="#ffffff" stroke="#dce5f1" stroke-width="4"/>
+  <text x="600" y="192" fill="#31517e" font-family="Inter, Arial, sans-serif" font-size="25" font-weight="600" text-anchor="middle">Pomodoro MVP</text>
 
-  <g transform="translate(728 70)">
-    <rect width="374" height="860" rx="44" fill="#ffffff" stroke="#dce5f1" stroke-width="5"/>
-    <rect x="26" y="26" width="322" height="808" rx="30" fill="#f7faff"/>
-    <text x="187" y="88" fill="#0b1b4d" font-family="Inter, Arial, sans-serif" font-size="26" font-weight="700" text-anchor="middle">Pomodoro</text>
-    <circle cx="187" cy="188" r="6" fill="#3b82f6"/>
-    <text x="187" y="242" fill="#31517e" font-family="Inter, Arial, sans-serif" font-size="21" text-anchor="middle">Pomodoro MVP</text>
-    <rect x="101" y="262" width="172" height="48" rx="14" fill="#ffffff" stroke="#dce5f1" stroke-width="2"/>
-    <text x="187" y="293" fill="#31517e" font-family="Inter, Arial, sans-serif" font-size="19" text-anchor="middle">Lista zadan</text>
-    <circle cx="187" cy="488" r="128" fill="none" stroke="#dce5f1" stroke-width="14"/>
-    <text x="187" y="510" fill="#0b1b4d" font-family="Inter, Arial, sans-serif" font-size="62" font-weight="300" text-anchor="middle">25:00</text>
-    <rect x="58" y="664" width="258" height="64" rx="16" fill="#ffffff" stroke="#dce5f1" stroke-width="2"/>
-    <text x="82" y="692" fill="#8aa0bf" font-family="Inter, Arial, sans-serif" font-size="13" font-weight="700" letter-spacing="1">PROJECT TIME</text>
-    <text x="82" y="716" fill="#0b1b4d" font-family="Inter, Arial, sans-serif" font-size="20" font-weight="700">0 min</text>
-    <rect x="58" y="744" width="258" height="56" rx="16" fill="#3b82f6"/>
-    <path d="M151 772l15 10v-20z" fill="#ffffff"/>
-    <text x="211" y="780" fill="#ffffff" font-family="Inter, Arial, sans-serif" font-size="20" font-weight="700" text-anchor="middle">Start</text>
-  </g>
+  <circle cx="600" cy="520" r="270" fill="#f8fbff" stroke="#dce5f1" stroke-width="28"/>
+  <circle cx="600" cy="520" r="270" fill="none" stroke="#3b82f6" stroke-width="28" stroke-linecap="round" stroke-dasharray="820 880" transform="rotate(-90 600 520)"/>
+  <text x="600" y="555" fill="#0b1b4d" font-family="Inter, Arial, sans-serif" font-size="116" font-weight="300" text-anchor="middle" letter-spacing="-4">25:00</text>
+
+  <rect x="434" y="838" width="332" height="82" rx="22" fill="#3b82f6"/>
+  <path d="M548 879l24 16v-32z" fill="#ffffff"/>
+  <text x="638" y="891" fill="#ffffff" font-family="Inter, Arial, sans-serif" font-size="29" font-weight="700" text-anchor="middle">Start</text>
 </svg>

@@ -36,7 +36,7 @@ function ProjectCard({
           }}
         >
           <div className="flex flex-row gap-4 items-start">
-            <div className="shrink-0 relative" style={{ width: '120px', height: '100px', borderRadius: '3px' }}>
+            <div className="shrink-0 relative" style={{ width: 'clamp(120px, 25vw, 160px)', height: 'clamp(100px, 20vw, 120px)', borderRadius: '3px' }}>
               <img src={project.thumbnail} alt={project.thumbnailAlt} className="w-full h-full object-cover" style={{ borderRadius: '3px' }} />
               <div
                 style={{
