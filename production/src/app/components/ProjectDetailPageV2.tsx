@@ -357,7 +357,6 @@ export function ProjectDetailPageV2() {
   const isGloria = project.slug === 'learning-management-system-case-study';
   const isFocusCycle = project.slug === 'focus-cycle-time-management';
   const resources = buildResources(project);
-  const processSource = textSections;
   const processSteps: ProcessStep[] = isGloria
     ? [
         {
@@ -371,10 +370,7 @@ export function ProjectDetailPageV2() {
           visual: imageSections[2],
         },
       ].filter((step) => step.visual)
-    : isFocusCycle ? [] : processSource.slice(0, 3).map((section, index) => ({
-        label: processLabel(section.content, index),
-        text: cleanPrefix(section.content),
-      }));
+    : [];
   const outcomeText = isGloria
     ? 'The case study connected business analysis, product strategy and UX translation into one coherent product concept.'
     : textSections.find((section) => !/^Rola:|^Zakres:|^Obszary pracy:/i.test(section.content))?.content ?? project.description;
@@ -404,7 +400,7 @@ export function ProjectDetailPageV2() {
   const resultImage = imageSections.at(-1);
   const resultNode = resultImage ? <ImageNode src={resultImage.src} alt={resultImage.alt} /> : <FinalVisual domain={project.category} />;
   const resultLightboxNode = resultImage ? <ImageNode src={resultImage.src} alt={resultImage.alt} fit="contain" /> : resultNode;
-  const artefactSections = isGloria ? imageSections.slice(3, -1) : imageSections.slice(0, -1);
+  const artefactSections = isGloria ? imageSections.slice(3, -1) : isFocusCycle ? [] : imageSections;
   const standardGallery: LightboxImage[] = [
     { node: heroNode, lightboxNode: heroLightboxNode, label: isGloria ? '01 Context / Gloria LMS' : `Hero / ${project.title}` },
     ...processSteps.map((step, index) => ({
@@ -417,7 +413,7 @@ export function ProjectDetailPageV2() {
       lightboxNode: <ImageNode src={section.src} alt={section.alt} aspectRatio={section.aspectRatio} fit="contain" />,
       label: `${String(index + processSteps.length + 2).padStart(2, '0')} Artefact / ${project.title}`,
     })),
-    { node: resultNode, lightboxNode: resultLightboxNode, label: isGloria ? '09 Outcome / Gloria LMS' : `Result / ${project.category}` },
+    ...(isGloria ? [{ node: resultNode, lightboxNode: resultLightboxNode, label: '09 Outcome / Gloria LMS' }] : []),
   ];
   const narrativeGallery: LightboxImage[] = imageSections.map((section, index) => ({
     node: <ImageNode src={section.src} alt={section.alt} aspectRatio={section.aspectRatio} />,
@@ -553,7 +549,7 @@ export function ProjectDetailPageV2() {
           </motion.div>
         ) : null}
 
-        {!isFocusCycle ? <motion.div {...fadeUp(0)}>
+        {isGloria ? <motion.div {...fadeUp(0)}>
           <span style={{ fontSize: '10px', fontWeight: 600, letterSpacing: '0.1em', textTransform: 'uppercase', opacity: 0.28, display: 'block', marginBottom: '18px' }}>Result</span>
           <p style={{ fontSize: '15px', fontWeight: 300, lineHeight: '1.75', color: 'rgba(0,0,0,0.7)', margin: '0 0 24px', maxWidth: '600px' }}>
             {cleanPrefix(outcomeText)}
