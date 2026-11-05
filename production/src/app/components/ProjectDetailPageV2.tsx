@@ -156,8 +156,8 @@ function GalleryImage({
   );
 }
 
-function ImageNode({ src, alt, aspectRatio, fit = 'contain', maxHeight = '78vh' }: { src: string; alt: string; aspectRatio?: string; fit?: 'cover' | 'contain'; maxHeight?: string }) {
-  return <img src={src} alt={alt} style={{ width: '100%', height: '100%', maxHeight, objectFit: fit, aspectRatio, display: 'block', background: fit === 'contain' ? 'transparent' : '#d9d9d9' }} />;
+function ImageNode({ src, alt, fit = 'contain', maxHeight = '78vh' }: { src: string; alt: string; aspectRatio?: string; fit?: 'cover' | 'contain'; maxHeight?: string }) {
+  return <img src={src} alt={alt} style={{ width: '100%', height: 'auto', maxHeight, objectFit: fit, display: 'block', background: 'transparent' }} />;
 }
 
 function getTextSections(project: Project) {
@@ -430,11 +430,7 @@ export function ProjectDetailPageV2() {
     };
   }, [lightboxIndex]);
 
-  const imgStyle = (aspectRatio: string): CSSProperties => ({
-    borderRadius: '2px',
-    overflow: 'hidden',
-    border: '1px solid rgba(0,0,0,0.12)',
-    aspectRatio,
+  const imgStyle = (_aspectRatio: string): CSSProperties => ({
     width: '100%',
   });
 

@@ -95,9 +95,9 @@ export function GloriaCaseStudyContent() {
         .gloria-section-heading > span { display: block; margin-bottom: 14px; color: #0057ff; font-family: 'JetBrains Mono', monospace; font-size: 10px; font-weight: 700; letter-spacing: .11em; text-transform: uppercase; }
         .gloria-section-heading h2 { margin: 0 0 12px; color: #111; font-size: clamp(28px, 4vw, 42px); font-weight: 650; line-height: 1.08; letter-spacing: -.035em; }
         .gloria-section-heading p { margin: 0; max-width: 680px; color: rgba(0,0,0,.58); font-size: 15px; font-weight: 300; line-height: 1.7; }
-        .gloria-figure { margin: 0 0 32px; overflow: hidden; border: 1px solid rgba(0,0,0,.12); border-radius: 3px; background: #f7f8fa; box-shadow: 0 12px 32px rgba(0,0,0,.035); }
+        .gloria-figure { margin: 0 0 32px; overflow: visible; }
         .gloria-figure img { display: block; width: 100%; height: auto; background: #fff; }
-        .gloria-figure figcaption { padding: 10px 14px; border-top: 1px solid rgba(0,0,0,.08); color: rgba(0,0,0,.46); background: #fafafa; font-family: 'JetBrains Mono', monospace; font-size: 9px; letter-spacing: .035em; text-transform: uppercase; }
+        .gloria-figure figcaption { padding: 9px 0 0; color: rgba(0,0,0,.46); font-family: 'JetBrains Mono', monospace; font-size: 9px; letter-spacing: .035em; text-transform: uppercase; }
         .gloria-artifact { width: 100%; }
         .gloria-portrait { width: min(760px, 100%); margin-left: auto; margin-right: auto; }
         .gloria-explanation { display: grid; grid-template-columns: minmax(190px, .7fr) 1.6fr; gap: 28px; margin: -12px 0 48px; padding: 24px 26px; border-left: 3px solid #0057ff; background: #f5f7fa; }
@@ -111,9 +111,9 @@ export function GloriaCaseStudyContent() {
         .gloria-stage-label { position: absolute; right: 28px; padding: 5px 8px; border: 1px solid rgba(0,0,0,.12); border-radius: 2px; background: #fff; color: #111; box-shadow: 0 5px 18px rgba(0,0,0,.08); font: 600 9px/1 'JetBrains Mono', monospace; letter-spacing: .06em; text-transform: uppercase; white-space: nowrap; opacity: 0; transform: translateX(5px); pointer-events: none; transition: .18s ease; }
         .gloria-stage-link:hover .gloria-stage-label, .gloria-stage-link:focus-visible .gloria-stage-label { opacity: 1; transform: translateX(0); }
         .gloria-prototype-gallery { display: grid; grid-template-columns: 1.35fr 1fr; gap: 16px; margin-bottom: 24px; }
-        .gloria-prototype-shot { margin: 0; overflow: hidden; border: 1px solid rgba(0,0,0,.12); border-radius: 3px; background: #f4f7fc; }
+        .gloria-prototype-shot { margin: 0; overflow: visible; }
         .gloria-prototype-shot:first-child { grid-row: span 2; }
-        .gloria-prototype-shot img { display: block; width: 100%; height: 100%; min-height: 180px; object-fit: cover; object-position: top left; }
+        .gloria-prototype-shot img { display: block; width: 100%; height: auto; object-fit: initial; object-position: initial; }
         .gloria-prototype-cta { display: flex; align-items: center; justify-content: space-between; gap: 24px; padding: 24px 26px; border-radius: 3px; background: #101828; color: #fff; }
         .gloria-prototype-cta h3 { margin: 0 0 6px; font-size: 20px; }
         .gloria-prototype-cta p { margin: 0; color: rgba(255,255,255,.68); font-size: 13px; font-weight: 300; line-height: 1.5; }
@@ -126,7 +126,7 @@ export function GloriaCaseStudyContent() {
           .gloria-case-study section { margin-bottom: 72px; padding-top: 36px; }
           .gloria-section-heading { margin-bottom: 28px; }
           .gloria-section-heading h2 { font-size: 29px; }
-          .gloria-figure { margin-bottom: 24px; border-radius: 2px; }
+          .gloria-figure { margin-bottom: 24px; }
           .gloria-figure figcaption { font-size: 8px; }
           .gloria-explanation { display: block; margin-top: -4px; margin-bottom: 36px; padding: 20px; }
           .gloria-explanation h3 { margin-bottom: 10px; font-size: 18px; }
