@@ -5,9 +5,9 @@ export const focusCycleTimeManagementProject = {
   title: 'Focus Cycle: Mobile Time Management App',
   category: 'Product Design',
   summary:
-    'A mobile Pomodoro app for choosing a task, running focused sessions and tracking time by project.',
+    'Focus Cycle is a mobile time-management app that turns project tasks into focused Pomodoro sessions. It connects task selection, a 25-minute timer and lightweight time tracking in one screen.',
   description:
-    'The app connects projects, tasks and focus sessions in one lightweight mobile workflow.',
+    'The core workflow is simple: choose a project, select the next task, run a focused session and review time spent by project and task.',
   tags: ['Mobile App', 'Product Design', 'Time Management'],
   thumbnail: cover,
   thumbnailAlt: 'Focus Cycle mobile Pomodoro timer',
@@ -16,7 +16,7 @@ export const focusCycleTimeManagementProject = {
   heroAspectRatio: '390 / 844',
   projectLinks: [
     {
-      label: 'Open interactive app',
+      label: 'Interactive prototype',
       url: '/Portfolio/demos/focus-cycle/',
     },
   ],

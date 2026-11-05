@@ -386,9 +386,9 @@ export function ProjectDetailPageV2() {
       ] as const)
     : isFocusCycle
     ? ([
-        ['Format', 'Mobile-first Pomodoro timer'],
-        ['Core use', 'Select a project and task before starting a session.'],
-        ['Tracking', 'Project time and task time are visible in the timer view.'],
+        ['Format', 'Mobile time-management app'],
+        ['Core flow', 'Choose a project and task, then start a focused Pomodoro session.'],
+        ['Tracking', 'Review time by project and task, plus completed sessions for the day.'],
       ] as const)
     : ([
         ['Challenge', project.summary],
