@@ -374,28 +374,15 @@ export function ProjectDetailPageV2() {
   const outcomeText = isGloria
     ? 'The case study connected business analysis, product strategy and UX translation into one coherent product concept.'
     : textSections.find((section) => !/^Rola:|^Zakres:|^Obszary pracy:/i.test(section.content))?.content ?? project.description;
-  const overview = isGloria
-    ? ([
-        ['Context', textSections[0]?.content ?? project.summary],
-        ['Objective', textSections[1]?.content ?? project.description],
-        ['Direction', 'Define a coherent LMS product direction: hybrid, structured around the full course lifecycle and realistic for Gloria operations.'],
-      ] as const)
-    : isFocusCycle
-    ? ([
-        ['Format', 'Mobile time-management app'],
-        ['Core flow', 'Choose a project and task, then start a focused Pomodoro session.'],
-        ['Tracking', 'Review time by project and task, plus completed sessions for the day.'],
-      ] as const)
-    : ([
-        ['Challenge', project.summary],
-        ['Approach', project.description],
-        ['Outcome', cleanPrefix(outcomeText)],
-      ] as const);
   const heroSection = isGloria ? imageSections[0] : undefined;
   const heroSrc = heroSection?.src ?? project.heroImage ?? project.thumbnail;
   const heroAlt = heroSection?.alt ?? project.heroImageAlt ?? project.thumbnailAlt ?? project.title;
   const heroAspectRatio = heroSection?.aspectRatio ?? project.heroAspectRatio ?? '2/1';
-  const heroNode = heroSrc ? <ImageNode src={heroSrc} alt={heroAlt} fit={isFocusCycle ? 'cover' : 'contain'} maxHeight={isFocusCycle ? 'none' : '78vh'} /> : <HeroVisual title={project.title} domain={project.category} dark={project.category === 'Game UX'} />;
+  const heroNode = heroSrc
+    ? isFocusCycle
+      ? <img src={heroSrc} alt={heroAlt} style={{ display: 'block', width: '100%', height: 'auto' }} />
+      : <ImageNode src={heroSrc} alt={heroAlt} />
+    : <HeroVisual title={project.title} domain={project.category} dark={project.category === 'Game UX'} />;
   const heroLightboxNode = heroSrc ? <ImageNode src={heroSrc} alt={heroAlt} fit="contain" /> : heroNode;
   const resultImage = imageSections.at(-1);
   const resultNode = resultImage ? <ImageNode src={resultImage.src} alt={resultImage.alt} /> : <FinalVisual domain={project.category} />;
@@ -491,8 +478,8 @@ export function ProjectDetailPageV2() {
       </div>
 
       <div data-scroll-anchor className="px-6 md:px-16 lg:px-28 max-w-5xl mx-auto">
-        <motion.div {...fadeUp(0.16)} style={{ maxWidth: isFocusCycle ? '360px' : undefined, margin: isFocusCycle ? '0 auto 40px' : '0 0 40px' }}>
-          <GalleryImage galleryIndex={0} onOpen={openLightbox} style={imgStyle(heroAspectRatio)}>
+        <motion.div {...fadeUp(0.16)} style={{ maxWidth: isFocusCycle ? '390px' : undefined, margin: isFocusCycle ? '0 auto 40px' : '0 0 40px' }}>
+          <GalleryImage galleryIndex={0} onOpen={openLightbox} style={isFocusCycle ? { width: '100%', overflow: 'hidden' } : imgStyle(heroAspectRatio)}>
             {heroNode}
           </GalleryImage>
         </motion.div>
@@ -502,18 +489,6 @@ export function ProjectDetailPageV2() {
         <GloriaCaseStudyContent />
       ) : (
       <div className="px-6 md:px-16 lg:px-28 max-w-5xl mx-auto pb-24 flex flex-col gap-10">
-        <motion.div {...fadeUp(0)}>
-          <span style={{ fontSize: '10px', fontWeight: 600, letterSpacing: '0.1em', textTransform: 'uppercase', opacity: 0.28, display: 'block', marginBottom: '18px' }}>Overview</span>
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
-            {overview.map(([label, text]) => (
-              <div key={label}>
-                <span style={{ fontSize: '11px', fontWeight: 500, color: '#111', display: 'block', marginBottom: '8px' }}>{label}</span>
-                <p style={{ fontSize: '12.5px', fontWeight: 300, lineHeight: '1.7', color: 'rgba(0,0,0,0.65)', margin: 0 }}>{text}</p>
-              </div>
-            ))}
-          </div>
-        </motion.div>
-
         {!isFocusCycle && processSteps.length ? (
           <motion.div {...fadeUp(0)}>
             <span style={{ fontSize: '10px', fontWeight: 600, letterSpacing: '0.1em', textTransform: 'uppercase', opacity: 0.28, display: 'block', marginBottom: '18px' }}>{isGloria ? 'Case Flow' : 'Process'}</span>
