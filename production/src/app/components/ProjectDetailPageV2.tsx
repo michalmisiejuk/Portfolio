@@ -399,7 +399,7 @@ export function ProjectDetailPageV2() {
   const heroSrc = heroSection?.src ?? project.heroImage ?? project.thumbnail;
   const heroAlt = heroSection?.alt ?? project.heroImageAlt ?? project.thumbnailAlt ?? project.title;
   const heroAspectRatio = heroSection?.aspectRatio ?? project.heroAspectRatio ?? '2/1';
-  const heroNode = heroSrc ? <ImageNode src={heroSrc} alt={heroAlt} maxHeight={isFocusCycle ? 'none' : '78vh'} /> : <HeroVisual title={project.title} domain={project.category} dark={project.category === 'Game UX'} />;
+  const heroNode = heroSrc ? <ImageNode src={heroSrc} alt={heroAlt} fit={isFocusCycle ? 'cover' : 'contain'} maxHeight={isFocusCycle ? 'none' : '78vh'} /> : <HeroVisual title={project.title} domain={project.category} dark={project.category === 'Game UX'} />;
   const heroLightboxNode = heroSrc ? <ImageNode src={heroSrc} alt={heroAlt} fit="contain" /> : heroNode;
   const resultImage = imageSections.at(-1);
   const resultNode = resultImage ? <ImageNode src={resultImage.src} alt={resultImage.alt} /> : <FinalVisual domain={project.category} />;
