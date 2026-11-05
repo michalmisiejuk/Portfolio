@@ -15,9 +15,10 @@ export const undergroundGarageUserExperienceRedesignProject = {
   slug: 'underground-garage-user-experience-redesign',
   title: 'Underground Garage: User Experience Redesign',
   category: 'Game UX',
-  summary: 'UX redesign dla gry samochodowej: HUD, questy, profile i flow systemowe.',
+  summary:
+    'Redesign UX gry o naprawie i tuningu samochodow po problematycznym release, obejmujacy HUD, questy, profile i kluczowe flow gracza.',
   description:
-    'Underground Garage to gra o naprawie i tuningu samochodow. Projekt obejmowal redesign UX po problematycznym release i uporzadkowanie kluczowych przeplywow gracza.',
+    'Underground Garage to gra o naprawie i tuningu samochodow. Projekt porzadkowal kluczowe przeplywy gracza i stabilizowal UX po problematycznym release.',
   tags: ['Game UX', 'UX Redesign', 'UI Design'],
   thumbnail: ugCover,
   thumbnailAlt: 'Okladka projektu Underground Garage',

@@ -4,9 +4,10 @@ export const kleksAcademyReleasedProductDemoProject = {
   slug: 'kleks-academy-released-product-demo',
   title: 'Kleks Academy - Released Product (Demo)',
   category: 'Product Design',
-  summary: 'Product discovery dla wczesnego etapu rozwoju gry Kleks Academy.',
+  summary:
+    'Product discovery dla wczesnego etapu rozwoju gry Kleks Academy: od wizji kreatywnej i celow biznesowych do wspolnego zakresu produktu.',
   description:
-    'Projekt skupial sie na wczesnym product discovery: przelozeniu wizji kreatywnej i celow biznesowych na czytelny zakres produktu oraz uporzadkowane wymagania.',
+    'Projekt przekladal wizje kreatywna i cele biznesowe na czytelny zakres produktu, uporzadkowane wymagania i wspolne rozumienie kierunku rozwoju.',
   tags: ['Product Discovery', 'Game UX', 'Business Analysis'],
   thumbnail: image04,
   thumbnailAlt: 'Okladka projektu Kleks Academy',

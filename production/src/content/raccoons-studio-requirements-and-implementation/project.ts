@@ -5,9 +5,9 @@ export const raccoonsStudioRequirementsAndImplementationProject = {
   title: 'Raccoons Studio - Requirements and Implementation Support',
   category: 'Business Analysis',
   summary:
-    'Zbieranie wymagan, koordynacja stakeholderow i wsparcie wdrozenia rozwiazania dla studia gier.',
+    'Analiza wymagan i wsparcie wdrozenia rozwiazania dla studia gier, laczace potrzeby biznesu, marketingu i zewnetrznego wykonawcy.',
   description:
-    'Projekt skupial sie na uporzadkowaniu wymagan, synchronizacji interesariuszy oraz doprowadzeniu rozwiazania od etapu ustalen biznesowych do wdrozenia operacyjnego.',
+    'Projekt porzadkowal wymagania i zaleznosci oraz prowadzil rozwiazanie od ustalen biznesowych do wdrozenia operacyjnego.',
   tags: ['Business Analysis', 'Stakeholder Management', 'Implementation'],
   thumbnail: thumb,
   thumbnailAlt: 'Miniatura projektu Raccoons Studio',
