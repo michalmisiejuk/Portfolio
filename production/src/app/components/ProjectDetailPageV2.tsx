@@ -156,8 +156,8 @@ function GalleryImage({
   );
 }
 
-function ImageNode({ src, alt, aspectRatio, fit = 'contain' }: { src: string; alt: string; aspectRatio?: string; fit?: 'cover' | 'contain' }) {
-  return <img src={src} alt={alt} style={{ width: '100%', height: '100%', maxHeight: '78vh', objectFit: fit, aspectRatio, display: 'block', background: fit === 'contain' ? 'transparent' : '#d9d9d9' }} />;
+function ImageNode({ src, alt, aspectRatio, fit = 'contain', maxHeight = '78vh' }: { src: string; alt: string; aspectRatio?: string; fit?: 'cover' | 'contain'; maxHeight?: string }) {
+  return <img src={src} alt={alt} style={{ width: '100%', height: '100%', maxHeight, objectFit: fit, aspectRatio, display: 'block', background: fit === 'contain' ? 'transparent' : '#d9d9d9' }} />;
 }
 
 function getTextSections(project: Project) {
@@ -399,7 +399,7 @@ export function ProjectDetailPageV2() {
   const heroSrc = heroSection?.src ?? project.heroImage ?? project.thumbnail;
   const heroAlt = heroSection?.alt ?? project.heroImageAlt ?? project.thumbnailAlt ?? project.title;
   const heroAspectRatio = heroSection?.aspectRatio ?? project.heroAspectRatio ?? '2/1';
-  const heroNode = heroSrc ? <ImageNode src={heroSrc} alt={heroAlt} /> : <HeroVisual title={project.title} domain={project.category} dark={project.category === 'Game UX'} />;
+  const heroNode = heroSrc ? <ImageNode src={heroSrc} alt={heroAlt} maxHeight={isFocusCycle ? 'none' : '78vh'} /> : <HeroVisual title={project.title} domain={project.category} dark={project.category === 'Game UX'} />;
   const heroLightboxNode = heroSrc ? <ImageNode src={heroSrc} alt={heroAlt} fit="contain" /> : heroNode;
   const resultImage = imageSections.at(-1);
   const resultNode = resultImage ? <ImageNode src={resultImage.src} alt={resultImage.alt} /> : <FinalVisual domain={project.category} />;
