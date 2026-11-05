@@ -1,4 +1,5 @@
 import cover from './focus-cycle-mobile.png';
+import thumbnail from './focus-cycle-thumbnail.svg';
 
 export const focusCycleTimeManagementProject = {
   slug: 'focus-cycle-time-management',
@@ -9,7 +10,7 @@ export const focusCycleTimeManagementProject = {
   description:
     'The core workflow is simple: choose a project, select the next task, run a focused session and review time spent by project and task.',
   tags: ['Mobile App', 'Product Design', 'Time Management'],
-  thumbnail: cover,
+  thumbnail,
   thumbnailAlt: 'Focus Cycle mobile Pomodoro timer',
   heroImage: cover,
   heroImageAlt: 'Focus Cycle mobile Pomodoro timer screen',

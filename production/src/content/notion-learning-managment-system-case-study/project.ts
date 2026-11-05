@@ -1,4 +1,5 @@
 import cover from './images/case-study-v2/assets/main-01.png';
+import thumbnail from './gloria-thumbnail.svg';
 
 const slide = (src: string, alt: string) => ({
   type: 'image' as const,
@@ -17,7 +18,7 @@ export const learningManagementSystemCaseStudyProject = {
   description:
     'The project examined where the existing setup failed, defined the product boundary and requirements, and reduced the planned solution to a complete workflow that users could test.',
   tags: ['Case Study', 'Product Design', 'Business Analysis', 'LMS'],
-  thumbnail: cover,
+  thumbnail,
   thumbnailAlt: 'Gloria LMS case study cover',
   projectLinks: [
     {
